@@ -36,7 +36,7 @@ from ase import units
 from cclib.parser.utils import convertor
 
 from mbgdml.utils import get_entity_ids, get_comp_ids, convert_forces, write_xyz
-from mbgdml.md import mbGDMLCalculator
+from mbgdml.md import mbGDML_ASE_Calculator
 
 ###   SCRIPT PARAMETERS   ###
 
@@ -120,7 +120,7 @@ ase_structure = read(structure_path)
 ase_atoms = ase_structure.numbers
 
 # Initalizing calculator.
-mbgdml_calculator = mbGDMLCalculator(
+mbgdml_calculator = mbGDML_ASE_Calculator(
     ase_atoms, model_paths, entity_ids, comp_ids
 )
 mbgdml_calculator.directory = working_dir
