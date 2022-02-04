@@ -1,0 +1,360 @@
+[smp-n115][[836,1],18][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(34) failed: Connection reset by peer (104)
+[smp-n115][[836,1],21][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(37) failed: Connection reset by peer (104)
+[smp-n115][[836,1],7][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(23) failed: Connection reset by peer (104)
+[smp-n115][[836,1],11][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(27) failed: Connection reset by peer (104)
+[smp-n115][[836,1],9][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(25) failed: Connection reset by peer (104)
+[smp-n115][[836,1],15][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(31) failed: Connection reset by peer (104)
+[smp-n115][[836,1],4][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(64) failed: Connection reset by peer (104)
+[smp-n115][[836,1],2][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(18) failed: Connection reset by peer (104)
+[smp-n115][[836,1],0][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(16) failed: Connection reset by peer (104)
+[smp-n115][[836,1],5][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(21) failed: Connection reset by peer (104)
+[smp-n115][[836,1],23][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(39) failed: Connection reset by peer (104)
+[smp-n115][[836,1],8][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(24) failed: Connection reset by peer (104)
+[smp-n115][[836,1],12][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(28) failed: Connection reset by peer (104)
+[smp-n115][[836,1],1][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(17) failed: Connection reset by peer (104)
+[smp-n115][[836,1],4][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(20) failed: Connection reset by peer (104)
+[smp-n115][[836,1],3][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(19) failed: Connection reset by peer (104)
+[smp-n115][[836,1],6][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(22) failed: Connection reset by peer (104)
+[smp-n115][[836,1],10][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(26) failed: Connection reset by peer (104)
+[smp-n115][[836,1],15][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(31) failed: Connection reset by peer (104)
+[smp-n115][[836,1],18][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(34) failed: Connection reset by peer (104)
+[smp-n115][[836,1],4][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(20) failed: Connection reset by peer (104)
+[smp-n115][[836,1],0][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(16) failed: Connection reset by peer (104)
+[smp-n115][[836,1],21][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(37) failed: Connection reset by peer (104)
+[smp-n115][[836,1],23][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(39) failed: Connection reset by peer (104)
+[smp-n115][[836,1],6][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(22) failed: Connection reset by peer (104)
+[smp-n115][[836,1],3][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(19) failed: Connection reset by peer (104)
+[smp-n115][[836,1],5][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(21) failed: Connection reset by peer (104)
+[smp-n115][[836,1],10][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(26) failed: Connection reset by peer (104)
+[smp-n115][[836,1],2][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(18) failed: Connection reset by peer (104)
+[smp-n115][[836,1],12][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(28) failed: Connection reset by peer (104)
+[smp-n115][[836,1],1][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(17) failed: Connection reset by peer (104)
+[smp-n115][[836,1],11][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(27) failed: Connection reset by peer (104)
+[smp-n115][[836,1],7][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(23) failed: Connection reset by peer (104)
+[smp-n115][[836,1],8][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(24) failed: Connection reset by peer (104)
+[smp-n115][[836,1],9][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(25) failed: Connection reset by peer (104)
+[smp-n115][[836,1],15][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(31) failed: Connection reset by peer (104)
+[smp-n115][[836,1],18][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(34) failed: Connection reset by peer (104)
+[smp-n115][[836,1],21][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(37) failed: Connection reset by peer (104)
+[smp-n115][[836,1],0][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(16) failed: Connection reset by peer (104)
+[smp-n115][[836,1],5][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(21) failed: Connection reset by peer (104)
+[smp-n115][[836,1],23][../../../../../dist/opal/mca/btl/tcp/btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(63) failed: Connection reset by peer (104)
+Step 0/300: E_pot = -18859.22129158 eV  E_kin = 1.82045716 eV (T = 391.21 K)  Etot = -18857.40083442 eV
+Step 1/300: E_pot = -18859.24644675 eV  E_kin = 1.85402226 eV (T = 398.43 K)  Etot = -18857.39242449 eV
+Step 2/300: E_pot = -18859.34427616 eV  E_kin = 1.93901850 eV (T = 416.69 K)  Etot = -18857.40525766 eV
+Step 3/300: E_pot = -18859.36667644 eV  E_kin = 1.96176691 eV (T = 421.58 K)  Etot = -18857.40490953 eV
+Step 4/300: E_pot = -18859.29458837 eV  E_kin = 1.89449901 eV (T = 407.13 K)  Etot = -18857.40008936 eV
+Step 5/300: E_pot = -18859.18701646 eV  E_kin = 1.78590889 eV (T = 383.79 K)  Etot = -18857.40110757 eV
+Step 6/300: E_pot = -18859.04616398 eV  E_kin = 1.65043781 eV (T = 354.68 K)  Etot = -18857.39572617 eV
+Step 7/300: E_pot = -18858.93836311 eV  E_kin = 1.54261443 eV (T = 331.51 K)  Etot = -18857.39574868 eV
+Step 8/300: E_pot = -18858.86856381 eV  E_kin = 1.46960341 eV (T = 315.82 K)  Etot = -18857.39896040 eV
+Step 9/300: E_pot = -18858.81182930 eV  E_kin = 1.42026417 eV (T = 305.21 K)  Etot = -18857.39156513 eV
+Step 10/300: E_pot = -18858.87792237 eV  E_kin = 1.48838455 eV (T = 319.85 K)  Etot = -18857.38953782 eV
+Step 11/300: E_pot = -18859.07726075 eV  E_kin = 1.67090372 eV (T = 359.07 K)  Etot = -18857.40635703 eV
+Step 12/300: E_pot = -18859.20088592 eV  E_kin = 1.80012709 eV (T = 386.84 K)  Etot = -18857.40075883 eV
+Step 13/300: E_pot = -18859.29316799 eV  E_kin = 1.89877631 eV (T = 408.04 K)  Etot = -18857.39439168 eV
+Step 14/300: E_pot = -18859.43203164 eV  E_kin = 2.03088538 eV (T = 436.43 K)  Etot = -18857.40114626 eV
+Step 15/300: E_pot = -18859.52991368 eV  E_kin = 2.12700764 eV (T = 457.09 K)  Etot = -18857.40290605 eV
+Step 16/300: E_pot = -18859.54151054 eV  E_kin = 2.13805575 eV (T = 459.47 K)  Etot = -18857.40345479 eV
+Step 17/300: E_pot = -18859.45424965 eV  E_kin = 2.04996933 eV (T = 440.54 K)  Etot = -18857.40428032 eV
+Step 18/300: E_pot = -18859.27908386 eV  E_kin = 1.88363860 eV (T = 404.79 K)  Etot = -18857.39544526 eV
+Step 19/300: E_pot = -18859.14968411 eV  E_kin = 1.75665641 eV (T = 377.50 K)  Etot = -18857.39302770 eV
+Step 20/300: E_pot = -18859.10062767 eV  E_kin = 1.69685993 eV (T = 364.65 K)  Etot = -18857.40376774 eV
+Step 21/300: E_pot = -18859.00404739 eV  E_kin = 1.60448347 eV (T = 344.80 K)  Etot = -18857.39956392 eV
+Step 22/300: E_pot = -18858.92038920 eV  E_kin = 1.53390555 eV (T = 329.63 K)  Etot = -18857.38648366 eV
+Step 23/300: E_pot = -18859.02198576 eV  E_kin = 1.63151538 eV (T = 350.61 K)  Etot = -18857.39047037 eV
+Step 24/300: E_pot = -18859.24601871 eV  E_kin = 1.84176012 eV (T = 395.79 K)  Etot = -18857.40425859 eV
+Step 25/300: E_pot = -18859.38636804 eV  E_kin = 1.98012884 eV (T = 425.53 K)  Etot = -18857.40623920 eV
+Step 26/300: E_pot = -18859.39581618 eV  E_kin = 1.99507154 eV (T = 428.74 K)  Etot = -18857.40074464 eV
+Step 27/300: E_pot = -18859.36844704 eV  E_kin = 1.97791834 eV (T = 425.05 K)  Etot = -18857.39052870 eV
+Step 28/300: E_pot = -18859.44909312 eV  E_kin = 2.05187484 eV (T = 440.94 K)  Etot = -18857.39721828 eV
+Step 29/300: E_pot = -18859.53753556 eV  E_kin = 2.12158493 eV (T = 455.93 K)  Etot = -18857.41595063 eV
+Step 30/300: E_pot = -18859.39471324 eV  E_kin = 1.98751579 eV (T = 427.11 K)  Etot = -18857.40719745 eV
+Step 31/300: E_pot = -18859.13667562 eV  E_kin = 1.74805303 eV (T = 375.65 K)  Etot = -18857.38862259 eV
+Step 32/300: E_pot = -18859.03854714 eV  E_kin = 1.65482804 eV (T = 355.62 K)  Etot = -18857.38371910 eV
+Step 33/300: E_pot = -18859.17383706 eV  E_kin = 1.77835456 eV (T = 382.17 K)  Etot = -18857.39548250 eV
+Step 34/300: E_pot = -18859.35994710 eV  E_kin = 1.95060119 eV (T = 419.18 K)  Etot = -18857.40934591 eV
+Step 35/300: E_pot = -18859.37810099 eV  E_kin = 1.96732752 eV (T = 422.78 K)  Etot = -18857.41077347 eV
+Step 36/300: E_pot = -18859.22421030 eV  E_kin = 1.83470597 eV (T = 394.28 K)  Etot = -18857.38950433 eV
+Step 37/300: E_pot = -18859.19616074 eV  E_kin = 1.81112337 eV (T = 389.21 K)  Etot = -18857.38503737 eV
+Step 38/300: E_pot = -18859.35528553 eV  E_kin = 1.94934574 eV (T = 418.91 K)  Etot = -18857.40593979 eV
+Step 39/300: E_pot = -18859.41483950 eV  E_kin = 2.00187201 eV (T = 430.20 K)  Etot = -18857.41296749 eV
+Step 40/300: E_pot = -18859.25583662 eV  E_kin = 1.85149126 eV (T = 397.88 K)  Etot = -18857.40434537 eV
+Step 41/300: E_pot = -18859.02197956 eV  E_kin = 1.63527776 eV (T = 351.42 K)  Etot = -18857.38670181 eV
+Step 42/300: E_pot = -18858.96505266 eV  E_kin = 1.57844113 eV (T = 339.20 K)  Etot = -18857.38661153 eV
+Step 43/300: E_pot = -18859.09649995 eV  E_kin = 1.69758849 eV (T = 364.81 K)  Etot = -18857.39891146 eV
+Step 44/300: E_pot = -18859.23030379 eV  E_kin = 1.82346913 eV (T = 391.86 K)  Etot = -18857.40683467 eV
+Step 45/300: E_pot = -18859.26192377 eV  E_kin = 1.86658316 eV (T = 401.13 K)  Etot = -18857.39534061 eV
+Step 46/300: E_pot = -18859.32600111 eV  E_kin = 1.92840934 eV (T = 414.41 K)  Etot = -18857.39759177 eV
+Step 47/300: E_pot = -18859.40238676 eV  E_kin = 1.99964344 eV (T = 429.72 K)  Etot = -18857.40274333 eV
+Step 48/300: E_pot = -18859.41700561 eV  E_kin = 2.02055726 eV (T = 434.21 K)  Etot = -18857.39644834 eV
+Step 49/300: E_pot = -18859.43523117 eV  E_kin = 2.03589329 eV (T = 437.51 K)  Etot = -18857.39933788 eV
+Step 50/300: E_pot = -18859.43365290 eV  E_kin = 2.03161408 eV (T = 436.59 K)  Etot = -18857.40203882 eV
+Step 51/300: E_pot = -18859.37202261 eV  E_kin = 1.96865813 eV (T = 423.06 K)  Etot = -18857.40336449 eV
+Step 52/300: E_pot = -18859.23093222 eV  E_kin = 1.82872527 eV (T = 392.99 K)  Etot = -18857.40220695 eV
+Step 53/300: E_pot = -18859.03424673 eV  E_kin = 1.64094804 eV (T = 352.64 K)  Etot = -18857.39329869 eV
+Step 54/300: E_pot = -18858.93242492 eV  E_kin = 1.55349923 eV (T = 333.84 K)  Etot = -18857.37892568 eV
+Step 55/300: E_pot = -18859.09722807 eV  E_kin = 1.70276315 eV (T = 365.92 K)  Etot = -18857.39446492 eV
+Step 56/300: E_pot = -18859.32400261 eV  E_kin = 1.91637623 eV (T = 411.83 K)  Etot = -18857.40762638 eV
+Step 57/300: E_pot = -18859.41059886 eV  E_kin = 2.00895255 eV (T = 431.72 K)  Etot = -18857.40164631 eV
+Step 58/300: E_pot = -18859.42513298 eV  E_kin = 2.03025892 eV (T = 436.30 K)  Etot = -18857.39487406 eV
+Step 59/300: E_pot = -18859.49262967 eV  E_kin = 2.10426751 eV (T = 452.20 K)  Etot = -18857.38836216 eV
+Step 60/300: E_pot = -18859.70532977 eV  E_kin = 2.30665317 eV (T = 495.70 K)  Etot = -18857.39867660 eV
+Step 61/300: E_pot = -18859.90775681 eV  E_kin = 2.48838919 eV (T = 534.75 K)  Etot = -18857.41936762 eV
+Step 62/300: E_pot = -18859.80748967 eV  E_kin = 2.38921907 eV (T = 513.44 K)  Etot = -18857.41827060 eV
+Step 63/300: E_pot = -18859.42971476 eV  E_kin = 2.03872909 eV (T = 438.12 K)  Etot = -18857.39098568 eV
+Step 64/300: E_pot = -18859.15922648 eV  E_kin = 1.77960205 eV (T = 382.43 K)  Etot = -18857.37962443 eV
+Step 65/300: E_pot = -18859.16241569 eV  E_kin = 1.76749358 eV (T = 379.83 K)  Etot = -18857.39492211 eV
+Step 66/300: E_pot = -18859.23042657 eV  E_kin = 1.82627553 eV (T = 392.46 K)  Etot = -18857.40415104 eV
+Step 67/300: E_pot = -18859.20181670 eV  E_kin = 1.79766390 eV (T = 386.32 K)  Etot = -18857.40415280 eV
+Step 68/300: E_pot = -18859.08692503 eV  E_kin = 1.69671271 eV (T = 364.62 K)  Etot = -18857.39021232 eV
+Step 69/300: E_pot = -18859.10257860 eV  E_kin = 1.72366602 eV (T = 370.41 K)  Etot = -18857.37891258 eV
+Step 70/300: E_pot = -18859.40011726 eV  E_kin = 2.00158414 eV (T = 430.14 K)  Etot = -18857.39853312 eV
+Step 71/300: E_pot = -18859.69882849 eV  E_kin = 2.27286184 eV (T = 488.43 K)  Etot = -18857.42596665 eV
+Step 72/300: E_pot = -18859.63256862 eV  E_kin = 2.21984520 eV (T = 477.04 K)  Etot = -18857.41272342 eV
+Step 73/300: E_pot = -18859.38313401 eV  E_kin = 1.99310978 eV (T = 428.32 K)  Etot = -18857.39002423 eV
+Step 74/300: E_pot = -18859.26046309 eV  E_kin = 1.86524210 eV (T = 400.84 K)  Etot = -18857.39522099 eV
+Step 75/300: E_pot = -18859.22260846 eV  E_kin = 1.82752201 eV (T = 392.73 K)  Etot = -18857.39508645 eV
+Step 76/300: E_pot = -18859.22576583 eV  E_kin = 1.82397445 eV (T = 391.97 K)  Etot = -18857.40179137 eV
+Step 77/300: E_pot = -18859.17023981 eV  E_kin = 1.76637714 eV (T = 379.59 K)  Etot = -18857.40386268 eV
+Step 78/300: E_pot = -18859.05230714 eV  E_kin = 1.66513671 eV (T = 357.84 K)  Etot = -18857.38717043 eV
+Step 79/300: E_pot = -18859.09758336 eV  E_kin = 1.70963889 eV (T = 367.40 K)  Etot = -18857.38794447 eV
+Step 80/300: E_pot = -18859.29814733 eV  E_kin = 1.89101537 eV (T = 406.38 K)  Etot = -18857.40713197 eV
+Step 81/300: E_pot = -18859.41746370 eV  E_kin = 2.01622600 eV (T = 433.28 K)  Etot = -18857.40123770 eV
+Step 82/300: E_pot = -18859.50556745 eV  E_kin = 2.10360947 eV (T = 452.06 K)  Etot = -18857.40195798 eV
+Step 83/300: E_pot = -18859.55007234 eV  E_kin = 2.13980829 eV (T = 459.84 K)  Etot = -18857.41026406 eV
+Step 84/300: E_pot = -18859.44467029 eV  E_kin = 2.04430240 eV (T = 439.32 K)  Etot = -18857.40036789 eV
+Step 85/300: E_pot = -18859.29685158 eV  E_kin = 1.90094485 eV (T = 408.51 K)  Etot = -18857.39590673 eV
+Step 86/300: E_pot = -18859.17904885 eV  E_kin = 1.78450187 eV (T = 383.49 K)  Etot = -18857.39454697 eV
+Step 87/300: E_pot = -18859.12537530 eV  E_kin = 1.73553835 eV (T = 372.96 K)  Etot = -18857.38983695 eV
+Step 88/300: E_pot = -18859.19359427 eV  E_kin = 1.79658881 eV (T = 386.08 K)  Etot = -18857.39700546 eV
+Step 89/300: E_pot = -18859.27589052 eV  E_kin = 1.86521392 eV (T = 400.83 K)  Etot = -18857.41067660 eV
+Step 90/300: E_pot = -18859.21134373 eV  E_kin = 1.81558505 eV (T = 390.17 K)  Etot = -18857.39575867 eV
+Step 91/300: E_pot = -18859.21812427 eV  E_kin = 1.83850764 eV (T = 395.09 K)  Etot = -18857.37961663 eV
+Step 92/300: E_pot = -18859.49140637 eV  E_kin = 2.08605881 eV (T = 448.29 K)  Etot = -18857.40534756 eV
+Step 93/300: E_pot = -18859.69496808 eV  E_kin = 2.27601066 eV (T = 489.11 K)  Etot = -18857.41895742 eV
+Step 94/300: E_pot = -18859.60367017 eV  E_kin = 2.19490160 eV (T = 471.68 K)  Etot = -18857.40876856 eV
+Step 95/300: E_pot = -18859.33965066 eV  E_kin = 1.94271026 eV (T = 417.49 K)  Etot = -18857.39694041 eV
+Step 96/300: E_pot = -18859.09760534 eV  E_kin = 1.71346460 eV (T = 368.22 K)  Etot = -18857.38414075 eV
+Step 97/300: E_pot = -18859.06666590 eV  E_kin = 1.68130978 eV (T = 361.31 K)  Etot = -18857.38535613 eV
+Step 98/300: E_pot = -18859.20033573 eV  E_kin = 1.78754053 eV (T = 384.14 K)  Etot = -18857.41279521 eV
+Step 99/300: E_pot = -18859.13020427 eV  E_kin = 1.71605680 eV (T = 368.78 K)  Etot = -18857.41414748 eV
+Step 100/300: E_pot = -18858.86886410 eV  E_kin = 1.49191720 eV (T = 320.61 K)  Etot = -18857.37694690 eV
+Step 101/300: E_pot = -18858.90711282 eV  E_kin = 1.52844436 eV (T = 328.46 K)  Etot = -18857.37866846 eV
+Step 102/300: E_pot = -18859.24828281 eV  E_kin = 1.84532502 eV (T = 396.56 K)  Etot = -18857.40295779 eV
+Step 103/300: E_pot = -18859.51864885 eV  E_kin = 2.10113052 eV (T = 451.53 K)  Etot = -18857.41751834 eV
+Step 104/300: E_pot = -18859.48697128 eV  E_kin = 2.07584623 eV (T = 446.10 K)  Etot = -18857.41112505 eV
+Step 105/300: E_pot = -18859.25554296 eV  E_kin = 1.86630178 eV (T = 401.07 K)  Etot = -18857.38924118 eV
+Step 106/300: E_pot = -18859.14070133 eV  E_kin = 1.75658118 eV (T = 377.49 K)  Etot = -18857.38412015 eV
+Step 107/300: E_pot = -18859.21515104 eV  E_kin = 1.81050946 eV (T = 389.08 K)  Etot = -18857.40464158 eV
+Step 108/300: E_pot = -18859.19479894 eV  E_kin = 1.77980634 eV (T = 382.48 K)  Etot = -18857.41499260 eV
+Step 109/300: E_pot = -18858.95257141 eV  E_kin = 1.55908229 eV (T = 335.04 K)  Etot = -18857.39348911 eV
+Step 110/300: E_pot = -18858.76980444 eV  E_kin = 1.38234267 eV (T = 297.06 K)  Etot = -18857.38746177 eV
+Step 111/300: E_pot = -18858.77083617 eV  E_kin = 1.38193960 eV (T = 296.98 K)  Etot = -18857.38889657 eV
+Step 112/300: E_pot = -18858.92739466 eV  E_kin = 1.53501436 eV (T = 329.87 K)  Etot = -18857.39238030 eV
+Step 113/300: E_pot = -18859.16256928 eV  E_kin = 1.75878475 eV (T = 377.96 K)  Etot = -18857.40378453 eV
+Step 114/300: E_pot = -18859.31282775 eV  E_kin = 1.90575077 eV (T = 409.54 K)  Etot = -18857.40707698 eV
+Step 115/300: E_pot = -18859.33599280 eV  E_kin = 1.93785387 eV (T = 416.44 K)  Etot = -18857.39813893 eV
+Step 116/300: E_pot = -18859.34420236 eV  E_kin = 1.94321968 eV (T = 417.60 K)  Etot = -18857.40098268 eV
+Step 117/300: E_pot = -18859.30024827 eV  E_kin = 1.89041632 eV (T = 406.25 K)  Etot = -18857.40983195 eV
+Step 118/300: E_pot = -18859.12228207 eV  E_kin = 1.72916228 eV (T = 371.59 K)  Etot = -18857.39311978 eV
+Step 119/300: E_pot = -18859.01349304 eV  E_kin = 1.61923886 eV (T = 347.97 K)  Etot = -18857.39425418 eV
+Step 120/300: E_pot = -18858.97487893 eV  E_kin = 1.57285686 eV (T = 338.00 K)  Etot = -18857.40202207 eV
+Step 121/300: E_pot = -18858.89035571 eV  E_kin = 1.49226291 eV (T = 320.69 K)  Etot = -18857.39809281 eV
+Step 122/300: E_pot = -18858.80534513 eV  E_kin = 1.41461150 eV (T = 304.00 K)  Etot = -18857.39073363 eV
+Step 123/300: E_pot = -18858.84479623 eV  E_kin = 1.46114199 eV (T = 314.00 K)  Etot = -18857.38365424 eV
+Step 124/300: E_pot = -18859.10076769 eV  E_kin = 1.70468512 eV (T = 366.33 K)  Etot = -18857.39608256 eV
+Step 125/300: E_pot = -18859.39227667 eV  E_kin = 1.97558354 eV (T = 424.55 K)  Etot = -18857.41669313 eV
+Step 126/300: E_pot = -18859.42501922 eV  E_kin = 2.00797755 eV (T = 431.51 K)  Etot = -18857.41704168 eV
+Step 127/300: E_pot = -18859.21700659 eV  E_kin = 1.82726600 eV (T = 392.68 K)  Etot = -18857.38974059 eV
+Step 128/300: E_pot = -18859.13790255 eV  E_kin = 1.74780824 eV (T = 375.60 K)  Etot = -18857.39009431 eV
+Step 129/300: E_pot = -18859.19664225 eV  E_kin = 1.78831687 eV (T = 384.31 K)  Etot = -18857.40832538 eV
+Step 130/300: E_pot = -18859.13585071 eV  E_kin = 1.73070421 eV (T = 371.93 K)  Etot = -18857.40514650 eV
+Step 131/300: E_pot = -18858.96371547 eV  E_kin = 1.56688066 eV (T = 336.72 K)  Etot = -18857.39683481 eV
+Step 132/300: E_pot = -18858.80425239 eV  E_kin = 1.41358630 eV (T = 303.78 K)  Etot = -18857.39066609 eV
+Step 133/300: E_pot = -18858.76878794 eV  E_kin = 1.38328980 eV (T = 297.27 K)  Etot = -18857.38549813 eV
+Step 134/300: E_pot = -18858.93676771 eV  E_kin = 1.54429338 eV (T = 331.87 K)  Etot = -18857.39247433 eV
+Step 135/300: E_pot = -18859.18828492 eV  E_kin = 1.77224209 eV (T = 380.85 K)  Etot = -18857.41604283 eV
+Step 136/300: E_pot = -18859.22805555 eV  E_kin = 1.82150350 eV (T = 391.44 K)  Etot = -18857.40655205 eV
+Step 137/300: E_pot = -18859.17971605 eV  E_kin = 1.78976190 eV (T = 384.62 K)  Etot = -18857.38995415 eV
+Step 138/300: E_pot = -18859.25072016 eV  E_kin = 1.84818706 eV (T = 397.17 K)  Etot = -18857.40253311 eV
+Step 139/300: E_pot = -18859.28496578 eV  E_kin = 1.87909410 eV (T = 403.81 K)  Etot = -18857.40587168 eV
+Step 140/300: E_pot = -18859.20564758 eV  E_kin = 1.80451616 eV (T = 387.79 K)  Etot = -18857.40113143 eV
+Step 141/300: E_pot = -18859.07696574 eV  E_kin = 1.68244018 eV (T = 361.55 K)  Etot = -18857.39452555 eV
+Step 142/300: E_pot = -18858.99695700 eV  E_kin = 1.60462184 eV (T = 344.83 K)  Etot = -18857.39233516 eV
+Step 143/300: E_pot = -18859.00665097 eV  E_kin = 1.61042999 eV (T = 346.08 K)  Etot = -18857.39622098 eV
+Step 144/300: E_pot = -18859.05230758 eV  E_kin = 1.64839640 eV (T = 354.24 K)  Etot = -18857.40391118 eV
+Step 145/300: E_pot = -18859.06063622 eV  E_kin = 1.66715673 eV (T = 358.27 K)  Etot = -18857.39347949 eV
+Step 146/300: E_pot = -18859.17444311 eV  E_kin = 1.78061742 eV (T = 382.65 K)  Etot = -18857.39382569 eV
+Step 147/300: E_pot = -18859.37373226 eV  E_kin = 1.96035771 eV (T = 421.28 K)  Etot = -18857.41337454 eV
+Step 148/300: E_pot = -18859.40272519 eV  E_kin = 1.99619391 eV (T = 428.98 K)  Etot = -18857.40653128 eV
+Step 149/300: E_pot = -18859.31595091 eV  E_kin = 1.91854320 eV (T = 412.29 K)  Etot = -18857.39740771 eV
+Step 150/300: E_pot = -18859.23819125 eV  E_kin = 1.83830126 eV (T = 395.05 K)  Etot = -18857.39988999 eV
+Step 151/300: E_pot = -18859.15460827 eV  E_kin = 1.75761381 eV (T = 377.71 K)  Etot = -18857.39699446 eV
+Step 152/300: E_pot = -18859.10609654 eV  E_kin = 1.71352269 eV (T = 368.23 K)  Etot = -18857.39257386 eV
+Step 153/300: E_pot = -18859.13264338 eV  E_kin = 1.72757608 eV (T = 371.25 K)  Etot = -18857.40506731 eV
+Step 154/300: E_pot = -18859.09430881 eV  E_kin = 1.69389864 eV (T = 364.02 K)  Etot = -18857.40041016 eV
+Step 155/300: E_pot = -18859.07224692 eV  E_kin = 1.68506561 eV (T = 362.12 K)  Etot = -18857.38718132 eV
+Step 156/300: E_pot = -18859.22778864 eV  E_kin = 1.82518096 eV (T = 392.23 K)  Etot = -18857.40260768 eV
+Step 157/300: E_pot = -18859.37472627 eV  E_kin = 1.96761693 eV (T = 422.84 K)  Etot = -18857.40710935 eV
+Step 158/300: E_pot = -18859.42687431 eV  E_kin = 2.02607279 eV (T = 435.40 K)  Etot = -18857.40080152 eV
+Step 159/300: E_pot = -18859.44602458 eV  E_kin = 2.04247959 eV (T = 438.93 K)  Etot = -18857.40354499 eV
+Step 160/300: E_pot = -18859.39781639 eV  E_kin = 1.99408010 eV (T = 428.52 K)  Etot = -18857.40373629 eV
+Step 161/300: E_pot = -18859.27840988 eV  E_kin = 1.88044775 eV (T = 404.11 K)  Etot = -18857.39796213 eV
+Step 162/300: E_pot = -18859.15696185 eV  E_kin = 1.75713496 eV (T = 377.61 K)  Etot = -18857.39982689 eV
+Step 163/300: E_pot = -18859.03379522 eV  E_kin = 1.64015091 eV (T = 352.47 K)  Etot = -18857.39364430 eV
+Step 164/300: E_pot = -18859.00976960 eV  E_kin = 1.62045765 eV (T = 348.23 K)  Etot = -18857.38931196 eV
+Step 165/300: E_pot = -18859.11741139 eV  E_kin = 1.70741422 eV (T = 366.92 K)  Etot = -18857.40999717 eV
+Step 166/300: E_pot = -18859.11642464 eV  E_kin = 1.71634818 eV (T = 368.84 K)  Etot = -18857.40007646 eV
+Step 167/300: E_pot = -18859.12827780 eV  E_kin = 1.74365331 eV (T = 374.71 K)  Etot = -18857.38462449 eV
+Step 168/300: E_pot = -18859.34571720 eV  E_kin = 1.94502682 eV (T = 417.98 K)  Etot = -18857.40069038 eV
+Step 169/300: E_pot = -18859.56436076 eV  E_kin = 2.15557520 eV (T = 463.23 K)  Etot = -18857.40878556 eV
+Step 170/300: E_pot = -18859.64280615 eV  E_kin = 2.23814560 eV (T = 480.97 K)  Etot = -18857.40466055 eV
+Step 171/300: E_pot = -18859.60910817 eV  E_kin = 2.20082702 eV (T = 472.95 K)  Etot = -18857.40828115 eV
+Step 172/300: E_pot = -18859.44244270 eV  E_kin = 2.04308704 eV (T = 439.06 K)  Etot = -18857.39935566 eV
+Step 173/300: E_pot = -18859.28850897 eV  E_kin = 1.90164606 eV (T = 408.66 K)  Etot = -18857.38686291 eV
+Step 174/300: E_pot = -18859.29693258 eV  E_kin = 1.89417107 eV (T = 407.05 K)  Etot = -18857.40276151 eV
+Step 175/300: E_pot = -18859.27871604 eV  E_kin = 1.87566611 eV (T = 403.08 K)  Etot = -18857.40304993 eV
+Step 176/300: E_pot = -18859.21133838 eV  E_kin = 1.81780147 eV (T = 390.64 K)  Etot = -18857.39353691 eV
+Step 177/300: E_pot = -18859.21452803 eV  E_kin = 1.81760277 eV (T = 390.60 K)  Etot = -18857.39692526 eV
+Step 178/300: E_pot = -18859.26381851 eV  E_kin = 1.86705757 eV (T = 401.23 K)  Etot = -18857.39676094 eV
+Step 179/300: E_pot = -18859.36127283 eV  E_kin = 1.96720853 eV (T = 422.75 K)  Etot = -18857.39406430 eV
+Step 180/300: E_pot = -18859.52344426 eV  E_kin = 2.11814046 eV (T = 455.19 K)  Etot = -18857.40530381 eV
+Step 181/300: E_pot = -18859.59308612 eV  E_kin = 2.18130119 eV (T = 468.76 K)  Etot = -18857.41178493 eV
+Step 182/300: E_pot = -18859.49405756 eV  E_kin = 2.09572373 eV (T = 450.37 K)  Etot = -18857.39833383 eV
+Step 183/300: E_pot = -18859.38584507 eV  E_kin = 1.98513490 eV (T = 426.60 K)  Etot = -18857.40071017 eV
+Step 184/300: E_pot = -18859.27037879 eV  E_kin = 1.87383070 eV (T = 402.68 K)  Etot = -18857.39654809 eV
+Step 185/300: E_pot = -18859.20417926 eV  E_kin = 1.81499853 eV (T = 390.04 K)  Etot = -18857.38918073 eV
+Step 186/300: E_pot = -18859.25960491 eV  E_kin = 1.85514446 eV (T = 398.67 K)  Etot = -18857.40446046 eV
+Step 187/300: E_pot = -18859.24666400 eV  E_kin = 1.84074468 eV (T = 395.57 K)  Etot = -18857.40591932 eV
+Step 188/300: E_pot = -18859.15860681 eV  E_kin = 1.77199825 eV (T = 380.80 K)  Etot = -18857.38660856 eV
+Step 189/300: E_pot = -18859.24967857 eV  E_kin = 1.85937894 eV (T = 399.58 K)  Etot = -18857.39029963 eV
+Step 190/300: E_pot = -18859.48257251 eV  E_kin = 2.07463978 eV (T = 445.84 K)  Etot = -18857.40793274 eV
+Step 191/300: E_pot = -18859.62607244 eV  E_kin = 2.21985442 eV (T = 477.04 K)  Etot = -18857.40621803 eV
+Step 192/300: E_pot = -18859.66549536 eV  E_kin = 2.25621795 eV (T = 484.86 K)  Etot = -18857.40927741 eV
+Step 193/300: E_pot = -18859.56574618 eV  E_kin = 2.15896205 eV (T = 463.96 K)  Etot = -18857.40678413 eV
+Step 194/300: E_pot = -18859.37622958 eV  E_kin = 1.98615439 eV (T = 426.82 K)  Etot = -18857.39007520 eV
+Step 195/300: E_pot = -18859.30364907 eV  E_kin = 1.90963650 eV (T = 410.38 K)  Etot = -18857.39401257 eV
+Step 196/300: E_pot = -18859.30689635 eV  E_kin = 1.90521845 eV (T = 409.43 K)  Etot = -18857.40167790 eV
+Step 197/300: E_pot = -18859.27849336 eV  E_kin = 1.87874248 eV (T = 403.74 K)  Etot = -18857.39975088 eV
+Step 198/300: E_pot = -18859.24410812 eV  E_kin = 1.84664419 eV (T = 396.84 K)  Etot = -18857.39746393 eV
+Step 199/300: E_pot = -18859.25734297 eV  E_kin = 1.86151991 eV (T = 400.04 K)  Etot = -18857.39582306 eV
+Step 200/300: E_pot = -18859.35773713 eV  E_kin = 1.96291887 eV (T = 421.83 K)  Etot = -18857.39481826 eV
+Step 201/300: E_pot = -18859.55789688 eV  E_kin = 2.15549944 eV (T = 463.21 K)  Etot = -18857.40239744 eV
+Step 202/300: E_pot = -18859.73076072 eV  E_kin = 2.31594212 eV (T = 497.69 K)  Etot = -18857.41481860 eV
+Step 203/300: E_pot = -18859.70624235 eV  E_kin = 2.30004727 eV (T = 494.28 K)  Etot = -18857.40619508 eV
+Step 204/300: E_pot = -18859.57240180 eV  E_kin = 2.17225491 eV (T = 466.81 K)  Etot = -18857.40014689 eV
+Step 205/300: E_pot = -18859.41705643 eV  E_kin = 2.01818406 eV (T = 433.70 K)  Etot = -18857.39887238 eV
+Step 206/300: E_pot = -18859.27818512 eV  E_kin = 1.88952415 eV (T = 406.06 K)  Etot = -18857.38866097 eV
+Step 207/300: E_pot = -18859.28027421 eV  E_kin = 1.88654930 eV (T = 405.42 K)  Etot = -18857.39372490 eV
+Step 208/300: E_pot = -18859.34599949 eV  E_kin = 1.93429911 eV (T = 415.68 K)  Etot = -18857.41170038 eV
+Step 209/300: E_pot = -18859.25724541 eV  E_kin = 1.85428508 eV (T = 398.48 K)  Etot = -18857.40296033 eV
+Step 210/300: E_pot = -18859.15475832 eV  E_kin = 1.77189271 eV (T = 380.78 K)  Etot = -18857.38286561 eV
+Step 211/300: E_pot = -18859.31253980 eV  E_kin = 1.91820933 eV (T = 412.22 K)  Etot = -18857.39433047 eV
+Step 212/300: E_pot = -18859.59308772 eV  E_kin = 2.18349871 eV (T = 469.23 K)  Etot = -18857.40958901 eV
+Step 213/300: E_pot = -18859.75658471 eV  E_kin = 2.34503885 eV (T = 503.95 K)  Etot = -18857.41154585 eV
+Step 214/300: E_pot = -18859.73793272 eV  E_kin = 2.32890920 eV (T = 500.48 K)  Etot = -18857.40902351 eV
+Step 215/300: E_pot = -18859.58156480 eV  E_kin = 2.18575803 eV (T = 469.72 K)  Etot = -18857.39580678 eV
+Step 216/300: E_pot = -18859.47234338 eV  E_kin = 2.08431310 eV (T = 447.92 K)  Etot = -18857.38803027 eV
+Step 217/300: E_pot = -18859.51256668 eV  E_kin = 2.11504002 eV (T = 454.52 K)  Etot = -18857.39752666 eV
+Step 218/300: E_pot = -18859.56885256 eV  E_kin = 2.16140057 eV (T = 464.48 K)  Etot = -18857.40745199 eV
+Step 219/300: E_pot = -18859.50556328 eV  E_kin = 2.10130512 eV (T = 451.57 K)  Etot = -18857.40425817 eV
+Step 220/300: E_pot = -18859.38653536 eV  E_kin = 1.99346349 eV (T = 428.39 K)  Etot = -18857.39307188 eV
+Step 221/300: E_pot = -18859.38973213 eV  E_kin = 1.99878797 eV (T = 429.54 K)  Etot = -18857.39094416 eV
+Step 222/300: E_pot = -18859.54886350 eV  E_kin = 2.14725615 eV (T = 461.44 K)  Etot = -18857.40160735 eV
+Step 223/300: E_pot = -18859.70682836 eV  E_kin = 2.29737821 eV (T = 493.70 K)  Etot = -18857.40945014 eV
+Step 224/300: E_pot = -18859.73011924 eV  E_kin = 2.32333553 eV (T = 499.28 K)  Etot = -18857.40678371 eV
+Step 225/300: E_pot = -18859.64643454 eV  E_kin = 2.24869151 eV (T = 483.24 K)  Etot = -18857.39774303 eV
+Step 226/300: E_pot = -18859.56870661 eV  E_kin = 2.17132303 eV (T = 466.61 K)  Etot = -18857.39738359 eV
+Step 227/300: E_pot = -18859.50776726 eV  E_kin = 2.10951737 eV (T = 453.33 K)  Etot = -18857.39824989 eV
+Step 228/300: E_pot = -18859.44860172 eV  E_kin = 2.05137284 eV (T = 440.84 K)  Etot = -18857.39722888 eV
+Step 229/300: E_pot = -18859.41204691 eV  E_kin = 2.01507263 eV (T = 433.04 K)  Etot = -18857.39697428 eV
+Step 230/300: E_pot = -18859.39934790 eV  E_kin = 1.99229611 eV (T = 428.14 K)  Etot = -18857.40705179 eV
+Step 231/300: E_pot = -18859.30483231 eV  E_kin = 1.90233072 eV (T = 408.81 K)  Etot = -18857.40250160 eV
+Step 232/300: E_pot = -18859.21086490 eV  E_kin = 1.82125950 eV (T = 391.39 K)  Etot = -18857.38960540 eV
+Step 233/300: E_pot = -18859.27885939 eV  E_kin = 1.87983628 eV (T = 403.97 K)  Etot = -18857.39902311 eV
+Step 234/300: E_pot = -18859.40814810 eV  E_kin = 2.00889345 eV (T = 431.71 K)  Etot = -18857.39925465 eV
+Step 235/300: E_pot = -18859.54891648 eV  E_kin = 2.14496013 eV (T = 460.95 K)  Etot = -18857.40395634 eV
+Step 236/300: E_pot = -18859.61056994 eV  E_kin = 2.20072020 eV (T = 472.93 K)  Etot = -18857.40984974 eV
+Step 237/300: E_pot = -18859.50593356 eV  E_kin = 2.10526579 eV (T = 452.42 K)  Etot = -18857.40066776 eV
+Step 238/300: E_pot = -18859.37779928 eV  E_kin = 1.99582211 eV (T = 428.90 K)  Etot = -18857.38197717 eV
+Step 239/300: E_pot = -18859.47630302 eV  E_kin = 2.08417719 eV (T = 447.89 K)  Etot = -18857.39212583 eV
+Step 240/300: E_pot = -18859.65833931 eV  E_kin = 2.23952728 eV (T = 481.27 K)  Etot = -18857.41881203 eV
+Step 241/300: E_pot = -18859.57390430 eV  E_kin = 2.16170419 eV (T = 464.55 K)  Etot = -18857.41220012 eV
+Step 242/300: E_pot = -18859.31870332 eV  E_kin = 1.92999075 eV (T = 414.75 K)  Etot = -18857.38871257 eV
+Step 243/300: E_pot = -18859.24007007 eV  E_kin = 1.85658826 eV (T = 398.98 K)  Etot = -18857.38348181 eV
+Step 244/300: E_pot = -18859.42047900 eV  E_kin = 2.02058040 eV (T = 434.22 K)  Etot = -18857.39989860 eV
+Step 245/300: E_pot = -18859.61553395 eV  E_kin = 2.20235858 eV (T = 473.28 K)  Etot = -18857.41317537 eV
+Step 246/300: E_pot = -18859.60539101 eV  E_kin = 2.19598274 eV (T = 471.91 K)  Etot = -18857.40940827 eV
+Step 247/300: E_pot = -18859.43565550 eV  E_kin = 2.04339610 eV (T = 439.12 K)  Etot = -18857.39225940 eV
+Step 248/300: E_pot = -18859.34757649 eV  E_kin = 1.96156260 eV (T = 421.54 K)  Etot = -18857.38601389 eV
+Step 249/300: E_pot = -18859.42979265 eV  E_kin = 2.03053054 eV (T = 436.36 K)  Etot = -18857.39926212 eV
+Step 250/300: E_pot = -18859.50406284 eV  E_kin = 2.09548104 eV (T = 450.32 K)  Etot = -18857.40858180 eV
+Step 251/300: E_pot = -18859.43668691 eV  E_kin = 2.03032194 eV (T = 436.31 K)  Etot = -18857.40636497 eV
+Step 252/300: E_pot = -18859.27431498 eV  E_kin = 1.87736810 eV (T = 403.44 K)  Etot = -18857.39694688 eV
+Step 253/300: E_pot = -18859.18493178 eV  E_kin = 1.79758121 eV (T = 386.30 K)  Etot = -18857.38735057 eV
+Step 254/300: E_pot = -18859.29190031 eV  E_kin = 1.89200313 eV (T = 406.59 K)  Etot = -18857.39989719 eV
+Step 255/300: E_pot = -18859.41977229 eV  E_kin = 2.00936829 eV (T = 431.81 K)  Etot = -18857.41040400 eV
+Step 256/300: E_pot = -18859.40933836 eV  E_kin = 2.00812526 eV (T = 431.54 K)  Etot = -18857.40121310 eV
+Step 257/300: E_pot = -18859.35898418 eV  E_kin = 1.96248692 eV (T = 421.74 K)  Etot = -18857.39649726 eV
+Step 258/300: E_pot = -18859.33456627 eV  E_kin = 1.93479034 eV (T = 415.78 K)  Etot = -18857.39977593 eV
+Step 259/300: E_pot = -18859.29004838 eV  E_kin = 1.88880846 eV (T = 405.90 K)  Etot = -18857.40123992 eV
+Step 260/300: E_pot = -18859.20390783 eV  E_kin = 1.80621083 eV (T = 388.15 K)  Etot = -18857.39769700 eV
+Step 261/300: E_pot = -18859.13778406 eV  E_kin = 1.74576556 eV (T = 375.16 K)  Etot = -18857.39201851 eV
+Step 262/300: E_pot = -18859.17536539 eV  E_kin = 1.77641681 eV (T = 381.75 K)  Etot = -18857.39894858 eV
+Step 263/300: E_pot = -18859.22027985 eV  E_kin = 1.80731295 eV (T = 388.39 K)  Etot = -18857.41296690 eV
+Step 264/300: E_pot = -18859.10906650 eV  E_kin = 1.70922323 eV (T = 367.31 K)  Etot = -18857.39984327 eV
+Step 265/300: E_pot = -18859.01826105 eV  E_kin = 1.63204369 eV (T = 350.72 K)  Etot = -18857.38621736 eV
+Step 266/300: E_pot = -18859.13048671 eV  E_kin = 1.73302419 eV (T = 372.42 K)  Etot = -18857.39746252 eV
+Step 267/300: E_pot = -18859.29575436 eV  E_kin = 1.88881400 eV (T = 405.90 K)  Etot = -18857.40694036 eV
+Step 268/300: E_pot = -18859.34639259 eV  E_kin = 1.93746128 eV (T = 416.36 K)  Etot = -18857.40893130 eV
+Step 269/300: E_pot = -18859.24172175 eV  E_kin = 1.83960180 eV (T = 395.33 K)  Etot = -18857.40211995 eV
+Step 270/300: E_pot = -18859.09209221 eV  E_kin = 1.70316012 eV (T = 366.01 K)  Etot = -18857.38893209 eV
+Step 271/300: E_pot = -18859.09311313 eV  E_kin = 1.70484788 eV (T = 366.37 K)  Etot = -18857.38826525 eV
+Step 272/300: E_pot = -18859.25022782 eV  E_kin = 1.84325878 eV (T = 396.11 K)  Etot = -18857.40696904 eV
+Step 273/300: E_pot = -18859.30942930 eV  E_kin = 1.89664905 eV (T = 407.59 K)  Etot = -18857.41278025 eV
+Step 274/300: E_pot = -18859.18476809 eV  E_kin = 1.78454999 eV (T = 383.50 K)  Etot = -18857.40021810 eV
+Step 275/300: E_pot = -18859.05220369 eV  E_kin = 1.66087639 eV (T = 356.92 K)  Etot = -18857.39132730 eV
+Step 276/300: E_pot = -18859.05578116 eV  E_kin = 1.66501250 eV (T = 357.81 K)  Etot = -18857.39076865 eV
+Step 277/300: E_pot = -18859.19222016 eV  E_kin = 1.78955892 eV (T = 384.57 K)  Etot = -18857.40266124 eV
+Step 278/300: E_pot = -18859.28012124 eV  E_kin = 1.86787844 eV (T = 401.40 K)  Etot = -18857.41224281 eV
+Step 279/300: E_pot = -18859.18185943 eV  E_kin = 1.77892965 eV (T = 382.29 K)  Etot = -18857.40292978 eV
+Step 280/300: E_pot = -18859.03368837 eV  E_kin = 1.64693498 eV (T = 353.92 K)  Etot = -18857.38675339 eV
+Step 281/300: E_pot = -18859.06056220 eV  E_kin = 1.66916469 eV (T = 358.70 K)  Etot = -18857.39139751 eV
+Step 282/300: E_pot = -18859.20522267 eV  E_kin = 1.80140567 eV (T = 387.12 K)  Etot = -18857.40381700 eV
+Step 283/300: E_pot = -18859.28423437 eV  E_kin = 1.87808306 eV (T = 403.60 K)  Etot = -18857.40615131 eV
+Step 284/300: E_pot = -18859.24323089 eV  E_kin = 1.83988553 eV (T = 395.39 K)  Etot = -18857.40334537 eV
+Step 285/300: E_pot = -18859.13737225 eV  E_kin = 1.74392188 eV (T = 374.77 K)  Etot = -18857.39345038 eV
+Step 286/300: E_pot = -18859.10956158 eV  E_kin = 1.71777219 eV (T = 369.15 K)  Etot = -18857.39178939 eV
+Step 287/300: E_pot = -18859.18605277 eV  E_kin = 1.78558581 eV (T = 383.72 K)  Etot = -18857.40046696 eV
+Step 288/300: E_pot = -18859.24156812 eV  E_kin = 1.83414149 eV (T = 394.15 K)  Etot = -18857.40742663 eV
+Step 289/300: E_pot = -18859.17755916 eV  E_kin = 1.77390770 eV (T = 381.21 K)  Etot = -18857.40365146 eV
+Step 290/300: E_pot = -18859.05401629 eV  E_kin = 1.66075849 eV (T = 356.89 K)  Etot = -18857.39325780 eV
+Step 291/300: E_pot = -18859.01651829 eV  E_kin = 1.62422803 eV (T = 349.04 K)  Etot = -18857.39229025 eV
+Step 292/300: E_pot = -18859.06810003 eV  E_kin = 1.66578212 eV (T = 357.97 K)  Etot = -18857.40231791 eV
+Step 293/300: E_pot = -18859.07279258 eV  E_kin = 1.67232040 eV (T = 359.38 K)  Etot = -18857.40047218 eV
+Step 294/300: E_pot = -18859.04470484 eV  E_kin = 1.65063659 eV (T = 354.72 K)  Etot = -18857.39406825 eV
+Step 295/300: E_pot = -18859.06560937 eV  E_kin = 1.66730539 eV (T = 358.30 K)  Etot = -18857.39830398 eV
+Step 296/300: E_pot = -18859.09132834 eV  E_kin = 1.69079875 eV (T = 363.35 K)  Etot = -18857.40052959 eV
+Step 297/300: E_pot = -18859.09632673 eV  E_kin = 1.69916842 eV (T = 365.15 K)  Etot = -18857.39715831 eV
+Step 298/300: E_pot = -18859.12835294 eV  E_kin = 1.73044411 eV (T = 371.87 K)  Etot = -18857.39790883 eV
+Step 299/300: E_pot = -18859.18252489 eV  E_kin = 1.77996461 eV (T = 382.51 K)  Etot = -18857.40256027 eV
+Step 300/300: E_pot = -18859.19986071 eV  E_kin = 1.79768865 eV (T = 386.32 K)  Etot = -18857.40217206 eV
+============================================================================
+                               JOB STATISTICS                              
+============================================================================
+      SubmitTime: 2021-09-03T21:25:06
+         EndTime: 2021-09-09T23:41:29
+         RunTime: 1-17:33:20
+           JobId: 4235277
+            TRES: cpu=24,mem=96432M,node=1,billing=19
+       Partition: smp
+        NodeList: smp-n115
+         Command: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/meoh/6meoh.boyd.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md-orca.mp2.def2tzvp.300k/submit-ase.md.orca.slurm
+          StdOut: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/meoh/6meoh.boyd.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md-orca.mp2.def2tzvp.300k/6meoh.boyd.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md-orca.mp2.def2tzvp.300k.out
+More information:
+    - `sacct -M smp -j 4235277 -S 2021-09-03T21:25:06 -E 2021-09-09T23:41:29`
+   Print control:
+    - List of all possible fields: `sacct --helpformat`
+    - Add `--format=<field1,field2,etc>` with fields of interest
+============================================================================

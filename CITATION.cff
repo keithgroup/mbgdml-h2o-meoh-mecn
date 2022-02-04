@@ -1,0 +1,14 @@
+message: If you use this dataset or software, please cite it as below.
+title: Water, Methanol, and Acetonitrile Many-Body GDML Data and Analysis
+authors:
+  - family-names: Maldonado
+    given-names: Alex M.
+    orcid: "https://orcid.org/0000-0003-3280-062X"
+  - family-names: Keith
+    given-names: John A.
+    email: jakeith@pitt.edu
+    orcid: "https://orcid.org/0000-0002-6583-6322"
+type: software
+version: v0.0.1
+license: CC-BY-4.0
+cff-version: 1.2.0

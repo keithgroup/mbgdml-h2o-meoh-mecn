@@ -1,0 +1,107 @@
+-------------------------------------------------------------
+----------------------- !PROPERTIES! ------------------------
+-------------------------------------------------------------
+------------------------ !PROPERTY! -------------------------
+   name:        PAL_Flags
+   comment:     The PAL Flags
+   geom. index: 1
+   prop. index: 1
+        Diskflag:     2
+------------------------ !PROPERTY! -------------------------
+   name:        SCF_Energy
+   comment:     The SCF energy
+   geom. index: 1
+   prop. index: 1
+        SCF Energy:     -456.3760734565
+------------------------ !PROPERTY! -------------------------
+   name:        MP2_Energies
+   comment:     The MP2 energies
+   geom. index: 1
+   prop. index: 1
+        Reference Energy:       -456.3760734565
+        Correlation Energy:       -1.5379244473
+        Total MP2 Energy:       -457.9139979038
+------------------------ !PROPERTY! -------------------------
+   name:        SCF_Electric_Properties
+   comment:     The SCF Calculated Electric Properties
+   geom. index: 1
+   prop. index: 1
+       Filename                          : orcacalc.scfp 
+       Do Dipole Moment Calculation      : 1 
+       Do Quadrupole Moment Calculation  : 0 
+       Do Polarizability Calculation     : 0 
+** Dipole moment part of electric properties **
+        Magnitude of dipole moment (Debye) :        3.1663998342
+        Electronic Contribution:
+                   0          1          2    
+      0       0.017157   0.063504  -0.010976
+        Nuclear Contribution:
+                   0          1          2    
+      0       0.333561   1.083365   0.347928
+        Total Dipole moment:
+                   0          1          2    
+      0       0.350718   1.146869   0.336953
+------------------------ !PROPERTY! -------------------------
+   name:        MP2_Electric_Properties
+   comment:     The MP2 Calculated Electric Properties
+   geom. index: 1
+   prop. index: 1
+       Filename                          : orcacalc.pmp2ur 
+       Do Dipole Moment Calculation      : 1 
+       Do Quadrupole Moment Calculation  : 0 
+       Do Polarizability Calculation     : 0 
+** Dipole moment part of electric properties **
+        Magnitude of dipole moment (Debye) :        3.1424356245
+        Electronic Contribution:
+                   0          1          2    
+      0       0.011276   0.055946  -0.014004
+        Nuclear Contribution:
+                   0          1          2    
+      0       0.333561   1.083365   0.347928
+        Total Dipole moment:
+                   0          1          2    
+      0       0.344837   1.139311   0.333925
+------------------------ !PROPERTY! -------------------------
+   name:        MP2_Electric_Properties
+   comment:     The MP2 Calculated Electric Properties
+   geom. index: 1
+   prop. index: 2
+       Filename                          : orcacalc.pmp2re 
+       Do Dipole Moment Calculation      : 1 
+       Do Quadrupole Moment Calculation  : 0 
+       Do Polarizability Calculation     : 0 
+** Dipole moment part of electric properties **
+        Magnitude of dipole moment (Debye) :        3.1411501478
+        Electronic Contribution:
+                   0          1          2    
+      0       0.000597   0.059158  -0.015998
+        Nuclear Contribution:
+                   0          1          2    
+      0       0.333561   1.083365   0.347928
+        Total Dipole moment:
+                   0          1          2    
+      0       0.334157   1.142523   0.331930
+-------------------------------------------------------------
+----------------------- !GEOMETRIES! ------------------------
+-------------------------------------------------------------
+------------------------ !GEOMETRY! -------------------------
+    Number of atoms:    18        Geometry Index:    1
+    Coordinates:
+            O      0.132079019201   -4.019752561730   -0.848105059999
+            H     -0.444505340420   -3.240381745090   -0.988664127071
+            H      0.955502114775   -3.860519810330   -0.448992476838
+            O     -1.916086042753   -0.672489026338   -1.249787888841
+            H     -2.192986961231   -0.421030600203   -2.109838926195
+            H     -2.249197446251   -0.017389097082   -0.627172809768
+            O     -2.253422560088    1.630154723613    0.393375998087
+            H     -1.256717011050    1.977275903455    0.354090322055
+            H     -2.849061836866    2.294532585186    0.692040085204
+            O      2.823583807643    0.775442257450    1.579231951320
+            H      2.171260050482    0.148912564135    1.277892082948
+            H      2.803151102529    0.564721867626    2.530651309713
+            O      0.774486851576   -0.380791669377   -0.353226099318
+            H     -0.002809462903   -0.736700376900   -0.690495174889
+            H      1.441904857171   -0.666973384802   -0.962386007329
+            O      0.448150185336    2.493049018850    0.536891517118
+            H      0.905976998550    3.067130918005    1.158688718593
+            H      1.135806235586    1.843203977395    0.348949725601

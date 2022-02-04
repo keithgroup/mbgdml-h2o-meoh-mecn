@@ -1,0 +1,24 @@
+Step 0/5: E_pot = -12460.47725308 eV  E_kin = 0.68426207 eV (T = 294.09 K)  Etot = -12459.79299101 eV
+Step 1/5: E_pot = -12460.54678392 eV  E_kin = 0.75327781 eV (T = 323.76 K)  Etot = -12459.79350612 eV
+Step 2/5: E_pot = -12460.70152338 eV  E_kin = 0.89584724 eV (T = 385.03 K)  Etot = -12459.80567614 eV
+Step 3/5: E_pot = -12460.76153107 eV  E_kin = 0.94596564 eV (T = 406.57 K)  Etot = -12459.81556542 eV
+Step 4/5: E_pot = -12460.60811946 eV  E_kin = 0.80739276 eV (T = 347.02 K)  Etot = -12459.80072671 eV
+Step 5/5: E_pot = -12460.47096766 eV  E_kin = 0.68584979 eV (T = 294.78 K)  Etot = -12459.78511787 eV
+============================================================================
+                               JOB STATISTICS                              
+============================================================================
+      SubmitTime: 2021-08-30T17:17:51
+         EndTime: 2021-08-31T17:17:54
+         RunTime: 00:04:11
+           JobId: 4181476
+            TRES: cpu=24,mem=96432M,node=1,billing=19
+       Partition: smp
+        NodeList: smp-n50
+         Command: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/h2o/6h2o.temelso.etal.pr.md.gfn2.300k/submit-ase.md.orca.slurm
+          StdOut: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/h2o/6h2o.temelso.etal.pr.md.gfn2.300k/6h2o.temelso.etal.pr.md.gfn2.300k.step10000-ase.md-orca.mp2.def2tzvp.300k.out
+More information:
+    - `sacct -M smp -j 4181476 -S 2021-08-30T17:17:51 -E 2021-08-31T17:17:54`
+   Print control:
+    - List of all possible fields: `sacct --helpformat`
+    - Add `--format=<field1,field2,etc>` with fields of interest
+============================================================================

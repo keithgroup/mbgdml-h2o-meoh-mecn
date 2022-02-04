@@ -1,0 +1,6 @@
+dict(charge=0,
+     label='/ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/h2o/6h2o.temelso.etal.pr.md.gfn2.300k-2/orcacalc',
+     mult=1,
+     orcablocks='%pal nprocs 24 end\n\n%maxcore 8000\n\n%scf    ConvForced true end',
+     orcasimpleinput='MP2 def2-TZVP TightSCF FrozenCore',
+     task='gradient')

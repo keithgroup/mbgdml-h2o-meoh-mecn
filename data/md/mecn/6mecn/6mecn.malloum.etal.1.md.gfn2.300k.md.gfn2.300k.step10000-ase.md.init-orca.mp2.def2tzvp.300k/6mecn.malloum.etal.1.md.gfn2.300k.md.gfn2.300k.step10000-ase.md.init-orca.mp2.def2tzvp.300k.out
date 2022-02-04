@@ -1,0 +1,24 @@
+Step 0/5: E_pot = -21629.89058830 eV  E_kin = 1.38776327 eV (T = 298.23 K)  Etot = -21628.50282503 eV
+Step 1/5: E_pot = -21630.06650847 eV  E_kin = 1.55576914 eV (T = 334.33 K)  Etot = -21628.51073934 eV
+Step 2/5: E_pot = -21630.29708826 eV  E_kin = 1.77426659 eV (T = 381.29 K)  Etot = -21628.52282167 eV
+Step 3/5: E_pot = -21630.39840444 eV  E_kin = 1.87194225 eV (T = 402.28 K)  Etot = -21628.52646219 eV
+Step 4/5: E_pot = -21630.31206506 eV  E_kin = 1.79346612 eV (T = 385.41 K)  Etot = -21628.51859894 eV
+Step 5/5: E_pot = -21630.15247805 eV  E_kin = 1.64368995 eV (T = 353.23 K)  Etot = -21628.50878810 eV
+============================================================================
+                               JOB STATISTICS                              
+============================================================================
+      SubmitTime: 2021-09-02T19:32:15
+         EndTime: 2021-09-08T19:32:33
+         RunTime: 01:30:12
+           JobId: 4225166
+            TRES: cpu=24,mem=96432M,node=1,billing=19
+       Partition: smp
+        NodeList: smp-n210
+         Command: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/mecn/6mecn.malloum.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md.init-orca.mp2.def2tzvp.300k/submit-ase.md.orca.slurm
+          StdOut: /ihome/jkeith/amm503/projects/mbgdml/ase.md/orca/mecn/6mecn.malloum.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md.init-orca.mp2.def2tzvp.300k/6mecn.malloum.etal.1.md.gfn2.300k.md.gfn2.300k.step10000-ase.md.init-orca.mp2.def2tzvp.300k.out
+More information:
+    - `sacct -M smp -j 4225166 -S 2021-09-02T19:32:15 -E 2021-09-08T19:32:33`
+   Print control:
+    - List of all possible fields: `sacct --helpformat`
+    - Add `--format=<field1,field2,etc>` with fields of interest
+============================================================================
