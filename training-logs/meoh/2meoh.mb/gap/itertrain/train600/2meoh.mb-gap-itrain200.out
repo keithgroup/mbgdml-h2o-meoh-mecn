@@ -1,0 +1,274 @@
+libAtoms::Hello World: 2022-07-19 18:06:24
+libAtoms::Hello World: git version  https://github.com/libAtoms/QUIP.git,cc2445e-dirty
+libAtoms::Hello World: QUIP_ARCH    linux_x86_64_gfortran_openmp
+libAtoms::Hello World: compiled on  Jun 17 2022 at 18:41:12
+libAtoms::Hello World: OpenMP parallelisation with 1 threads
+libAtoms::Hello World: OMP_STACKSIZE=5G
+libAtoms::Hello World: Random Seed = 65184152
+libAtoms::Hello World: global verbosity = 0
+
+Calls to system_timer will do nothing by default
+
+
+================================ Input parameters ==============================
+
+config_file =
+atoms_filename = //MANDATORY//
+at_file = train-600.xyz
+gap = "soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5 add_species=T n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points"
+e0 = 0.0
+local_property0 = 0.0
+e0_offset = 0.0
+e0_method = average
+default_kernel_regularisation = //MANDATORY//
+default_sigma = "0.001 0.01 0.0 0.0"
+default_kernel_regularisation_local_property = 0.001
+default_local_property_sigma = 0.001
+sparse_jitter = 1.0e-10
+hessian_displacement = 1.0e-2
+hessian_delta = 1.0e-2
+baseline_param_filename = quip_params.xml
+core_param_file = quip_params.xml
+baseline_ip_args =
+core_ip_args =
+energy_parameter_name = energy
+local_property_parameter_name = local_property
+force_parameter_name = forces
+virial_parameter_name = virial
+stress_parameter_name = stress
+hessian_parameter_name = hessian
+config_type_parameter_name = config_type
+kernel_regularisation_parameter_name = sigma
+sigma_parameter_name = sigma
+force_mask_parameter_name = force_mask
+parameter_name_prefix =
+config_type_kernel_regularisation =
+config_type_sigma =
+kernel_regularisation_is_per_atom = T
+sigma_per_atom = T
+do_copy_atoms_file = T
+do_copy_at_file = F
+sparse_separate_file = T
+sparse_use_actual_gpcov = F
+gap_file = gap_new.xml
+gp_file = 2meoh.mb-gap.xml
+verbosity = NORMAL
+rnd_seed = -1
+openmp_chunk_size = 1000
+do_ip_timing = F
+template_file = template.xyz
+sparsify_only_no_fit = F
+condition_number_norm =
+linear_system_dump_file =
+mpi_blocksize_rows = 0
+mpi_blocksize_cols = 100
+mpi_print_all = F
+
+========================================  ======================================
+
+
+============== Gaussian Approximation Potentials - Database fitting ============
+
+
+Initial parsing of command line arguments finished.
+Found 1 GAPs.
+Descriptors have been parsed
+XYZ file read
+Old GAP: {soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5 add_species=T n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points}
+New GAP: {soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=8 species_Z={8 1 6 }}
+New GAP: {soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=1 species_Z={8 1 6 }}
+New GAP: {soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=6 species_Z={8 1 6 }}
+Multispecies support added where requested
+
+===================== Report on number of descriptors found ====================
+
+---------------------------------------------------------------------
+Descriptor 1: soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=8 species_Z={8 1 6 }
+Number of descriptors:                        1200
+Number of partial derivatives of descriptors: 33018
+---------------------------------------------------------------------
+Descriptor 2: soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=1 species_Z={8 1 6 }
+Number of descriptors:                        4800
+Number of partial derivatives of descriptors: 116292
+---------------------------------------------------------------------
+Descriptor 3: soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=6 species_Z={8 1 6 }
+Number of descriptors:                        1200
+Number of partial derivatives of descriptors: 29352
+
+========================================  ======================================
+
+
+========================= Memory Estimate (per process) ========================
+
+Descriptors
+Descriptor 1 :: x 2101 1200 memory 20 MB
+Descriptor 1 :: xPrime 2101 33018 memory 554 MB
+Descriptor 2 :: x 2101 4800 memory 80 MB
+Descriptor 2 :: xPrime 2101 116292 memory 1954 MB
+Descriptor 3 :: x 2101 1200 memory 20 MB
+Descriptor 3 :: xPrime 2101 29352 memory 493 MB
+Subtotal 3123 MB
+
+Covariances
+yY 12000 22200 memory 2131 MB * 2
+yy 12000 12000 memory 1152 MB
+A 12000 34200 memory 3283 MB * 2
+Subtotal 11 GB
+
+Peak1 5255 MB
+Peak2 11 GB
+PEAK  11 GB
+
+Free system memory  163 GB
+Total system memory 201 GB
+
+========================================  ======================================
+
+E0/atom =  -0.95414999611666655E-002  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000 -0.95414999611666655E-002  0.00000000000000000E+000 -0.95414999611666655E-002  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000  0.00000000000000000E+000
+
+========== Report on number of target properties found in training XYZ: ========
+
+Number of target energies (property name: energy) found: 600
+Number of target local_properties (property name: local_property) found: 0
+Number of target forces (property name: forces) found: 21600
+Number of target virials (property name: virial) found: 0
+Number of target Hessian eigenvalues (property name: hessian) found: 0
+
+================================= End of report ================================
+
+
+===== Report on per-configuration/per-atom sigma (error parameter) settings ====
+
+Number of per-configuration setting of energy_sigma found:     0
+Number of per-configuration setting of force_sigma found:      0
+Number of per-configuration setting of virial_sigma found:     0
+Number of per-configuration setting of hessian_sigma found:    0
+Number of per-configuration setting of local_propery_sigma found:0
+Number of per-atom setting of force_atom_sigma found:          0
+Number of per-component setting of force_component_sigma found:          0
+
+================================= End of report ================================
+
+WARNING: gpCoordinates_sparsify: number of data points (1198) less than the number of sparse points (4000), number of sparse points changed to 1198
+WARNING: gpCoordinates_sparsify: affected descriptor : soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=8 species_Z={8 1 6 }
+Started CUR decomposition
+cur_decomposition: iteration: 1, error: .36346589845343612E-007
+Finished CUR decomposition
+Started CUR decomposition
+cur_decomposition: iteration: 1, error: .16146877740965311E-008
+Finished CUR decomposition
+WARNING: gpCoordinates_sparsify: number of data points (1199) less than the number of sparse points (4000), number of sparse points changed to 1199
+WARNING: gpCoordinates_sparsify: affected descriptor : soap cutoff=4.0 covariance_type=dot_product zeta=3 delta=0.1 atom_sigma=0.5               n_max=8 l_max=6 n_sparse=4000 sparse_method=cur_points n_species=3 Z=6 species_Z={8 1 6 }
+Started CUR decomposition
+cur_decomposition: iteration: 1, error: .56507570150420777E-007
+Finished CUR decomposition
+Cartesian coordinates transformed to descriptors
+Started sparse covariance matrix calculation of coordinate 1
+Covariance matrix   9% |*                   |   9.8 / 117.0 sCovariance matrix  17% |***                 |  19.5 / 116.8 sCovariance matrix  26% |*****               |  29.1 / 116.1 sCovariance matrix  34% |******              |  38.7 / 115.8 sCovariance matrix  42% |********            |  48.3 / 115.7 sCovariance matrix  51% |**********          |  57.9 / 115.7 sCovariance matrix  59% |***********         |  67.5 / 115.6 sCovariance matrix  67% |*************       |  77.1 / 115.5 sCovariance matrix  76% |***************     |  86.7 / 115.5 sCovariance matrix  84% |****************    |  96.4 / 115.5 sCovariance matrix  92% |******************  | 106.0 / 115.4 s
+Finished sparse covariance matrix calculation of coordinate 1
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate1_sparse  done in 115.33624200000000 cpu secs, 115.33765399456024 wall clock secs.
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate1         done in 115.38168800000001 cpu secs, 115.38309955596924 wall clock secs.
+Started sparse covariance matrix calculation of coordinate 2
+Covariance matrix   3% |                    |   0.6 /  25.9 mCovariance matrix   5% |*                   |   1.3 /  25.6 mCovariance matrix   8% |*                   |   1.9 /  25.5 mCovariance matrix  10% |**                  |   2.6 /  25.5 mCovariance matrix  13% |**                  |   3.2 /  25.5 mCovariance matrix  15% |***                 |   3.8 /  25.5 mCovariance matrix  18% |***                 |   4.5 /  25.5 mCovariance matrix  20% |****                |   5.1 /  25.5 mCovariance matrix  23% |****                |   5.7 /  25.5 mCovariance matrix  25% |*****               |   6.4 /  25.5 mCovariance matrix  28% |*****               |   7.0 /  25.5 mCovariance matrix  30% |******              |   7.6 /  25.5 mCovariance matrix  33% |******              |   8.3 /  25.5 mCovariance matrix  35% |*******             |   8.9 /  25.5 mCovariance matrix  38% |*******             |   9.6 /  25.5 mCovariance matrix  40% |********            |  10.2 /  25.5 mCovariance matrix  43% |********            |  10.8 /  25.5 mCovariance matrix  45% |*********           |  11.5 /  25.5 mCovariance matrix  48% |*********           |  12.1 /  25.5 mCovariance matrix  50% |**********          |  12.8 /  25.5 mCovariance matrix  53% |**********          |  13.4 /  25.5 mCovariance matrix  55% |***********         |  14.0 /  25.5 mCovariance matrix  58% |***********         |  14.7 /  25.5 mCovariance matrix  60% |************        |  15.3 /  25.5 mCovariance matrix  63% |************        |  16.0 /  25.5 mCovariance matrix  65% |*************       |  16.6 /  25.5 mCovariance matrix  68% |*************       |  17.2 /  25.5 mCovariance matrix  70% |**************      |  17.9 /  25.5 mCovariance matrix  73% |**************      |  18.5 /  25.5 mCovariance matrix  75% |***************     |  19.2 /  25.5 mCovariance matrix  78% |***************     |  19.8 /  25.5 mCovariance matrix  80% |****************    |  20.4 /  25.5 mCovariance matrix  83% |****************    |  21.1 /  25.5 mCovariance matrix  85% |*****************   |  21.7 /  25.5 mCovariance matrix  88% |*****************   |  22.4 /  25.5 mCovariance matrix  90% |******************  |  23.0 /  25.5 mCovariance matrix  93% |******************  |  23.6 /  25.5 mCovariance matrix  95% |******************* |  24.3 /  25.5 mCovariance matrix  98% |******************* |  24.9 /  25.6 mCovariance matrix 100% |********************|  25.6 /  25.6 m
+Finished sparse covariance matrix calculation of coordinate 2
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate2_sparse  done in 1532.9541750000001 cpu secs, 1533.0115777105093 wall clock secs.
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate2         done in 1533.0965039999999 cpu secs, 1533.1539045758545 wall clock secs.
+Started sparse covariance matrix calculation of coordinate 3
+Covariance matrix   9% |*                   |   8.9 / 106.6 sCovariance matrix  17% |***                 |  17.5 / 104.9 sCovariance matrix  26% |*****               |  26.1 / 104.3 sCovariance matrix  34% |******              |  34.7 / 104.0 sCovariance matrix  42% |********            |  43.5 / 104.2 sCovariance matrix  51% |**********          |  52.1 / 104.0 sCovariance matrix  59% |***********         |  60.7 / 103.9 sCovariance matrix  67% |*************       |  69.3 / 103.8 sCovariance matrix  76% |***************     |  77.9 / 103.8 sCovariance matrix  84% |****************    |  86.5 / 103.7 sCovariance matrix  92% |******************  |  95.2 / 103.7 s
+Finished sparse covariance matrix calculation of coordinate 3
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate3_sparse  done in 103.74009400000000 cpu secs, 103.74141705408692 wall clock secs.
+TIMER: gpFull_covarianceMatrix_sparse_Coordinate3         done in 103.77080999999998 cpu secs, 103.77213495969772 wall clock secs.
+TIMER: gpFull_covarianceMatrix_sparse_FunctionValues      done in .12700000002041634E-003 cpu secs, .12720376253128052E-003 wall clock secs.
+TIMER: gpFull_covarianceMatrix_sparse                     done in 1752.9771120000000 cpu secs, 1753.0372602641582 wall clock secs.
+Using LAPACK to solve QR
+TIMER: GP sparsify                                        done in 1798.4989570000000 cpu secs, 1799.6605638638139 wall clock secs.
+
+libAtoms::Finalise: 2022-07-19 18:36:52
+libAtoms::Finalise: Bye-Bye!
+Getting next training set
+---------------------------
+|   Finding Problematic   |
+|       Structures        |
+---------------------------
+
+Loading dataset
+
+Dropping indices already in training set
+There are a total of 10169 structures
+Removed 600 structures
+Clustering 9569 structures
+Agglomerative clustering
+Took 3.97824 s
+K-means clustering
+Took 0.07474 s
+K-means clustering
+Took 0.01944 s
+K-means clustering
+Took 0.01884 s
+K-means clustering
+Took 0.01569 s
+K-means clustering
+Took 0.01898 s
+K-means clustering
+Took 0.01580 s
+K-means clustering
+Took 0.01489 s
+K-means clustering
+Took 0.01693 s
+K-means clustering
+Took 0.01821 s
+K-means clustering
+Took 0.01708 s
+Total clustering time: 20.36572 s
+
+Predicting structures
+Predictions took 928.807 s
+Computing prediction errors
+
+Aggregating errors
+Assembling data into 50 clusters
+Assembling data into 50 clusters
+Computing cluster losses
+Finding problematic structures
+Refine clustering of problematic structures
+Clustering 1974 structures
+Agglomerative clustering
+Took 0.12118 s
+Total clustering time: 0.12497 s
+Aggregating errors for problematic structures
+Assembling data into 100 clusters
+Assembling data into 100 clusters
+Assembling data into 100 clusters
+
+Selecting problematic structures
+Computing cluster loss weights
+Sampling structures
+Elapsed time: 963.9439237117767 s
+Loading /ihome/jkeith/amm503/projects/gap-training-2022-06/training-logs/meoh/2meoh/62meoh-xtb.md-samples.exdir
+Writing /ihome/jkeith/amm503/projects/gap-training-2022-06/training-logs/meoh/2meoh/train600/train-700.xyz
+
+Done!
+WARNING: Potential_initialise using default init_args "Potential xml_label=GAP_2022_7_19_-240_18_36_44_939"
+WARNING: Potential_calc: cutoff of Atoms object (-1.0000000000000000) < Potential cutoff (4.0000000000000000) - increasing it now
+DONE
+==============================================================================
+                                JOB STATISTICS                                
+==============================================================================
+
+           JobId: 6360784
+      SubmitTime: 2022-07-19T18:06:07
+         EndTime: 2022-07-20T18:06:10
+         RunTime: 00:47:01
+            TRES: cpu=24,mem=96432M,node=1,billing=19
+       Partition: smp
+        NodeList: smp-n39
+         Command: /ihome/jkeith/amm503/projects/gap-training-2022-06/training-logs/meoh/2meoh/train600/submit-gap-train.slurm
+
+==============================================================================
+ For more information use the command:
+   - `sacct -M smp -j 6360784 -S 2022-07-19T18:06:07 -E 2022-07-20T18:06:10`
+
+ To control the output of the above command:
+   - Add `--format=<field1,field2,etc>` with fields of interest
+   - See the list of all possible fields by running: `sacct --helpformat`
+==============================================================================

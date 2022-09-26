@@ -1,0 +1,43 @@
+Loaded properties:
+ energy
+ forces
+ _atomic_numbers
+ _positions
+ _neighbors
+ _cell
+ _cell_offset
+
+Forces:
+ [[ 1.41433619  0.42507178 -1.73200423]
+ [-0.56654262 -0.43917582  1.64307388]
+ [-0.84779356  0.01410404  0.08892984]]
+Shape:
+ (3, 3)
+Mean atomization energy / atom:       -692.105103 [eV]
+Std. dev. atomization energy / atom:     0.043511 [eV]
+Using cuda
+
+Test MAE:
+    energy:   0.000051 eV
+    forces:   0.000298 eV/Å
+==============================================================================
+                                JOB STATISTICS                                
+==============================================================================
+
+           JobId: 319973
+      SubmitTime: 2022-07-08T17:01:28
+         EndTime: 2022-07-11T17:01:29
+         RunTime: 08:29:25
+            TRES: cpu=1,mem=5364M,node=1,gres/gpu=1
+       Partition: scavenger
+        NodeList: gpu-n16
+         Command: /ihome/jkeith/amm503/projects/schnet-training-2022-06/logs-training/h2o/1h2o/schnet/1h2o-niter5.nfeat128.cut3.ngauss30-train1000/submit-train-schnet.slurm
+
+==============================================================================
+ For more information use the command:
+   - `sacct -M gpu -j 319973 -S 2022-07-08T17:01:28 -E 2022-07-11T17:01:29`
+
+ To control the output of the above command:
+   - Add `--format=<field1,field2,etc>` with fields of interest
+   - See the list of all possible fields by running: `sacct --helpformat`
+==============================================================================

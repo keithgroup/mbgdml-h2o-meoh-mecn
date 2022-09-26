@@ -1,0 +1,58 @@
+Loaded properties:
+ energy
+ forces
+ _atomic_numbers
+ _positions
+ _neighbors
+ _cell
+ _cell_offset
+
+Forces:
+ [[-1.34725816e-04  1.02329913e-04 -2.82821369e-05]
+ [-4.62798603e-06  4.57656397e-05  3.08532402e-06]
+ [-2.72536955e-05 -2.62252542e-05  2.67394749e-05]
+ [ 1.59408408e-05  3.08532402e-05 -2.98247989e-05]
+ [ 4.62798603e-06  3.89779268e-04  2.16486902e-04]
+ [ 3.23444802e-04 -4.79767886e-04  3.39385643e-05]
+ [ 2.70480073e-04  3.39385643e-05  1.27012506e-04]
+ [-4.83367430e-05 -1.86662103e-04  2.57110335e-06]
+ [-9.25597207e-05 -6.58202458e-05  7.19908939e-05]
+ [-1.55808863e-04  9.97588101e-05 -8.12468659e-05]
+ [ 3.80523296e-05  2.93105782e-04  6.73629078e-05]
+ [-8.12468659e-05 -2.22143330e-04 -2.46825922e-04]
+ [ 4.54571073e-04 -3.03390196e-05 -3.00304872e-04]
+ [ 1.95403855e-05  4.57656397e-05  6.32491425e-05]
+ [-8.33037486e-05  1.36782698e-04 -1.09529003e-04]
+ [-5.16277553e-04 -1.98489179e-04  1.87176324e-04]
+ [-1.70207042e-04 -1.71749704e-04 -9.56450447e-05]
+ [ 1.88204765e-04  2.02088723e-04  9.10170587e-05]]
+Shape:
+ (18, 3)
+Mean atomization energy / atom:         -0.000022 [eV]
+Std. dev. atomization energy / atom:     0.000271 [eV]
+Using cuda
+
+Test MAE:
+    energy:   0.000312 eV
+    forces:   0.000150 eV/Å
+==============================================================================
+                                JOB STATISTICS                                
+==============================================================================
+
+           JobId: 319784
+      SubmitTime: 2022-07-07T10:12:40
+         EndTime: 2022-07-10T10:12:43
+         RunTime: 09:14:07
+            TRES: cpu=1,mem=5364M,node=1,gres/gpu=1
+       Partition: scavenger
+        NodeList: gpu-stage12
+         Command: /ihome/jkeith/amm503/projects/schnet-training-2022-06/logs-training/mecn/3mecn.mb/schnet/3mecn.mb-niter5.nfeat128.cut10-train1000/submit-train-schnet.slurm
+
+==============================================================================
+ For more information use the command:
+   - `sacct -M gpu -j 319784 -S 2022-07-07T10:12:40 -E 2022-07-10T10:12:43`
+
+ To control the output of the above command:
+   - Add `--format=<field1,field2,etc>` with fields of interest
+   - See the list of all possible fields by running: `sacct --helpformat`
+==============================================================================

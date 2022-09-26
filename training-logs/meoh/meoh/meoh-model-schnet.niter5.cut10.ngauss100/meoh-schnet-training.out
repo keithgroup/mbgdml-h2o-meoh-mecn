@@ -1,0 +1,50 @@
+Loaded properties:
+ energy
+ forces
+ _atomic_numbers
+ _positions
+ _neighbors
+ _cell
+ _cell_offset
+
+Forces:
+ [[ 0.37766269  0.39816055  1.63261772]
+ [-0.77342491 -1.0822823  -1.84627641]
+ [ 0.08402571  2.81485578  2.56686823]
+ [ 0.69582593 -2.11709072 -0.65483431]
+ [ 0.39445765  0.10853347 -1.01114759]
+ [-0.77854655 -0.12217729 -0.68722764]]
+Shape:
+ (6, 3)
+Mean atomization energy / atom:       -523.800232 [eV]
+Std. dev. atomization energy / atom:     0.019417 [eV]
+n_features: 128
+n_interactions: 5
+cutoff: 10.0
+n_gaussians: 100
+Start training using cuda
+
+Test MAE:
+    energy:   0.004887 eV
+    forces:   0.008945 eV/Å
+==============================================================================
+                                JOB STATISTICS                                
+==============================================================================
+
+           JobId: 320667
+      SubmitTime: 2022-07-11T09:50:06
+         EndTime: 2022-07-14T09:50:06
+         RunTime: 18:00:22
+            TRES: cpu=1,mem=5364M,node=1,gres/gpu=1
+       Partition: scavenger
+        NodeList: gpu-n16
+         Command: /ihome/jkeith/amm503/projects/schnet-training/meoh/submit-train-schnet.slurm
+
+==============================================================================
+ For more information use the command:
+   - `sacct -M gpu -j 320667 -S 2022-07-11T09:50:06 -E 2022-07-14T09:50:06`
+
+ To control the output of the above command:
+   - Add `--format=<field1,field2,etc>` with fields of interest
+   - See the list of all possible fields by running: `sacct --helpformat`
+==============================================================================

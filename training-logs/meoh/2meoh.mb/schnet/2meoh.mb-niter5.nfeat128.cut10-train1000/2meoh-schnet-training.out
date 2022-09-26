@@ -1,0 +1,52 @@
+Loaded properties:
+ energy
+ forces
+ _atomic_numbers
+ _positions
+ _neighbors
+ _cell
+ _cell_offset
+
+Forces:
+ [[-8.84459553e-05  6.51774700e-03  2.41760848e-02]
+ [-7.83055237e-03 -1.96242034e-02  3.27558567e-04]
+ [ 6.84170602e-03  2.49037071e-03 -1.80902832e-03]
+ [-1.22898740e-03  1.38479627e-03 -8.02184246e-05]
+ [-1.22384520e-03 -2.22708972e-03  2.98402255e-03]
+ [ 1.68407270e-03 -1.85993617e-03  3.19331036e-04]
+ [-4.92571980e-03 -6.55914176e-02  1.06988753e-02]
+ [-4.43618172e-03  2.31913522e-04 -1.53854825e-03]
+ [ 3.45402024e-02  5.34223855e-02 -3.08331856e-02]
+ [-6.36810878e-03 -1.34520127e-02  1.42130593e-02]
+ [ 7.91591300e-03  1.17396579e-03 -2.97939456e-03]
+ [-2.48810814e-02  3.75345094e-02 -1.54785564e-02]]
+Shape:
+ (12, 3)
+Mean atomization energy / atom:         -0.006033 [eV]
+Std. dev. atomization energy / atom:     0.007671 [eV]
+Using cuda
+
+Test MAE:
+    energy:   0.002829 eV
+    forces:   0.003554 eV/Å
+==============================================================================
+                                JOB STATISTICS                                
+==============================================================================
+
+           JobId: 319781
+      SubmitTime: 2022-07-07T10:12:39
+         EndTime: 2022-07-10T10:12:40
+         RunTime: 14:27:28
+            TRES: cpu=1,mem=5364M,node=1,gres/gpu=1
+       Partition: scavenger
+        NodeList: gpu-stage11
+         Command: /ihome/jkeith/amm503/projects/schnet-training-2022-06/logs-training/meoh/2meoh.mb/schnet/2meoh.mb-niter5.nfeat128.cut10-train1000/submit-train-schnet.slurm
+
+==============================================================================
+ For more information use the command:
+   - `sacct -M gpu -j 319781 -S 2022-07-07T10:12:39 -E 2022-07-10T10:12:40`
+
+ To control the output of the above command:
+   - Add `--format=<field1,field2,etc>` with fields of interest
+   - See the list of all possible fields by running: `sacct --helpformat`
+==============================================================================
