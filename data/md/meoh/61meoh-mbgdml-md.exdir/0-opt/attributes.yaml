@@ -1,0 +1,25 @@
+periodic:
+- true
+- true
+- true
+periodic_cell:
+- - 16.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 16.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 16.0
+prov: ASE
+prov_version: 3.22.1
+md5: 52649558445d605e8dd5b899e55f2b74
+md5_arrays: 08854e83127c61abcf0ff7c00378ac70
+md5_structures: 76940899318300150f22db7169d56eb1
+reptar_version: v0.0.2+18.g73f1c48.dirty
+optimizer_algo: BGFS
+optimizer_force_max: 0.007349864496307142
+periodic_mic_cutoff: 8.0
+readme: Preliminary energy minimization before MD simulation. Periodic box using mbGDML
+  ASE calculator.
