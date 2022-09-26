@@ -1,0 +1,29 @@
+periodic:
+- true
+- true
+- true
+periodic_cell:
+- - 18.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 18.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 18.0
+prov: ASE
+prov_version: 3.22.1
+md5: d91ac8dedb1910e302e8b0f9da5c105d
+md5_arrays: d809fff0394317f4d2b46df0560c4792
+md5_structures: 0004fc2426457a8a02b883c247d952bb
+reptar_version: v0.0.2+21.g4d6196e
+thermostat_type: Berendsen
+thermostat_temp: 298.15
+thermostat_beren_tau_temp: 0.1
+t_step: 1.0
+md_duration: 10
+md_steps_dump_traj: 1
+periodic_mic_cutoff: 9.0
+readme: 'A 10 ps NVT simulation at 298.15 K using the Berendsen thermostat. Initialized
+  from 1-nvt-298 trajectory. '
