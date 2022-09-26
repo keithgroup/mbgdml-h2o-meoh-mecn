@@ -1,2 +1,0 @@
-slurmstepd: error: *** JOB 4225147 ON smp-n87 CANCELLED AT 2021-09-03T19:04:46 DUE TO TIME LIMIT ***
-mpirun: Forwarding signal 18 to job
