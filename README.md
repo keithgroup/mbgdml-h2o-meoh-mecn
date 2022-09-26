@@ -1,10 +1,7 @@
-<h1 align="center">Many-Body GDML - Common Solvents</h1>
+# Many-Body machine learning potentials for water, acetonitrile, and methanol
 
-<h4 align="center">Water, acetonitrile, and methanol sampling, data sets, training, models, and analysis</h4>
-
-<p align="center">
-    <a href="#license">License</a>
-</p>
+Data sets, scripts, and analyses of many-body machine learning (mbML) potentials for water, acetonitrile, and methanol.
+[GDML, GAP, and SchNet models](https://doi.org/10.5281/zenodo.7112163) and [MD simulations](https://doi.org/10.5281/zenodo.7112198) are provided in complementary repositories.
 
 ## License
 
