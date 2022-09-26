@@ -1,0 +1,29 @@
+periodic:
+- true
+- true
+- true
+periodic_cell:
+- - 12.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 12.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 12.0
+prov: ASE
+prov_version: 3.22.1
+md5: 9bdc47551cea5b951a145ffb2b6af02c
+md5_arrays: 5a5c9f484c2752da75f761c11fd34418
+md5_structures: f2941953bc0ae606f156e12abe9a24c9
+reptar_version: v0.0.2+18.g73f1c48.dirty
+thermostat_type: Nose-Hoover
+thermostat_temp: 298.15
+t_step: 1.0
+md_duration: 10
+md_steps_dump_traj: 1
+periodic_mic_cutoff: 6.0
+readme: A 10 ps NVT simulation at 298.15 K using the Nose-Hoover thermostat. Initialized
+  from opt-0 optimization. The simulation crashes shortly after time step 7321 (massive
+  e_kin oscillations).

@@ -1,0 +1,33 @@
+periodic:
+- true
+- true
+- true
+periodic_cell:
+- - 16.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 16.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 16.0
+prov: ASE
+prov_version: 3.22.1
+md5: 28e52e3f96a3b9337cce08d045f97def
+md5_arrays: 131eb21c958fd1304a86fe4f07527ad7
+md5_structures: f0f9599d0d079cf088c87cc54ad3624f
+reptar_version: v0.0.2+19.gf65a9e7
+velcs_init_algo: Maxwell Boltzmann
+velcs_init_temp: 100
+thermostat_type: Berendsen
+thermostat_temp: 298.15
+thermostat_beren_tau_temp: 0.05
+t_step: 1.0
+md_duration: 5.0
+md_steps_dump_traj: 1
+periodic_mic_cutoff: 8.0
+readme: 'A 5 ps NVT simulation at 298.15 K using the Berendsen thermostat. Initialized
+  from 0-opt trajectory. Relaxation analysis using energy and temperature 
+  detect_equilibration from pymbar determined that the start of production is at 
+  step 4590. '
