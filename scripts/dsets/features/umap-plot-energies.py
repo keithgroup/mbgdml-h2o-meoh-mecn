@@ -94,7 +94,7 @@ for path in umap_npz_paths:
     cmap = mpl.cm.get_cmap(colormap_selection)
     colors = cmap(norm(E))
 
-     # Lighten colors
+    # Lighten colors
     colors_train = np.array([
         lighten_color(colors[i][:3], amount=lighten_factor) for i in idxs_train
     ])
