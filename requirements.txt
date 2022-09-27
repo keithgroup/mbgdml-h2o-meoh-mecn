@@ -1,0 +1,16 @@
+ase==3.22.1
+dscribe==1.2.2
+matplotlib==3.5.1
+mbgdml==0.0.3
+MDAnalysis==2.3.0
+natsort==8.1.0
+numpy==1.22.4
+pandas==1.4.2
+pymbar==4.0.1
+qcelemental==0.25.0
+ray==2.0.0
+reptar==0.0.3
+scikit_learn==1.1.2
+scipy==1.7.3
+torch==1.12.0
+umap_learn==0.5.3
