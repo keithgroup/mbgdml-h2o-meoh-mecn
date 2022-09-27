@@ -36,7 +36,9 @@ max_errors = {
     '2mer': 0.07,
     '3mer': 0.3,
 }
-# TODO: can parse max errors from csv files.
+
+n_neighbors_plot = [5, 20]
+fig_types = ['svg', 'eps']
 
 
 
@@ -85,6 +87,9 @@ for path in umap_npz_paths:
 
     for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
 
+        if n_nbr not in n_neighbors_plot:
+            continue
+
         fig, ax = plt.subplots(1, 1, constrained_layout=True)
         
         # Train scatter
@@ -113,10 +118,11 @@ for path in umap_npz_paths:
             label='Energy error (kcal/mol)', location='right'
         )
 
-        save_path = os.path.join(
-            umap_dir, f'error-nnbr{n_nbr}-mind{min_dist}.png'
-        )
-        plt.savefig(save_path, dpi=1000)
+        for fig_type in fig_types:
+            save_path = os.path.join(
+                umap_dir, f'error-nnbr{n_nbr}-mind{min_dist}.{fig_type}'
+            )
+            plt.savefig(save_path, dpi=1000)
 
         plt.close()
 

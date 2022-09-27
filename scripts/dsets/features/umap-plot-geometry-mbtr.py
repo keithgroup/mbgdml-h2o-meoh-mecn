@@ -34,6 +34,9 @@ edge_width = 0.00
 alpha = 1.0
 lighten_factor = 0.3
 
+n_neighbors_plot = [5, 20]
+fig_types = ['svg', 'eps']
+
 data_dir = 'analysis/feature-space-dim-red'
 
 
@@ -106,6 +109,9 @@ for system_label in system_labels:
         colors_16mer = colors[idxs_16mer]
 
         for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
+            
+            if n_nbr not in n_neighbors_plot:
+                continue
 
             fig, ax = plt.subplots(1, 1, constrained_layout=True)
             
@@ -132,10 +138,11 @@ for system_label in system_labels:
                 label='Geometric similarity', location='right', ticks=[]
             )
 
-            save_path = os.path.join(
-                umap_dir, f'geometry-mbtr-nnbr{n_nbr}-mind{min_dist}.png'
-            )
-            plt.savefig(save_path, dpi=1000)
+            for fig_type in fig_types:
+                save_path = os.path.join(
+                    umap_dir, f'geometry-mbtr-nnbr{n_nbr}-mind{min_dist}.{fig_type}'
+                )
+                plt.savefig(save_path, dpi=1000)
 
             plt.close()
 

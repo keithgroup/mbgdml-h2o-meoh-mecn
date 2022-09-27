@@ -35,6 +35,9 @@ lighten_factor = 0.3
 
 data_dir = 'analysis/feature-space-dim-red'
 
+n_neighbors_plot = [5, 20]
+fig_types = ['svg', 'eps']
+
 
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
@@ -108,6 +111,9 @@ for system_label in system_labels:
 
         for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
 
+            if n_nbr not in n_neighbors_plot:
+                continue
+
             fig, ax = plt.subplots(1, 1, constrained_layout=True)
             
             ax.scatter(
@@ -133,10 +139,11 @@ for system_label in system_labels:
                 label='Geometry metric', location='right', ticks=None
             )
 
-            save_path = os.path.join(
-                umap_dir, f'geometry-distang-nnbr{n_nbr}-mind{min_dist}.png'
-            )
-            plt.savefig(save_path, dpi=1000)
+            for fig_type in fig_types:
+                save_path = os.path.join(
+                    umap_dir, f'geometry-distang-nnbr{n_nbr}-mind{min_dist}.{fig_type}'
+                )
+                plt.savefig(save_path, dpi=1000)
 
             plt.close()
 
