@@ -60,16 +60,7 @@ labels = [
     'mbSchNet',
     'GFN2-xTB'
 ]
-colors = [
-    '#343a40',
-    '#6c757d',
-    '#ced4da',
-    '#03045e',
-    '#0077b6',
-    '#00b4d8',
-    '#90e0ef',
-    '#caf0f8',
-]
+colors = ['#343a40', '#6c757d', '#ced4da', '#03045e', '#0077b6', '#90e0ef', '#FFE7BE']
 
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
@@ -177,7 +168,8 @@ for i in range(len(md_data)):
         marker='', markersize=0, 
         linestyle='-', linewidth=line_width,
         label=label,
-        alpha=1.0
+        alpha=1.0,
+        zorder=-i
     )
 
 # X axis

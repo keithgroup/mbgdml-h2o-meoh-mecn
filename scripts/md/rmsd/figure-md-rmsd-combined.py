@@ -30,7 +30,7 @@ import rmsd
 # initial - RMSD with respect to the initial structure of the same MD simulation
 # compare - Choose a reference to compute RMSD at each time step to. Reference is not included in figure.
 # compare is a superior analysis
-rmsd_type = 'compare'
+rmsd_type = 'initial'
 rmsd_ref_idx = 0
 
 fig_save_types = ['svg', 'eps']  # eps or png
@@ -73,9 +73,9 @@ md_npz_paths_all ={
 }
 labels = ['MP2', 'RI-MP2', 'def2-SVP', 'mbGDML', 'mbGAP', 'mbSchNet', 'GFN2-xTB']
 colors_all = {
-    'h2o':  ['#343a40', '#6c757d', '#ced4da', '#03045e', '#0077b6', '#00b4d8', '#90e0ef', '#caf0f8'],
-    'mecn': ['#343a40', '#6c757d', '#ced4da', '#1b4332', '#2d6a4f', '#52b788', '#95d5b2', '#d8f3dc'],
-    'meoh': ['#343a40', '#6c757d', '#ced4da', '#590d22', '#a4133c', '#ff4d6d', '#ff8fa3', '#ffccd5'],
+    'h2o':  ['#343a40', '#6c757d', '#ced4da', '#03045e', '#0077b6', '#90e0ef', '#FFE7BE'],
+    'mecn': ['#343a40', '#6c757d', '#ced4da', '#1b4332', '#2d6a4f', '#95d5b2', '#FFE7BE'],
+    'meoh': ['#343a40', '#6c757d', '#ced4da', '#590d22', '#a4133c', '#ff8fa3', '#FFE7BE'],
 }
 
 ###   SCRIPT   ###
@@ -191,8 +191,19 @@ for solv_key in md_npz_paths_all.keys():
             marker='', markersize=0, 
             linestyle='-', linewidth=line_width,
             label=label_plot,
-            alpha=1.0
+            alpha=1.0,
+            zorder=-i
         )
+
+    # Subplot label
+    label = chr(ord('@')+(ax_idx + 1))
+    ax.text(
+        0.02, 0.96,
+        label,
+        fontsize='large',
+        fontweight='bold',
+        transform=ax.transAxes
+    )
     
     ax.set_xlim(xmin=0)
     
