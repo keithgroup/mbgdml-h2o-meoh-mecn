@@ -61,7 +61,7 @@ labels = [
     'GFN2-xTB'
 ]
 colors = [
-    None,  # MP2 is never plotted
+    '#343a40',
     '#6c757d',
     '#ced4da',
     '#03045e',
