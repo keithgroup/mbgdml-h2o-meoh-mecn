@@ -35,7 +35,11 @@ exp_label = 'Hernández-Cobos et al.'
 
 r_max = 9
 
-save_path = f'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-c_n-c_n.png'
+mbml_color = '#61BFA3'
+ref_color = '#6c757d'
+
+save_path = f'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-c_n-c_n'
+fig_types = ['svg', 'eps']
 
 
 ###   SCRIPT   ###
@@ -83,11 +87,11 @@ fig, ax = plt.subplots(1, 1, constrained_layout=True)
 
 ax.plot(
     r_md, g_md, label='mbGDML', zorder=0,
-    linestyle='-', color='#00946F', linewidth=2
+    linestyle='-', color=mbml_color, linewidth=2
 )
 ax.plot(
     r_exp, g_exp, label=exp_label, zorder=1,
-    linestyle=(0, (5, 4)), color='#93F2D4', linewidth=2
+    linestyle=(0, (5, 4)), color=ref_color, linewidth=2
 )
 ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
@@ -98,4 +102,5 @@ ax.set_ylabel('g$_{C_NC_N}$($r$)')
 ax.set_ylim(ymin=0)
 
 plt.legend(frameon=False)
-plt.savefig(save_path, dpi=600)
+for fig_type in fig_types:
+    plt.savefig(save_path + f'.{fig_type}', dpi=1000)

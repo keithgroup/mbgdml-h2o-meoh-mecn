@@ -1,2 +1,7 @@
 # psi4 timer
 timer.dat
+
+# Exclude large file sizes
+data/md/h2o/137h2o-mbgdml-nvt_1_2.npy
+data/md/mecn/67mecn-mbgdml-nvt_1_2_3-298.npy
+data/md/meoh/61meoh-mbgdml-nvt_1_2_3.npy

@@ -35,7 +35,13 @@ exp2_path = 'external/md/meoh-rdf/vrhovsek2011hydrogen-fig5-goo-nx+md.csv'  # Vr
 exp_path = exp1_path
 exp_label = 'Yamaguchi et al.'
 
-save_path = f'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oo.png'
+r_max = 8.0
+
+mbml_color = '#FFB5BA'
+ref_color = '#6c757d'
+
+save_path = 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oo'
+fig_types = ['svg', 'eps']
 
 
 ###   SCRIPT   ###
@@ -78,19 +84,20 @@ fig, ax = plt.subplots(1, 1, constrained_layout=True)
 
 ax.plot(
     r_md, g_md, label='mbGDML', zorder=0,
-    linestyle='-', color='#7D132D', linewidth=2
+    linestyle='-', color=mbml_color, linewidth=2
 )
 ax.plot(
     r_exp, g_exp, label=exp_label, zorder=1,
-    linestyle=(0, (5, 4)), color='#E67582', linewidth=2
+    linestyle=(0, (5, 4)), color=ref_color, linewidth=2
 )
 ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
 ax.set_xlabel('$r$ (A)')
-ax.set_xlim(0, 8)
+ax.set_xlim(0, r_max)
 
 ax.set_ylabel('$g_{OO}$($r$)')
 ax.set_ylim(ymin=0)
 
 plt.legend(frameon=False)
-plt.savefig(save_path, dpi=600)
+for fig_type in fig_types:
+    plt.savefig(save_path + f'.{fig_type}', dpi=1000)

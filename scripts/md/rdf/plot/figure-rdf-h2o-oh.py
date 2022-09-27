@@ -36,7 +36,11 @@ exp_label = 'Soper'
 x_max = 6.0
 y_max = None
 
-save_path = f'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-oh.png'
+mbml_color = '#4ABBF3'
+ref_color = '#6c757d'
+
+save_path = f'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-oh'  # No file extension
+fig_types = ['svg', 'eps']
 
 
 ###   SCRIPT   ###
@@ -85,11 +89,11 @@ fig, ax = plt.subplots(1, 1, constrained_layout=True)
 
 ax.plot(
     r_md, g_md, label='mbGDML', zorder=0,
-    linestyle='-', color='#0061AD', linewidth=2
+    linestyle='-', color=mbml_color, linewidth=2
 )
 ax.plot(
     r_exp, g_exp, label=exp_label, zorder=1,
-    linestyle=(0, (5, 4)), color='#4ABBF3', linewidth=2
+    linestyle=(0, (5, 4)), color=ref_color, linewidth=2
 )
 ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
@@ -100,4 +104,5 @@ ax.set_ylabel('g$_{OH}$($r$)')
 ax.set_ylim(ymin=0, ymax=y_max)
 
 plt.legend(frameon=False)
-plt.savefig(save_path, dpi=600)
+for fig_type in fig_types:
+    plt.savefig(save_path + f'.{fig_type}', dpi=1000)
