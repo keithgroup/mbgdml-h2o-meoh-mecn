@@ -30,11 +30,11 @@ import rmsd
 # initial - RMSD with respect to the initial structure of the same MD simulation
 # compare - Choose a reference to compute RMSD at each time step to. Reference is not included in figure.
 # compare is a superior analysis
-rmsd_type = 'initial'
+rmsd_type = 'compare'
 rmsd_ref_idx = 0
 
 fig_save_types = ['svg', 'eps']  # eps or png
-figsize = (6, 3.5)
+figsize = (6, 3.0)
 font_size = 8  # 8
 line_width = 1.4
 
@@ -198,7 +198,7 @@ for solv_key in md_npz_paths_all.keys():
     # Subplot label
     label = chr(ord('@')+(ax_idx + 1))
     ax.text(
-        0.02, 0.96,
+        0.02, 0.955,
         label,
         fontsize='large',
         fontweight='bold',
