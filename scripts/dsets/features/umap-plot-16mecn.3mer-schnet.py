@@ -38,7 +38,7 @@ colormap_errors = 'viridis'
 edge_color = 'black'
 edge_width = 0.00  # 0.05
 lighten_factor = 0.3
-figsize = (3.2, 5)  # Width and height
+figsize = (6.7, 2.7)  # Width and height
 
 n_neighbors_plot = [5, 20]
 fig_types = ['svg', 'eps']
@@ -130,7 +130,7 @@ for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
         continue
 
     fig, axes = plt.subplots(
-        2, 1, constrained_layout=True, figsize=figsize, sharex=True
+        1, 2, constrained_layout=True, figsize=figsize, sharey=True
     )
     ax1, ax2 = axes
 
@@ -183,14 +183,14 @@ for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
 
     # Subplot labels
     ax1.text(
-        0.02, 0.925,
+        0.02, 0.93,
         'A',
         fontsize='large',
         fontweight='bold',
         transform=ax1.transAxes
     )
     ax2.text(
-        0.02, 0.925,
+        0.02, 0.93,
         'B',
         fontsize='large',
         fontweight='bold',
