@@ -26,9 +26,13 @@ import numpy as np
 import os
 from reptar import File
 from reptar.parsers import parserORCA
+from mbgdml.utils import get_entity_ids, get_comp_ids
 
 
 exdir_path = 'isomers/20meoh.yao.etal.exdir'
+comp_id = 'meoh'
+atoms_per_mol = 6
+num_mol = 20
 
 out_dir = 'isomers/20meoh.yao.etal-ouputs/'
 out_paths = {
@@ -62,6 +66,9 @@ base_dir = '../../'
 data_dir = os.path.join(base_dir, 'data')
 out_dir = os.path.join(data_dir, out_dir)
 exdir_path = os.path.join(data_dir, exdir_path)
+
+entity_ids = get_entity_ids(atoms_per_mol, num_mol)
+comp_ids = get_comp_ids(comp_id, num_mol, entity_ids)
 
 # Parses data using reptar
 parsed_data = []
@@ -161,6 +168,9 @@ for data in parsed_data:
         combined_data_ccpvtz['dipole_moment_rimp2_ccpvtz'] = np.hstack(
             (combined_data_ccpvtz['dipole_moment_rimp2_ccpvtz'], data['outputs']['dipole_moment'])
         )
+
+combined_data_def2tzvp['entity_ids'] = entity_ids
+combined_data_def2tzvp['comp_ids'] = comp_ids
 
 # Adds base data from def2-TZVP calculations
 rfile = File(exdir_path, mode='w', allow_remove=True, from_dict=combined_data_def2tzvp)
