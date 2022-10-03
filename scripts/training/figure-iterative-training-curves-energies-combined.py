@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Plots force MAEs of models trained with increasing more data (in one plot)."""
+"""Plots energy RMSEs of models trained with increasing more data (in one plot)."""
 
 import numpy as np
 import os
@@ -200,10 +200,9 @@ for solvent,ax in zip(solvents, axes):
         for i_training_size in range(len(all_nbody_jsons)):
             with open(all_nbody_jsons[i_training_size], 'r') as f:
                 json_data = json.load(f)
-            loss = json_data['testing']['force']['rmse']
+            loss = json_data['testing']['energy']['rmse']
             test_loss[i_training_size] = loss  # kcal/mol
         
-
         ax.plot(
             training_sizes, test_loss,
             marker=markers[i_nbody], markersize=5,
@@ -215,22 +214,28 @@ for solvent,ax in zip(solvents, axes):
     ax.text(0.1, 0.94, panel_label, fontweight='bold', fontsize='x-large', transform=ax.transAxes)
     ax.set_xticks([200, 400, 600, 800, 1000])
 
-    ax.set_ylim(bottom=0.0)
-    y_ticks = ax.get_yticks(minor=False)
-    y_tick_max = np.true_divide(np.floor(np.max(y_ticks) * 10), 10)
-    ax.set_yticks(np.arange(start=0.0, stop=y_tick_max+0.09, step=0.1))
-    ax.set_yticks(np.arange(0.05, y_tick_max, 0.1), minor=True)
+    major_step = 0.05
+    minor_step = 0.025
+    _, y_lim_top = ax.get_ylim()
 
+    ax.set_yticks(
+        np.arange(start=0.0, stop=y_lim_top+major_step*2, step=major_step)
+    )
+    ax.set_yticks(
+        np.arange(start=minor_step, stop=y_lim_top+major_step*2, step=minor_step),
+        minor=True
+    )
+    ax.set_ylim(bottom=0.0, top=y_lim_top)
     ax.legend(frameon=False)
     
     i += 1
 
 
 axes[1].set_xlabel('Training Set Size')
-axes[0].set_ylabel('Force RMSE (kcal/(mol $\AA$))')
+axes[0].set_ylabel('Energy RMSE (kcal/mol)')
 
 
 print(f'Saving {plot_names[solvent]}')
 for image_type in image_types:
-    plt_path = os.path.join(save_dir, f'all-mbgdml-training-curves-forces.{image_type}')
+    plt_path = os.path.join(save_dir, f'all-mbgdml-training-curves-energies.{image_type}')
     plt.savefig(plt_path, dpi=1000)
