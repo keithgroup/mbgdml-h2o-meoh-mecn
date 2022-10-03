@@ -1,5 +1,7 @@
 # Many-body machine learning potentials for water, acetonitrile, and methanol
 
+![GitHub repo size](https://img.shields.io/github/repo-size/keithgroup/mbgdml-h2o-meoh-mecn)
+
 Data sets, scripts, and analyses of many-body machine learning (mbML) potentials for water, acetonitrile, and methanol.
 
 ## Manifest
