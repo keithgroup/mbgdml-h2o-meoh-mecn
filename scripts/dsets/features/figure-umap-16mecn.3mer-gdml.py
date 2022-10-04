@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""3mecn energy and geometry metric plot for GDML"""
+"""3mecn energy and geometry descriptor plot for GDML"""
 
 import numpy as np
 import os
@@ -199,7 +199,7 @@ for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
     )
     fig.colorbar(
         mpl.cm.ScalarMappable(norm=norm_geom, cmap=cmap_geom), ax=ax2,
-        label='Geometry metric', location='right', ticks=None
+        label='Geometry descriptor', location='right', ticks=None
     )
 
     # Subplot labels

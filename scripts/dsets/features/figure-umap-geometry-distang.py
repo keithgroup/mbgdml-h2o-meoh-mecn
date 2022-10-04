@@ -134,7 +134,7 @@ for system_label in system_labels:
             if n_nbr not in n_neighbors_plot:
                 continue
 
-            fig, ax = plt.subplots(1, 1, constrained_layout=True)
+            fig, ax = plt.subplots(1, 1, constrained_layout=True, figsize=(3.2, 3.0))
             
             ax.scatter(
                 embedding[:, 0][idxs_train], embedding[:, 1][idxs_train],
@@ -156,7 +156,7 @@ for system_label in system_labels:
             plt.gca().set_aspect('equal', 'datalim')
             fig.colorbar(
                 mpl.cm.ScalarMappable(norm=norm, cmap=cmap), ax=ax,
-                label='Geometry metric', location='right', ticks=None
+                label='Geometry descriptor', location='right', ticks=None
             )
 
             for fig_type in fig_types:
