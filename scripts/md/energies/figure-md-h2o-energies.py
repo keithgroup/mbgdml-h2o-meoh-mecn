@@ -22,6 +22,7 @@
 
 """Plots the RMSDs of MD simulations"""
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -31,7 +32,7 @@ from scipy.signal import savgol_filter
 fig_save_type = 'svg'  # eps or png
 figsize = (6, 6)
 font_size = 18  # 8
-line_width = 2.5
+line_width = 1.5
 
 save = True
 plot_name = '6h2o-ase.md-energies'
@@ -79,6 +80,15 @@ alphas = [
     m_alpha,
     m_alpha,
 ]
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../../fonts/roboto']
+rc_json_path = '../../matplotlib-rc-params.json'
+
+
+
+
 
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
@@ -143,10 +153,20 @@ for E_rel in E_rel_data:
 
 
 # Plotting figure
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : font_size}
-plt.rc('font', **font)
+
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
+
 
 fig, ax = plt.subplots(1, 1 , figsize=figsize, constrained_layout=True)
 

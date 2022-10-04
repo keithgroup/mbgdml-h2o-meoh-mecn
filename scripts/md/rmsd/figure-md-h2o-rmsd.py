@@ -22,6 +22,7 @@
 
 """Plots the RMSDs of hexamer MD simulations"""
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -33,9 +34,8 @@ rmsd_type = 'compare'
 rmsd_ref_idx = 0
 
 fig_save_type = 'svg'  # eps or png
-figsize = (6, 6)
-font_size = 18  # 8
-line_width = 2.5
+figsize = (3.2, 3.2)
+line_width = 1.5
 
 save = True
 plot_name = '6h2o-ase.md-rmsd'
@@ -61,6 +61,16 @@ labels = [
     'GFN2-xTB'
 ]
 colors = ['#343a40', '#6c757d', '#ced4da', '#03045e', '#0077b6', '#90e0ef', '#FFE7BE']
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../../fonts/roboto']
+rc_json_path = '../../matplotlib-rc-params.json'
+
+
+
+
+
 
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
@@ -146,10 +156,19 @@ elif rmsd_type == 'compare':
 
 
 # Plotting figure
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : font_size}
-plt.rc('font', **font)
+
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
 
 fig, ax = plt.subplots(1, 1 , figsize=figsize, constrained_layout=True)
 
@@ -177,7 +196,7 @@ ax.set_xlabel('Time (fs)')
 ax.set_xlim(xmin=0)
 
 # Y axis
-ax.set_ylabel('RMSD ($\AA$)')
+ax.set_ylabel('RMSD (Ang.)')
 ax.set_ylim(ymin=0)
 
 ax.legend(frameon=False)

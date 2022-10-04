@@ -24,12 +24,13 @@
 
 import numpy as np
 import os
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.data import predictSet
 import json
 
 solvents = ['h2o', 'mecn', 'meoh']  # 'h2o', 'mecn', 'meoh'
-save_dir = '../../analysis/training/'
+save_dir = '../../analysis/training/forces/'
 image_types = ['svg', 'eps', 'png']
 
 
@@ -39,6 +40,7 @@ image_types = ['svg', 'eps', 'png']
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.makedirs(save_dir, exist_ok=True)
 
 # Plot names
 plot_names = {
@@ -169,23 +171,36 @@ mbgdml_colors = {
 }
 ref_color = 'silver'
 
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../fonts/roboto']
+rc_json_path = '../matplotlib-rc-params.json'
+
 
 
 ##################
 ###   FIGURE   ###
 ##################
 
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : 8}
-plt.rc('font', **font)
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
 
 include_ref_values = False
 
 line_styles = ['-', 'dashed', (0, (5, 10))]
 markers = ['o', 's', '^']
 
-fig, axes = plt.subplots(1, len(solvents), figsize=(6.5, 3.5), constrained_layout=True)
+fig, axes = plt.subplots(1, len(solvents), figsize=(6.5, 3.2), constrained_layout=True)
 
 i = 1
 for solvent,ax in zip(solvents, axes):

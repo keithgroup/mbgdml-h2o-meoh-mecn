@@ -16,6 +16,7 @@ Due to [GitHub file size limitations](https://docs.github.com/en/repositories/wo
 The resulting models are [archived on Zenodo](https://doi.org/10.5281/zenodo.7112163).
 - `scripts`: all Python scripts used to prepare the manuscript.
 This includes scripts to train models, run molecular dynamics simulations, convert file types, analyze model predictions, create plots, etc.
+All Python scripts that generate figures with matplotlib are labeled with a `figure-` prefix.
 - `analysis`: mainly figures used for the results and discussion along with some postprocessing data.
 
 ## Reproducibility

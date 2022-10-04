@@ -24,13 +24,21 @@
 
 import numpy as np
 import os
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.data import predictSet
 import json
 
 solvents = ['h2o', 'mecn', 'meoh']  # 'h2o', 'mecn', 'meoh'
-save_dir = '../../analysis/training/'
+save_dir = '../../analysis/training/energies/'
 image_types = ['svg', 'eps', 'png']
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../fonts/roboto']
+rc_json_path = '../matplotlib-rc-params.json'
+
+
 
 
 
@@ -178,10 +186,18 @@ ref_color = 'silver'
 ###   FIGURE   ###
 ##################
 
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : 8}
-plt.rc('font', **font)
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
 
 include_ref_values = False
 
@@ -189,7 +205,7 @@ line_styles = ['-', 'dashed', (0, (5, 10))]
 markers = ['o', 's', '^']
 
 for solvent in solvents:
-    fig, ax = plt.subplots(1, 1, figsize=(3.5, 3.5), constrained_layout=True)
+    fig, ax = plt.subplots(1, 1, figsize=(3.2, 3.2), constrained_layout=True)
 
     color = mbgdml_colors[solvent]
 

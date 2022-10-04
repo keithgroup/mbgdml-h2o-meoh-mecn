@@ -25,6 +25,7 @@
 import json
 import os
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.utils import get_files
 
@@ -40,12 +41,17 @@ json_paths = {
     1000: 'training-logs/meoh/2meoh.mb/gap/itertrain/train1000/find_problematic_indices.json',
 }
 
-save_dir = 'analysis/training/'
+save_dir = 'analysis/training/meoh-al/'
 plot_name = '2meoh.mb-gap-itertrain-force-mse'
 fig_types = ['png']
 
 ref_force_rmse = 0.2812708408394224  # kcal/(mol A)
 ref_force_mse = ref_force_rmse**2
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../fonts/roboto']
+rc_json_path = '../matplotlib-rc-params.json'
 
 
 
@@ -60,11 +66,6 @@ os.makedirs(save_dir, exist_ok=True)
 
 
 # FIGURE #
-
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : 8}
-plt.rc('font', **font)
 
 mbgdml_colors = {
     'h2o': '#4ABBF3',
@@ -90,7 +91,19 @@ train_set_sizes = np.array(train_set_sizes)
 force_mses = np.array(force_mses)
 
 print('Making plot')
-fig, ax = plt.subplots(1, 1, figsize=(3.5, 3), constrained_layout=True)
+# Setup matplotlib style
+if use_rc_params:
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
+
+fig, ax = plt.subplots(1, 1, figsize=(3.2, 3.2), constrained_layout=True)
 
 ax.plot(
     train_set_sizes, force_mses, label=None,

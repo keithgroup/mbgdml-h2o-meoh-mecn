@@ -23,6 +23,7 @@
 import os
 from copy import copy
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.data import dataSet, predictSet
 from mbgdml.mbe import mbe_contrib
@@ -73,6 +74,11 @@ pset_paths = {
         6: 'meoh/gdml/6meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-gdml.train1000.npz',
     }
 }
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../fonts/roboto']
+rc_json_path = '../matplotlib-rc-params.json'
 
 
 
@@ -170,13 +176,22 @@ mbe_colors = {
 }
 ref_color = 'silver'
 
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
+
+
 
 # FIGURE #
-
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : 8}
-plt.rc('font', **font)
 
 include_ref_values = False
 

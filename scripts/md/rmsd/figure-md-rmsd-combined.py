@@ -22,6 +22,7 @@
 
 """Plots the RMSDs of hexamer MD simulations for all solvents."""
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -30,13 +31,12 @@ import rmsd
 # initial - RMSD with respect to the initial structure of the same MD simulation
 # compare - Choose a reference to compute RMSD at each time step to. Reference is not included in figure.
 # compare is a superior analysis
-rmsd_type = 'compare'
+rmsd_type = 'initial'
 rmsd_ref_idx = 0
 
 fig_save_types = ['svg', 'eps']  # eps or png
-figsize = (6, 3.0)
-font_size = 8  # 8
-line_width = 1.4
+figsize = (6, 3.2)
+line_width = 1.5
 
 save = True
 plot_name = '6mer-ase.md-rmsd-all'
@@ -78,6 +78,16 @@ colors_all = {
     'meoh': ['#343a40', '#6c757d', '#ced4da', '#590d22', '#a4133c', '#ff8fa3', '#FFE7BE'],
 }
 
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../../fonts/roboto']
+rc_json_path = '../../matplotlib-rc-params.json'
+
+
+
+
+
+
 ###   SCRIPT   ###
 # Ensures we execute from script directory (for relative paths).
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -118,10 +128,19 @@ def calc_rmsd(R_ref, R):
 
 
 # Plotting figure
-# Setting up general figure properties
-font = {'family' : 'sans-serif',
-        'size'   : font_size}
-plt.rc('font', **font)
+
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
 
 fig, axes = plt.subplots(1, 3, figsize=figsize, constrained_layout=True, sharey=True)
 
@@ -213,7 +232,7 @@ for solv_key in md_npz_paths_all.keys():
 axes[1].set_xlabel('Time (fs)')
 
 # Y axis
-axes[0].set_ylabel('RMSD ($\AA$)')
+axes[0].set_ylabel('RMSD (Ang.)')
 axes[0].set_ylim(ymin=0)
 
 axes[0].legend(frameon=False)

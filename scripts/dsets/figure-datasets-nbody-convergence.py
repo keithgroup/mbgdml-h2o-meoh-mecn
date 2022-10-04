@@ -23,6 +23,7 @@
 import os
 import math
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.data import dataSet
 from mbgdml.criteria import cm_distance_sum
@@ -93,11 +94,17 @@ plot_data = {
 save_dir = 'analysis/nbody-energy-wrt-l'
 
 solvent_colors = {'h2o': '#4ABBF3', 'mecn': '#61BFA3', 'meoh': '#FFB5BA'}
-cluster_num_color = 'silver'
+cluster_num_color = '#7D7D7D'
 
 cutoff_grid_step = 0.01
 desired_percent_error = 0.01  # None or float (e.g., 0.01)
 desired_energy_error = None  # None or float
+
+# More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
+use_rc_params = True
+font_dirs = ['../../fonts/roboto']
+rc_json_path = '../matplotlib-rc-params.json'
+
 
 
 
@@ -112,6 +119,20 @@ os.makedirs(save_dir, exist_ok=True)
 
 hartree2kcalmol = 627.5094737775374055927342256  # Psi4 constant
 hartree2ev = 27.21138602  # Psi4 constant
+
+# Setup matplotlib style
+if use_rc_params:
+    import json
+    with open(rc_json_path, 'r') as f:
+        rc_params = json.load(f)
+    font_paths = mpl.font_manager.findSystemFonts(
+        fontpaths=font_dirs, fontext='ttf'
+    )
+    for font_path in font_paths:
+        mpl.font_manager.fontManager.addfont(font_path)
+    for key, params in rc_params.items():
+        plt.rc(key, **params)
+
 
 for plot_name, data in plot_data.items():
     print(f'Working on {plot_name}')
@@ -177,10 +198,6 @@ for plot_name, data in plot_data.items():
     print(f'Energy error at cutoff: {nbody_energy_error_wrt_L[L_cutoff]:.3f}')
 
     ###   FIGURE   ###
-    # Setting up general figure properties
-    font = {'family' : 'sans-serif',
-            'size'   : 8}
-    plt.rc('font', **font)
 
     fig, ax = plt.subplots(1, 1 , figsize=(3.5, 2.6), constrained_layout=True)
 
@@ -205,7 +222,7 @@ for plot_name, data in plot_data.items():
     )
 
     # Axis labels
-    ax.set_xlabel('$L$ cutoff ($\AA$)')
+    ax.set_xlabel('L cutoff (Ang.)')
     ax.set_ylabel(f'{mb_order}-body energy (kcal/mol)', color=color)
     ax2.set_ylabel(f'Number of clusters', color=cluster_num_color)
 

@@ -96,7 +96,7 @@ for plot_key, data in plot_data.items():
     bin_width = bin_edges[1] - bin_edges[0]
 
     # X axis
-    plt.xlabel('$L$ ($\AA$)')
+    plt.xlabel('$L$ (Ang.)')
     plt.xlim((bin_edges[0] - bin_width, bin_edges[-1] + bin_width))
 
     # Y axis
