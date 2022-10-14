@@ -156,14 +156,16 @@ for model_key, pset_data in systems_dict.items():
 
         E_true = pset.E_true
         F_true = pset.F_true
+
         E_pred, F_pred = pset.nbody_predictions([1, 2, 3])
         E_error = E_pred - E_true
-        E_error_per_monomer = E_error/n_monomers
         F_error = np.ravel(F_pred-F_true)
-        F_error_per_atom = F_error/n_atoms
         if pset.e_unit.lower() == 'ev':
             E_error *= ev2kcalmol
             F_error *= ev2kcalmol
+        F_error_per_atom = F_error/n_atoms
+        E_error_per_monomer = E_error/n_monomers
+
         E_errors.extend(E_error.tolist())
         E_errors_per_monomer.extend(E_error_per_monomer.tolist())
         F_errors.extend(F_error.tolist())
