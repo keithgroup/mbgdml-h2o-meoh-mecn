@@ -118,7 +118,7 @@ ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 ax.set_xlabel('r (Ang.)')
 ax.set_xlim(0, r_max)
 
-ax.set_ylabel('g$\mathregular{_{HH}}$(r)')
+ax.set_ylabel('g$\mathregular{_{OH}}$(r)')
 ax.set_ylim(ymin=0)
 
 plt.legend(frameon=False)
