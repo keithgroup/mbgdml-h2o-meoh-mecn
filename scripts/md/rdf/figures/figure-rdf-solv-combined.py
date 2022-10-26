@@ -35,8 +35,9 @@ rdf_info = {
         'npz_path': 'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-oo.npz',
         'exp_path': 'external/md/h2o-rdf/soper2013radial.csv',
         'exp_csv_label': 'goo',
-        'exp_label': 'Soper',
-        'solv_label': 'H$\mathregular{_2}$O',
+        'exp_label': 'Reference',  # Soper
+        'comp_label': 'mbGDML',
+        'solv_label': 'H$_2$O',
         'r_max': 8.0,
         'mbml_color': '#4ABBF3',
         'plot_ylabel': 'g$\mathregular{_{OO}}$(r)',
@@ -45,9 +46,10 @@ rdf_info = {
         'npz_path': 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-nn.npz',
         'exp_path': 'external/md/mecn-rdf/hernandez2020general-fig7-nn.csv',
         'exp_csv_label': 'g',
-        'exp_label': 'Hernández-Cobos et al.',
+        'exp_label': 'Reference',  # Hernández-Cobos et al.
+        'comp_label': 'mbGDML',
         'solv_label': 'MeCN',
-        'r_max': 9.0,
+        'r_max': 8.0,
         'mbml_color': '#61BFA3',
         'plot_ylabel': 'g$\mathregular{_{NN}}$(r)',
     },
@@ -55,7 +57,8 @@ rdf_info = {
         'npz_path': 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oo.npz',
         'exp_path': 'external/md/meoh-rdf/yamaguchi1999structure-fig6-oo.csv',
         'exp_csv_label': 'g',
-        'exp_label': 'Yamaguchi et al.',
+        'exp_label': 'Reference',  # Yamaguchi et al.
+        'comp_label': 'mbGDML',
         'solv_label': 'MeOH',
         'r_max': 8.0,
         'mbml_color': '#FFB5BA',
@@ -132,16 +135,17 @@ for i in range(len(keys_order)):
     g_exp = df[solv_info['exp_csv_label']].values
 
     ax.plot(
-        r_md, g_md, label=solv_info['solv_label'], zorder=0,
+        r_md, g_md, label=solv_info['comp_label'], zorder=0,
         linestyle='-', color=solv_info['mbml_color'], linewidth=linewidth
     )
     ax.plot(
-        r_exp, g_exp, label=None, zorder=1,
+        r_exp, g_exp, label=solv_info['exp_label'], zorder=1,
         linestyle=(0, (5, 4)), color=ref_color, linewidth=linewidth
     )
     ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
-    ax.legend(loc='lower right', frameon=False)
+    if i == 0:
+        ax.legend(loc='lower right', frameon=False)
 
     ax.set_xlim(0, solv_info['r_max'])
 
@@ -163,6 +167,14 @@ for i in range(len(keys_order)):
         label,
         fontsize='large',
         fontweight='bold',
+        transform=ax.transAxes
+    )
+
+    ax.text(
+        0.02, 0.04,
+        solv_info['solv_label'],
+        fontsize='medium',
+        fontweight='normal',
         transform=ax.transAxes
     )
 
