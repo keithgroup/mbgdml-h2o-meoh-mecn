@@ -24,7 +24,7 @@ import json
 import numpy as np
 import os
 from reptar import File
-from mbgdml.predict import gdmlModel
+from mbgdml.models import gdmlModel
 from mbgdml.data import predictSet
 from mbgdml.analysis.models import gdml_mat52
 from reptar.descriptors import criteria, com_distance_sum

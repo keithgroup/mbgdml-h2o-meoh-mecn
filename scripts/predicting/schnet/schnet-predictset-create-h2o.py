@@ -28,7 +28,8 @@ import os
 from reptar import File
 import time
 from mbgdml.data import predictSet
-from mbgdml.predict import schnetModel, predict_schnet_decomp
+from mbgdml.models import schnetModel
+from mbgdml.predictors import predict_schnet_decomp
 from mbgdml.criteria import cm_distance_sum
 
 overwrite = True

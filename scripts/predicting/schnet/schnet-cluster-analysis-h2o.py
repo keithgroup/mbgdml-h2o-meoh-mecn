@@ -31,7 +31,8 @@ from mbgdml.analysis.clustering import get_clustered_data, get_cluster_losses, c
 from mbgdml.analysis.problematic import prob_structures
 from mbgdml.data import dataSet
 from mbgdml.mbe import mbePredict
-from mbgdml.predict import predict_schnet, schnetModel
+from mbgdml.models import schnetModel
+from mbgdml.predictors import predict_schnet
 
 model_path = 'h2o/3h2o/schnet/3h2o.mb-niter5.nfeat128.cut10-train1000.pt'
 clustering_file_path = 'h2o/3h2o.mb/gdml/train1000/find_problematic_indices.json'

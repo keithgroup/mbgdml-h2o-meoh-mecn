@@ -28,7 +28,8 @@ import os
 import numpy as np
 from reptar import File
 from mbgdml.mbe import mbePredict
-from mbgdml.predict import schnetModel, predict_schnet
+from mbgdml.models import schnetModel
+from mbgdml.predictors import predict_schnet
 from mbgdml.criteria import cm_distance_sum
 
 model_path = 'h2o/2h2o/schnet/2h2o.mb-niter5.nfeat128.cut10-train1000.pt'

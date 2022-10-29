@@ -29,7 +29,8 @@ import os
 from reptar import File
 import time
 import torch
-from mbgdml.predict import schnetModel, predict_schnet
+from mbgdml.models import schnetModel
+from mbgdml.predictors import predict_schnet
 from mbgdml.criteria import cm_distance_sum
 import schnetpack
 

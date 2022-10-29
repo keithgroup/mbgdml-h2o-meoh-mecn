@@ -28,7 +28,8 @@ import os
 from reptar import File
 import time
 from mbgdml.data import predictSet
-from mbgdml.predict import gdmlModel, predict_gdml_decomp
+from mbgdml.models import gdmlModel
+from mbgdml.predictors import predict_gdml_decomp
 from mbgdml.criteria import cm_distance_sum
 
 save = True

@@ -28,7 +28,8 @@ import os
 from reptar import File
 import time
 from mbgdml.data import predictSet
-from mbgdml.predict import gapModel, predict_gap_decomp
+from mbgdml.models import gapModel
+from mbgdml.predictors import predict_gap_decomp
 from mbgdml.criteria import cm_distance_sum
 
 overwrite = True

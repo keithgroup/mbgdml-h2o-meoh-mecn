@@ -27,7 +27,8 @@ import os
 import numpy as np
 from reptar import File
 from mbgdml.mbe import mbePredict
-from mbgdml.predict import schnetModel, predict_schnet
+from mbgdml.models import schnetModel
+from mbgdml.predictors import predict_schnet
 from mbgdml.criteria import cm_distance_sum
 
 model_paths = [

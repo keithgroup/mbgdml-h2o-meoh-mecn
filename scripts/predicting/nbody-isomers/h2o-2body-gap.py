@@ -28,7 +28,8 @@ import os
 import numpy as np
 from reptar import File
 from mbgdml.mbe import mbePredict
-from mbgdml.predict import gapModel, predict_gap
+from mbgdml.models import gapModel
+from mbgdml.predictors import predict_gap
 from mbgdml.criteria import cm_distance_sum
 
 model_path = 'h2o/2h2o/gap/2h2o.mb-gap.xml'

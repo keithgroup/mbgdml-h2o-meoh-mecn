@@ -1,7 +1,8 @@
 from mbgdml.analysis.problematic import prob_structures
 from mbgdml.criteria import cm_distance_sum
 from mbgdml.data import dataSet
-from mbgdml.predict import gapModel, predict_gap
+from mbgdml.models import gapModel
+from mbgdml.predictors import predict_gap
 import numpy as np
 import os
 

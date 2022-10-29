@@ -28,7 +28,8 @@ import os
 import numpy as np
 from reptar import File
 from mbgdml.mbe import mbePredict
-from mbgdml.predict import gdmlModel, predict_gdml
+from mbgdml.models import gdmlModel
+from mbgdml.predictors import predict_gdml
 from mbgdml.criteria import cm_distance_sum
 
 model_path = 'h2o/3h2o/gdml/140h2o.sphere.gfn2.md.500k.prod1.3h2o.cm10-model.mb-train1000.npz'
