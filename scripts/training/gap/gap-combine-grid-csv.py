@@ -50,6 +50,7 @@ def get_files(path, expression, recursive=True):
                 files.append(path + f)
     return files
 
+# Custom function to accept different validation results.
 def loss_f_e_weighted_mse(results, rho, n_atoms):
     r"""Computes a combined energy and force loss function.
 

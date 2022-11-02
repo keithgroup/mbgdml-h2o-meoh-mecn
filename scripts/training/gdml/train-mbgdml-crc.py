@@ -25,7 +25,8 @@
 import os
 import numpy as np
 from mbgdml.data import dataSet
-from mbgdml.train import mbGDMLTrain, loss_f_e_weighted_mse
+from mbgdml.train import mbGDMLTrain
+from mbgdml.losses import loss_f_e_weighted_mse
 
 # Setting paths.
 # dset_path: Path to dataset to train on.
