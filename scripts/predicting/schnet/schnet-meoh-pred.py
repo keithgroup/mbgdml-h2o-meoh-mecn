@@ -31,7 +31,6 @@ import time
 import torch
 from mbgdml.models import schnetModel
 from mbgdml.predictors import predict_schnet
-from mbgdml.criteria import cm_distance_sum
 import schnetpack
 
 overwrite = True
@@ -55,13 +54,13 @@ n_cores = None
 jobs = [
     # Training sets
     # 4mer isomers
-    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '4meoh', 'nbody_orders': [1, 2, 3], 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '4meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
+    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '4meoh', 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '4meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
     # 5mer isomers
-    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '5meoh', 'nbody_orders': [1, 2, 3], 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '5meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
+    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '5meoh', 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '5meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
     # 6mer isomers
-    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '6meoh', 'nbody_orders': [1, 2, 3], 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '6meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
+    {'dset_path': 'isomers/meoh-boyd.etal.exdir', 'group_key': '6meoh', 'E_key': 'energy_ele_mp2.def2tzvp_orca', 'F_key': 'grads_mp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '6meoh.boyd.etal-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
     # 16mer
-    {'dset_path': 'isomers/16meoh-pires.deturi.exdir', 'group_key': '', 'nbody_orders': [1, 2, 3], 'E_key': 'energy_ele_rimp2.def2tzvp_orca', 'F_key': 'grads_rimp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '16meoh.pires.deturi-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
+    {'dset_path': 'isomers/16meoh-pires.deturi.exdir', 'group_key': '', 'E_key': 'energy_ele_rimp2.def2tzvp_orca', 'F_key': 'grads_rimp2.def2tzvp_orca', 'save_dir': 'data/psets/meoh/gap', 'name': '16meoh.pires.deturi-pset-62meoh.sphere.gfn2.md.500k.prod1-schnet.niter5.nfeat128.best.train1000'},
 ]
 
 model_path = 'meoh/meoh-model-schnet.niter5.cut10.ngauss100.pt'
@@ -138,11 +137,8 @@ for job in jobs:
 
     t_start = time.time()
 
-    print(f'Loading {len(nbody_idxs)} model(s)')
-    model = schnetModel(
-        model_path, ['meoh'], device,
-        criteria_desc_func=None, criteria_cutoff=None
-    )
+    print(f'Loading model')
+    model = schnetModel(model_path, ['meoh'], device)
 
     
 

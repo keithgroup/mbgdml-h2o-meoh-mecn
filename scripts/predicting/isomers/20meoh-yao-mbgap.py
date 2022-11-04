@@ -29,7 +29,8 @@ from reptar import File
 from mbgdml.mbe import mbePredict
 from mbgdml.models import gapModel
 from mbgdml.predictors import predict_gap
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 
 model_paths = [
     'meoh/1meoh/gap/1meoh-gap.xml',
@@ -43,8 +44,17 @@ in_ev = True  # GAP and SchNet models are in eV
 # H2O     |   6    |   10   |
 # MeCN    |   9    |   17   |
 # MeOH    |   8    |   14   |
-mb_cutoffs = [None, 8.0, 14.0]
+model_desc_cutoffs = (None, 8.0, 14.0)
 models_comp_ids = [['meoh'], ['meoh', 'meoh'], ['meoh', 'meoh', 'meoh']]
+model_desc_kwargs = (
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=1)},  # 1meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=2)},  # 2meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=3)},  # 3meoh
+)
+model_criterias = [
+    Criteria(com_distance_sum, desc_kwargs, cutoff) for desc_kwargs,cutoff \
+    in zip(model_desc_kwargs, model_desc_cutoffs)
+]
 all_data_keys = {
     'yao': {
         'rfile_path': 'isomers/20meoh.yao.etal.exdir',
@@ -78,12 +88,11 @@ model_paths = [os.path.join(model_dir, model_path) for model_path in model_paths
 
 # Setup mbML predictor
 # Initialize model
-models = [
-    gapModel(
-        model_path, model_comp_ids, criteria_desc_func=cm_distance_sum,
-        criteria_cutoff=mb_cutoff
-    ) for model_path, model_comp_ids, mb_cutoff in zip(model_paths, models_comp_ids, mb_cutoffs)
-]
+models = []
+for i in range(len(model_paths)):
+    models.append(
+        gapModel(model_paths[i], model_comp_ids, criteria=model_criterias[i])
+    )
 mbpred = mbePredict(models, predict_gap)
 
 for key in all_data_keys:

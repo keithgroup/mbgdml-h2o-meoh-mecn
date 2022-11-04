@@ -59,8 +59,8 @@ hartree2kcalmol = 627.5094737775374055927342256  # Psi4 constant
 hartree2ev = 27.21138602  # Psi4 constant
 ev2kcalmol = hartree2kcalmol/hartree2ev
 
-dset = dataSet(dset_path)
-z = dset.z
+dset = dataSet(dset_path, Z_key='z')
+z = dset.Z
 R = dset.R
 entity_ids = dset.entity_ids
 comp_ids = dset.comp_ids

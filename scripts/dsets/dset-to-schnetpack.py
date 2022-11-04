@@ -26,7 +26,8 @@ import os
 import numpy as np
 from reptar import File
 from reptar.writers import write_schnetpack_db
-from reptar.descriptors import criteria, com_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 
 # Reptar file to read
 exdir_path = '62meoh-xtb.md-samples.exdir'
@@ -34,7 +35,7 @@ exdir_path = '62meoh-xtb.md-samples.exdir'
 # Many-body dataset to write
 save_path = 'meoh/schnetpack/62meoh.sphere.gfn2.md.500k.prod1-dset-all.db'
 
-group_name = '3meoh'
+group_key = '3meoh'
 energy_key = 'energy_ele_mp2.def2tzvp_orca'
 grad_key = 'grads_mp2.def2tzvp_orca'
 
@@ -64,17 +65,18 @@ save_path = os.path.join(save_dir, save_path)
 
 print(f'Loading {exdir_path}')
 rfile = File(exdir_path, mode='r')
-Z = rfile.get(f'{group_name}/atomic_numbers')
-R = rfile.get(f'{group_name}/geometry')
-E = rfile.get(f'{group_name}/{energy_key}')  # Eh
+Z = rfile.get(f'{group_key}/atomic_numbers')
+R = rfile.get(f'{group_key}/geometry')
+E = rfile.get(f'{group_key}/{energy_key}')  # Eh
 E *= hartree2ev  # eV
-G = rfile.get(f'{group_name}/{grad_key}')  # Eh/A
+G = rfile.get(f'{group_key}/{grad_key}')  # Eh/A
 G *= hartree2ev  # eV/A
 F = -G
 
 if use_criteria:
-    desc_args = (rfile.get(f'{group_name}/{dkey}') for dkey in desc_arg_keys)
-    _, R_idxs = criteria(com_distance_sum, desc_args, cutoff)
+    desc_kwargs = {'entity_ids': rfile.get(f'{group_key}/entity_ids')}
+    r_criteria = Criteria(com_distance_sum, desc_kwargs, cutoff)
+    R_idxs, _ = r_criteria.accept(Z, R)
     R = R[R_idxs]
     E = E[R_idxs]
     F = F[R_idxs]

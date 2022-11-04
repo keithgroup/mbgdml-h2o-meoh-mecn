@@ -26,7 +26,7 @@ import numpy as np
 import os
 from reptar import File
 from mbgdml.data import predictSet
-from reptar.descriptors import criteria, com_distance_sum
+from reptar.descriptors import Criteria, com_distance_sum
 import schnetpack as spk
 import torch
 import umap
@@ -136,8 +136,11 @@ for i in range(len(data_paths)):
 
     if only_train:
         if i == dset_idx:
-            desc_args = (Z, R, entity_ids)
-            _, R_idxs = criteria(com_distance_sum, desc_args, cutoff)
+            desc_kwargs = {
+                'entity_ids': rfile.get(f'{group_key}/entity_ids')
+            }
+            r_criteria = Criteria(com_distance_sum, desc_kwargs, cutoff)
+            R_idxs, _ = r_criteria.accept(Z, R)
             R = R[R_idxs][train_idxs]
             E = E[R_idxs][train_idxs]
             G = G[R_idxs][train_idxs]

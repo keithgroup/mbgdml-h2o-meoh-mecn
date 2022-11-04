@@ -28,7 +28,8 @@ import os
 import numpy as np
 from reptar import File
 from reptar.writers import write_xyz_gap
-from reptar.descriptors import criteria, com_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 from reptar.utils import find_parent_r_idxs
 
 # Reptar file to read
@@ -56,8 +57,8 @@ lattice = np.array(
 )
 
 use_criteria = True
-desc_arg_keys = ('atomic_numbers', 'geometry', 'entity_ids')
 cutoff = 8.0
+
 
 
 
@@ -94,8 +95,11 @@ G *= hartree2ev  # eV/A
 F = -G
 
 if use_criteria:
-    desc_args = (rfile.get(f'{group_key}/{dkey}') for dkey in desc_arg_keys)
-    _, R_idxs = criteria(com_distance_sum, desc_args, cutoff)
+    desc_kwargs = {
+        'entity_ids': rfile.get(f'{group_key}/entity_ids')
+    }
+    r_criteria = Criteria(com_distance_sum, desc_kwargs, cutoff)
+    R_idxs, _ = r_criteria.accept(Z, R)
     R = R[R_idxs]
     E = E[R_idxs]
     F = F[R_idxs]
@@ -107,7 +111,6 @@ test_idxs = np.load(test_idxs_path)
 
 
 print(f'Writing {save_path}')
-
 if use_idxs:
     for xyz_label,idxs in zip(
         ('-train', '-valid', '-test'),

@@ -30,10 +30,11 @@ import time
 from mbgdml.data import predictSet
 from mbgdml.models import schnetModel
 from mbgdml.predictors import predict_schnet_decomp
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 
-overwrite = True
-save = True
+save = False
+overwrite = False
 theory = 'mp2.def2tzvp.frozencore'
 r_unit = 'Angstrom'
 e_unit = 'eV'
@@ -82,8 +83,6 @@ model_paths = [
     'meoh/2meoh/schnet/2meoh.mb-niter5.nfeat128.cut10-train1000.pt',
     'meoh/3meoh/schnet/3meoh.mb-niter5.nfeat128.cut10-train1000.pt',
 ]
-model_comp_ids = [['meoh'], ['meoh', 'meoh'], ['meoh', 'meoh', 'meoh']]
-cutoffs = [None, 8.0, 14.0]
 device = 'cpu'
 
 
@@ -101,6 +100,17 @@ model_dir = '../../../../mbgdml-h2o-meoh-mecn-models'
 
 model_paths = [
     os.path.join(model_dir, model_path) for model_path in model_paths
+]
+model_comp_ids = [['meoh'], ['meoh', 'meoh'], ['meoh', 'meoh', 'meoh']]
+model_desc_kwargs = (
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=1)},  # 1meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=2)},  # 2meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=3)},  # 3meoh
+)
+model_desc_cutoffs = (None, 8.0, 14.0)
+model_criterias = [
+    Criteria(com_distance_sum, desc_kwargs, cutoff) for desc_kwargs,cutoff \
+    in zip(model_desc_kwargs, model_desc_cutoffs)
 ]
 
 if save:
@@ -161,7 +171,7 @@ for job in jobs:
     pset = predictSet()
 
     print(f'Loading the {dset_path} data set')
-    pset.load_dataset(dset)
+    pset.load_dataset(dset, Z_key='z')
 
     print(f'Loading {len(nbody_idxs)} model(s)')
     models = []
@@ -169,7 +179,7 @@ for job in jobs:
         models.append(
             schnetModel(
                 model_paths[i], model_comp_ids[i], device,
-                criteria_desc_func=cm_distance_sum, criteria_cutoff=cutoffs[i]
+                criteria=model_criterias[i]
             )
         )
     pset.load_models(

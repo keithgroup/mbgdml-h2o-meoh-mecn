@@ -47,7 +47,7 @@ for file_path in file_paths:
     except KeyError:
         continue
     if npz_type == 'd':
-        data = dataSet(file_path)
+        data = dataSet(file_path, Z_key='z')
     elif npz_type == 's':
         data = structureSet(file_path)
     else:

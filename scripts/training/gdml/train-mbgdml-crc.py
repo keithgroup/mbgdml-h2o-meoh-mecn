@@ -81,7 +81,7 @@ parent_dir = '../../../'
 dset_dir = f'{parent_dir}/data/ml-dsets'
 dset_path = os.path.join(dset_dir, dset_path)
 
-dset = dataSet(dset_path)
+dset = dataSet(dset_path, Z_key='z')
 loss_kwargs['n_atoms'] = dset.n_z
 
 if model0_path is not None:

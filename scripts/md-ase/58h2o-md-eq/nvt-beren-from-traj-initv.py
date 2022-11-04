@@ -30,7 +30,7 @@ from ase import units
 from mbgdml.mbe import mbePredict
 from mbgdml.models import gdmlModel
 from mbgdml.predictors import predict_gdml
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
 from mbgdml.periodic import Cell
 from mbgdml.interfaces.ase import mbeCalculator
 from mbgdml.utils import get_entity_ids, get_comp_ids
@@ -90,12 +90,21 @@ model_paths = [
 ]
 
 # Prepares models
+model_desc_kwargs = (
+    {'entity_ids': get_entity_ids(atoms_per_mol=3, num_mol=1)},  # 1h2o
+    {'entity_ids': get_entity_ids(atoms_per_mol=3, num_mol=2)},  # 2h2o 
+    {'entity_ids': get_entity_ids(atoms_per_mol=3, num_mol=3)},  # 3h2o
+)
+model_desc_cutoffs = (None, 6.0, 10.0)
+model_criterias = [
+    Criteria(com_distance_sum, desc_kwargs, cutoff) for desc_kwargs,cutoff \
+    in zip(model_desc_kwargs, model_desc_cutoffs)
+]
 models = []
 for i in range(len(model_paths)):
     models.append(
         gdmlModel(
-            model_paths[i], criteria_desc_func=cm_distance_sum,
-            criteria_cutoff=mb_cutoffs[i]
+            model_paths[i], criteria=model_criterias[i]
         )
     )
 

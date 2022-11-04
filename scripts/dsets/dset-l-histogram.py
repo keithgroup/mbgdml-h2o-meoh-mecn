@@ -27,7 +27,7 @@ Computes and plots a histogram of cluster sizes of a data set.
 import os
 import numpy as np
 from mbgdml.data import dataSet
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import com_distance_sum
 import matplotlib.pyplot as plt
 
 solvent = 'meoh'
@@ -83,8 +83,7 @@ for plot_key, data in plot_data.items():
     L = np.zeros(R.shape[0])
 
     for i in range(len(R)):
-        L[i] = cm_distance_sum(z, R[i], z_slice, entity_ids, cutoff=None)[1]
-
+        L[i] = com_distance_sum(z, R[i], entity_ids)[0]
     # Plotting histogram of L
     bin_num = 100
     density = False

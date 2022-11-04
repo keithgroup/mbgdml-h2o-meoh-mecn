@@ -127,9 +127,11 @@ for i in range(len(data_paths)):
 
     if only_train:
         if i == dset_idx:
-            desc_arg_keys = ('atomic_numbers', 'geometry', 'entity_ids')
-            desc_args = (rfile.get(f'{group_key}/{dkey}') for dkey in desc_arg_keys)
-            _, R_idxs = criteria(com_distance_sum, desc_args, cutoff)
+            desc_kwargs = {
+                'entity_ids': rfile.get(f'{group_key}/entity_ids')
+            }
+            r_criteria = Criteria(com_distance_sum, desc_kwargs, cutoff)
+            R_idxs, _ = r_criteria.accept(Z, R)
             R = R[R_idxs][train_idxs]
             E = E[R_idxs][train_idxs]
             G = G[R_idxs][train_idxs]

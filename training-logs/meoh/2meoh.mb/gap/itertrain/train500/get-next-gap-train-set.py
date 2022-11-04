@@ -1,5 +1,6 @@
 from mbgdml.analysis.problematic import prob_structures
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 from mbgdml.data import dataSet
 from mbgdml.models import gapModel
 from mbgdml.predictors import predict_gap
@@ -30,14 +31,15 @@ model_path = os.path.join(base_dir, model_path)
 train_idxs_path = os.path.join(base_dir, train_idxs_path)
 next_train_idxs_path = os.path.join(base_dir, next_train_idxs_path)
 
-dset = dataSet(dset_path)
+dset = dataSet(dset_path, Z_key='z')
 
+desc_kwargs = {
+    'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=2)  # 2meoh
+}
 mbe_cutoff = 8.0
 model_comp_ids = ['meoh', 'meoh']
-model = gapModel(
-    model_path, model_comp_ids,
-    criteria_desc_func=cm_distance_sum, criteria_cutoff=mbe_cutoff
-)
+r_criteria = Criteria(com_distance_sum, desc_kwargs, mbe_cutoff)
+model = gapModel(model_path, model_comp_ids, r_criteria)
 
 train_idxs = np.load(train_idxs_path)
 
@@ -56,7 +58,6 @@ print(f'Elapsed time: {t_end-t_start} s')
 # Writing next training set
 from reptar import File
 from reptar.writers import write_xyz_gap
-from reptar.descriptors import criteria, com_distance_sum
 from reptar.utils import find_parent_r_idxs
 
 
@@ -82,8 +83,6 @@ lattice = np.array(
 )
 
 use_criteria = True
-desc_arg_keys = ('atomic_numbers', 'geometry', 'entity_ids')
-mbe_cutoff = 8.0
 
 
 
@@ -106,8 +105,7 @@ G *= hartree2ev  # eV/A
 F = -G
 
 if use_criteria:
-    desc_args = (rfile.get(f'{group_key}/{dkey}') for dkey in desc_arg_keys)
-    _, R_idxs = criteria(com_distance_sum, desc_args, mbe_cutoff)
+    R_idxs, _ = r_criteria.accept(Z, R)
     R = R[R_idxs]
     E = E[R_idxs]
     F = F[R_idxs]

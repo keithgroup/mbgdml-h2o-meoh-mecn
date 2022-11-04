@@ -39,7 +39,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 base_dir = '../../data/ml-dsets'
 dset_path = os.path.join(base_dir, dset_path)
 
-dset = dataSet(dset_path)
+dset = dataSet(dset_path, Z_key='z')
 
 E = dset.E
 F = dset.F

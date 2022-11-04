@@ -30,10 +30,11 @@ import time
 from mbgdml.data import predictSet
 from mbgdml.models import gapModel
 from mbgdml.predictors import predict_gap_decomp
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 
-overwrite = True
 save = False
+overwrite = False
 theory = 'mp2.def2tzvp.frozencore'
 r_unit = 'Angstrom'
 e_unit = 'eV'
@@ -82,8 +83,6 @@ model_paths = [
     'meoh/2meoh/gap/2meoh.mb-gap.xml',
     'meoh/3meoh/gap/3meoh.mb-gap.xml',
 ]
-model_comp_ids = [['meoh'], ['meoh', 'meoh'], ['meoh', 'meoh', 'meoh']]
-cutoffs = [None, 8.0, 14.0]
 
 hartree2kcalmol = 627.5094737775374055927342256  # Psi4 constant
 hartree2ev = 27.21138602  # Psi4 constant
@@ -97,7 +96,17 @@ model_dir = '../../../../mbgdml-h2o-meoh-mecn-models'
 model_paths = [
     os.path.join(model_dir, model_path) for model_path in model_paths
 ]
-
+model_comp_ids = [['meoh'], ['meoh', 'meoh'], ['meoh', 'meoh', 'meoh']]
+model_desc_kwargs = (
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=1)},  # 1meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=2)},  # 2meoh
+    {'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=3)},  # 3meoh
+)
+model_desc_cutoffs = (None, 8.0, 14.0)
+model_criterias = [
+    Criteria(com_distance_sum, desc_kwargs, cutoff) for desc_kwargs,cutoff \
+    in zip(model_desc_kwargs, model_desc_cutoffs)
+]
 
 if save:
     csv_data = [csv_headers]
@@ -158,7 +167,7 @@ for job in jobs:
     pset = predictSet()
 
     print(f'Loading the {dset_path} data set')
-    pset.load_dataset(dset)
+    pset.load_dataset(dset, Z_key='z')
 
     print(f'Loading {len(nbody_idxs)} model(s)')
     models = []
@@ -166,7 +175,7 @@ for job in jobs:
         models.append(
             gapModel(
                 model_paths[i], model_comp_ids[i],
-                criteria_desc_func=cm_distance_sum, criteria_cutoff=cutoffs[i]
+                criteria=model_criterias[i]
             )
         )
     pset.load_models(

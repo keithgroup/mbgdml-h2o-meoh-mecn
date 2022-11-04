@@ -30,7 +30,8 @@ from reptar import File
 from mbgdml.mbe import mbePredict
 from mbgdml.models import schnetModel
 from mbgdml.predictors import predict_schnet
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import Criteria, com_distance_sum
+from mbgdml.utils import get_entity_ids
 
 model_path = 'h2o/3h2o/schnet/3h2o.mb-niter5.nfeat128.cut10-train1000.pt'
 in_ev = True  # GAP and SchNet models are in eV
@@ -81,11 +82,14 @@ data_dir = os.path.join(base_dir, 'data')
 model_path = os.path.join(model_dir, model_path)
 
 # Setup mbML predictor
+desc_kwargs = {
+    'entity_ids': get_entity_ids(atoms_per_mol=3, num_mol=3)  # 3h2o
+}
 # Initialize model
 models = [
     schnetModel(
-        model_path, model_comp_ids, 'cpu', criteria_desc_func=cm_distance_sum,
-        criteria_cutoff=mb_cutoff
+        model_path, model_comp_ids, 'cpu',
+        criteria=Criteria(com_distance_sum, desc_kwargs, mb_cutoff)
     )
 ]
 mbpred = mbePredict(models, predict_schnet)

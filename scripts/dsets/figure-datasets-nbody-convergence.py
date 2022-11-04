@@ -26,7 +26,7 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mbgdml.data import dataSet
-from mbgdml.criteria import cm_distance_sum
+from mbgdml.descriptors import com_distance_sum
 from reptar import File
 
 plot_data = {
