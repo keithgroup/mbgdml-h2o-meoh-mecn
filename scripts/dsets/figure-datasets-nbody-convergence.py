@@ -152,8 +152,7 @@ for plot_name, data in plot_data.items():
     # Calculate size metric
     L = np.empty(len(R))
     for i in range(len(R)):
-        _, l = cm_distance_sum(Z, R[i], None, entity_ids)
-        L[i] = l
+        L[i] = com_distance_sum(Z, R[i], entity_ids)
 
 
     # Generates range of L cutoffs.
@@ -224,7 +223,7 @@ for plot_name, data in plot_data.items():
     # Axis labels
     ax.set_xlabel('L cutoff (Ang.)')
     ax.set_ylabel(f'{mb_order}-body energy (kcal/mol)', color=color)
-    ax2.set_ylabel(f'Number of clusters', color=cluster_num_color)
+    ax2.set_ylabel(f'Cumulative number of clusters', color=cluster_num_color)
 
     # Axis tick label colors
     ax.tick_params(axis='y', colors=color)
