@@ -37,7 +37,7 @@ rdf_info = {
         'exp_csv_label': 'goo',
         'exp_label': 'Reference',  # Soper
         'comp_label': 'mbGDML',
-        'solv_label': 'H$_2$O',
+        'solv_label': '   H$_2$O',  # Extra spaces to left align to other labels 
         'r_max': 8.0,
         'mbml_color': '#4ABBF3',
         'plot_ylabel': 'g$\mathregular{_{OO}}$(r)',
@@ -68,12 +68,14 @@ rdf_info = {
 keys_order = ['h2o', 'mecn', 'meoh']
 
 ref_color = '#6c757d'
-plot_xlabel = 'r (Ang.)'
+plot_xlabel = r'r $\left( \mathbf{\AA} \right)$'
 linewidth = 1.5
+x_min = 2
+solv_label_location = (0.87, 0.90)
 
 save_path = 'analysis/md/rdf/solvent-rdf-combined'
 fig_types = ['svg', 'eps']
-figsize = (3.2, 6)
+figsize = (3.2, 5.0)
 
 # More information: https://matplotlib.org/stable/api/matplotlib_configuration_api.html#default-values-and-styling
 use_rc_params = True
@@ -147,7 +149,7 @@ for i in range(len(keys_order)):
     if i == 0:
         ax.legend(loc='lower right', frameon=False)
 
-    ax.set_xlim(0, solv_info['r_max'])
+    ax.set_xlim(x_min, solv_info['r_max'])
 
     ax.set_ylabel(solv_info['plot_ylabel'])
     ax.set_ylim(ymin=0)
@@ -171,14 +173,14 @@ for i in range(len(keys_order)):
     )
 
     ax.text(
-        0.02, 0.04,
+        *solv_label_location,
         solv_info['solv_label'],
         fontsize='medium',
         fontweight='normal',
         transform=ax.transAxes
     )
 
-axes[-1].set_xlabel('r (Ang.)')
+axes[-1].set_xlabel(r'r $\left( \mathbf{\AA} \right)$')
 
 for fig_type in fig_types:
     plt.savefig(save_path + f'.{fig_type}', dpi=1000)
