@@ -233,7 +233,7 @@ for solvent,solvent_axes in zip(solvents, axes):
 
         # Predicted set.
         pset_path = pset_paths[solvent][isomer_size]
-        pset = predictSet(pset_path)
+        pset = predictSet(pset_path, Z_key='z')
         model_E, model_F = pset.nbody_predictions([1, 2, 3])
         model_E = model_E[E_idx]
         model_E_relative = model_E - mp2_E[0]

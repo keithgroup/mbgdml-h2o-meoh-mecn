@@ -24,7 +24,7 @@
 
 from mbgdml.utils import get_entity_ids, get_comp_ids
 import os
-from reptar import creator
+from reptar import Creator
 import qcelemental as qcel
 
 
@@ -61,7 +61,7 @@ traj_path = os.path.join(traj_dir, traj_path)
 exdir_path = os.path.join(data_dir, exdir_path)
 
 
-create = creator()
+create = Creator()
 create.load(exdir_path, mode='w', allow_remove=True)
 rfile = create.from_calc(group_key, traj_path=traj_path)
 

@@ -26,7 +26,7 @@ import numpy as np
 import os
 from reptar import File
 from mbgdml.data import predictSet
-from reptar.descriptors import criteria, com_distance_sum
+from reptar.descriptors import Criteria, com_distance_sum
 import schnetpack as spk
 import torch
 import umap
@@ -94,7 +94,7 @@ base_dir = '../../../../'
 data_dir = os.path.join(base_dir, 'data/')
 data_paths = [os.path.join(data_dir, i) for i in data_paths]
 train_json_path = os.path.join(base_dir, train_json_path)
-model_dir = '../../../../mbgdml-h2o-meoh-mecn-models'
+model_dir = '../../../../../mbgdml-h2o-meoh-mecn-models'
 model_path = os.path.join(model_dir, model_path)
 pset_path = os.path.join(data_dir, pset_path)
 save_dir = os.path.join(base_dir, save_dir)
@@ -178,7 +178,7 @@ if include_gradients:
     scaled_data_descriptor[:,-G_size:] = data_descriptor[:,-G_size:]
 
 if use_pset:
-    pset = predictSet(pset_path)
+    pset = predictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred  # kcal/mol or eV
     if in_ev:
@@ -193,6 +193,8 @@ if use_pset:
 
 save_dir = os.path.join(save_dir, plot_name)
 os.makedirs(save_dir, exist_ok=True)
+
+print(f'Max energy error: {np.nanmax(E_error_plot):.3f} kcal/mol')
 
 npz_dict = {
     'Z': Z,

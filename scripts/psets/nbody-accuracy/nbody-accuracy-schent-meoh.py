@@ -130,7 +130,7 @@ def compute_E_pred_rmse(int_constant_change, E_true, E_pred):
 rfile = File(dset_path)
 number_structures = rfile.get(f'{group_key}/geometry').shape[0]
 
-psets = [predictSet(i) for i in pset_paths]
+psets = [predictSet(i, Z_key='z') for i in pset_paths]
 
 # Variables for prediction of all.
 

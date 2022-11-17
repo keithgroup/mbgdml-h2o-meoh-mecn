@@ -228,7 +228,7 @@ for solvent in solvents:
 
         # Predicted set.
         pset_path = pset_paths[solvent][isomer_size]
-        pset = predictSet(pset_path)
+        pset = predictSet(pset_path, Z_key='z')
         mbgdml_E, mbgdml_F = pset.nbody_predictions([1, 2, 3])
         mbgdml_E = mbgdml_E[E_idx]
         mbgdml_E_relative = mbgdml_E - mp2_E[0]

@@ -150,7 +150,7 @@ for model_key, pset_data in systems_dict.items():
     F_errors = []
     F_errors_per_atom = []
     for pset_path in pset_paths:
-        pset = predictSet(pset_path)
+        pset = predictSet(pset_path, Z_key='z')
         n_monomers = int(len(set(pset.entity_ids)))
         n_atoms = int(len(pset.R[0]))
 

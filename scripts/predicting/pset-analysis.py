@@ -41,7 +41,7 @@ pset_dir = 'data/psets/'
 pset_path = os.path.join(base_dir, pset_dir, pset_path)
 
 # Load in paths
-pset = predictSet(pset_path)
+pset = predictSet(pset_path, Z_key='z')
 
 # Check eV conversion.
 e_unit = pset.e_unit

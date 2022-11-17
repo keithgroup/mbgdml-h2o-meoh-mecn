@@ -27,7 +27,7 @@ from reptar import File
 from mbgdml.models import gdmlModel
 from mbgdml.data import predictSet
 from mbgdml.analysis.models import gdml_mat52
-from reptar.descriptors import criteria, com_distance_sum
+from reptar.descriptors import Criteria, com_distance_sum
 import umap
 
 from sklearn.preprocessing import StandardScaler
@@ -183,7 +183,7 @@ if include_gradients:
     scaled_data_descriptor[:,-G_size:] = data_descriptor[:,-G_size:]
 
 if use_pset:
-    pset = predictSet(pset_path)
+    pset = predictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred  # kcal/mol or eV
     if in_ev:
@@ -198,6 +198,8 @@ if use_pset:
 
 save_dir = os.path.join(save_dir, plot_name)
 os.makedirs(save_dir, exist_ok=True)
+
+print(f'Max energy error: {np.nanmax(E_error_plot):.3f} kcal/mol')
 
 npz_dict = {
     'Z': Z,

@@ -28,7 +28,7 @@ from reptar import File
 from mbgdml.models import gdmlModel
 from mbgdml.data import predictSet
 from mbgdml.analysis.models import gdml_mat52
-from reptar.descriptors import criteria, com_distance_sum
+from reptar.descriptors import Criteria, com_distance_sum
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
@@ -182,7 +182,7 @@ with open(save_path, 'w') as f:
 
 
 if use_pset:
-    pset = predictSet(pset_path)
+    pset = predictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred
     if in_ev:

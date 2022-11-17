@@ -28,7 +28,7 @@ import os
 from reptar import File
 from mbgdml.data import predictSet
 from mbgdml._gdml.desc import _from_r
-from reptar.descriptors import criteria, com_distance_sum
+from reptar.descriptors import Criteria, com_distance_sum
 import schnetpack as spk
 import torch
 
@@ -184,7 +184,7 @@ with open(save_path, 'w') as f:
         f.write(f'{i},{eigenvalues[i]},\n')
 
 if use_pset:
-    pset = predictSet(pset_path)
+    pset = predictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred  # kcal/mol or eV
     if in_ev:
@@ -214,9 +214,6 @@ save_path = os.path.join(
     save_dir, plot_name + '-eigenvalues.png'
 )
 plt.savefig(save_path, dpi=600)
-
-exit()
-
 
 
 

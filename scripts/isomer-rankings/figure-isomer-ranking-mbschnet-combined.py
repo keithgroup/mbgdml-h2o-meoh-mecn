@@ -234,7 +234,7 @@ for solvent,solvent_axes in zip(solvents, axes):
 
         # Predicted set.
         pset_path = pset_paths[solvent][isomer_size]
-        pset = predictSet(pset_path)
+        pset = predictSet(pset_path, Z_key='z')
         model_E, model_F = pset.nbody_predictions([1, 2, 3])
         if model_type == 'mbGAP' or model_type == 'mbSchNet':
             model_E *= ev2kcalmol
