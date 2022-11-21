@@ -25,6 +25,7 @@
 import numpy as np
 import os
 from mbgdml.utils import get_files
+from mbgdml.losses import sse
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
@@ -128,6 +129,9 @@ E_error_abs = np.nan_to_num(E_error_abs, 0.0)  # Some energies are not predicted
 norm = mpl.colors.Normalize(vmin=0, vmax=max_error)
 cmap = mpl.cm.get_cmap(colormap_errors)
 colors_errors = cmap(norm(E_error_abs))
+
+print(f'Max energy error: {np.nanmax(E_error_abs):.3f} kcal/mol')
+print(f'SSE: {sse(E_error_abs):.3f} (kcal/mol)^2')
 
 # Plot highest errors on top
 error_order = np.argsort(E_error_abs)
