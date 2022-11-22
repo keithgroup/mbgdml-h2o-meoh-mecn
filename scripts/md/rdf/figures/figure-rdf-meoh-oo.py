@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Performs a path similarity analysis with MDAnalysis."""
+"""Plot O-O site RDF curve of methanol."""
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt

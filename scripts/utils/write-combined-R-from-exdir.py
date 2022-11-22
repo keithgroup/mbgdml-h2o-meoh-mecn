@@ -30,9 +30,9 @@ from numpy.lib.format import open_memmap
 from mbgdml.utils import get_entity_ids, get_comp_ids
 from reptar import File
 
-exdir_path = 'h2o/137h2o-mbgdml-md.exdir'
-group_keys = ['1-nvt', '2-nvt']
-npy_path = 'h2o/137h2o-mbgdml-nvt_1_2.npy'
+exdir_path = 'mecn/67mecn-mbgdml-md.exdir'
+group_keys = ['1-nvt-298', '2-nvt-298', '3-nvt-298']
+npy_path = 'mecn/67mecn-mbgdml-nvt_1_2_3-298.npy'
 
 trim_restart_initial = True
 

@@ -23,7 +23,7 @@
 # SOFTWARE.
 
 """
-Computes the O-H rdf curve in pure water.
+Computes the H-H rdf curve in pure water.
 """
 
 import os

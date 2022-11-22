@@ -22,7 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Plot O-H site RDF curve of methanol."""
+"""Plot C-C site RDF curve of acetonitrile.
+This curve is not provided in Hernández-Cobos et al."""
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -30,16 +31,14 @@ import numpy as np
 import os
 import pandas as pd
 
-npz_path = 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oh.npz'
-exp_path = 'external/md/meoh-rdf/yamaguchi1999structure-fig6-oh.csv'  # Yamaguchi et al.
-exp_label = 'Yamaguchi et al.'
+npz_path = 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-cc.npz'  # No file extension
 
-r_max = 8.0
+r_max = 9
 
-mbml_color = '#FFB5BA'
+mbml_color = '#61BFA3'
 ref_color = '#6c757d'
 
-save_path = f'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oh'
+save_path = f'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-cc'
 fig_types = ['svg', 'eps']
 fig_size = (3.2, 3.2)
 
@@ -62,7 +61,6 @@ data_dir = os.path.join(base_dir, 'data/')
 md_dir = os.path.join(data_dir, 'md/')
 
 npz_path = os.path.join(base_dir, npz_path)
-exp_path = os.path.join(data_dir, exp_path)
 save_path = os.path.join(base_dir, save_path)
 
 
@@ -72,22 +70,19 @@ md_data = dict(np.load(npz_path, allow_pickle=True))
 r_md = md_data['bins']
 g_md = md_data['rdf']
 
-df = pd.read_csv(exp_path)
-r_exp = df['r'].values
-g_exp = df['g'].values
+# Trim MD data
+md_idxs = np.argwhere(r_md <= r_max).T[0]
+r_md = r_md[md_idxs]
+g_md = g_md[md_idxs]
+
+
 
 # Find peak
 peak_md = np.argmax(g_md)
-peak_exp = np.argmax(g_exp)
 peak_md_r = r_md[peak_md]
-peak_exp_r = r_exp[peak_exp]
 print(f'MD peak:   {g_md[peak_md]:.2f}')
-print(f'Exp. peak: {g_exp[peak_exp]:.2f}')
-print(f'Difference: {g_md[peak_md]-g_exp[peak_exp]:.2f}')
 
 print(f'\nMD r_peak:   {peak_md_r:.2f} Ang')
-print(f'Exp. r_peak: {peak_exp_r:.2f} Ang')
-print(f'Difference: {peak_md_r-peak_exp_r:.2f} Ang')
 
 
 # Setup matplotlib style
@@ -109,16 +104,12 @@ ax.plot(
     r_md, g_md, label='mbGDML', zorder=0,
     linestyle='-', color=mbml_color, linewidth=1.5
 )
-ax.plot(
-    r_exp, g_exp, label=exp_label, zorder=1,
-    linestyle=(0, (5, 4)), color=ref_color, linewidth=1.5
-)
 ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
 ax.set_xlabel(r'r $\left( \mathbf{\AA} \right)$')
 ax.set_xlim(0, r_max)
 
-ax.set_ylabel('g$\mathregular{_{OH}}$(r)')
+ax.set_ylabel('g$\mathregular{_{CC}}$(r)')
 ax.set_ylim(ymin=0)
 
 plt.legend(frameon=False)

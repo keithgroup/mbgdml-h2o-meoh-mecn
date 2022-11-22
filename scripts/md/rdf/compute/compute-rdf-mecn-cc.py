@@ -23,34 +23,29 @@
 # SOFTWARE.
 
 """
-Computes the H-H rdf curve in pure methanol.
+Computes the C-C rdf curve in pure acetonitrile.
 """
 
 import os
 import numpy as np
-from mbgdml.periodic import Cell
 from mbgdml.analysis.rdf import RDF
 from reptar import File
 import matplotlib.pyplot as plt
 
+exdir_path = 'data/md/mecn/67mecn-mbgdml-md.exdir'
+example_key = '1-nvt-298'
+R_path = 'data/md/mecn/67mecn-mbgdml-nvt_1_2_3-298.npy'
 
-exdir_path = 'data/md/meoh/61meoh-mbgdml-md.exdir'
-example_key = '1-nvt'
-R_path = 'data/md/meoh/61meoh-mbgdml-nvt_1_2_3.npy'
+save_path = 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-cc.npz'
 
-save_path = 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-hh.npz'
-
-
-comp_id_pair = ('meoh', 'meoh')
-entity_idxs = (1, 1)  # 8 1 6 1 1 1
+comp_id_pair = ('mecn', 'mecn')
+entity_idxs = (0, 0)  # 6 1 1 1 6 7
 bin_width = 0.1  # Ang
-rdf_range = (0.0, 8.0)  # lower and upper bound in Ang
+rdf_range = (0.0, 9.0)  # lower and upper bound in Ang
 
-start_frame = 5130
+start_frame = 500
 step = 1
-n_workers = 8  # None or int
-
-
+n_workers = 8  # None or 8
 
 
 ###   SCRIPT   ###

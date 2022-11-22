@@ -23,7 +23,7 @@
 # SOFTWARE.
 
 """
-Computes the N-N rdf curve in pure acetonitrile.
+Computes the C_N-C_N rdf curve in pure acetonitrile.
 """
 
 import os
