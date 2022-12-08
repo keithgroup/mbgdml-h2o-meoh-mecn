@@ -22,7 +22,7 @@
 
 """Determines origin of energy errors (cutoff or prediction)."""
 
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 import numpy as np
 import os
 
@@ -46,7 +46,7 @@ hartree2kcalmol = 627.5094737775374055927342256  # Psi4 constant
 hartree2ev = 27.21138602  # Psi4 constant
 ev2kcalmol = hartree2kcalmol/hartree2ev
 
-pset = predictSet(pset_path, Z_key='z')
+pset = PredictSet(pset_path, Z_key='z')
 E_pred, F_pred = pset.nbody_predictions([nbody_order])
 E_true = pset.E_true
 F_true = pset.F_true

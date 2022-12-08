@@ -22,7 +22,7 @@
 
 """Print energy statistics from predict set"""
 
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 import numpy as np
 import os
 
@@ -41,7 +41,7 @@ pset_dir = 'data/psets/'
 pset_path = os.path.join(base_dir, pset_dir, pset_path)
 
 # Load in paths
-pset = predictSet(pset_path, Z_key='z')
+pset = PredictSet(pset_path, Z_key='z')
 
 # Check eV conversion.
 e_unit = pset.e_unit

@@ -28,10 +28,8 @@ Computes the O-H rdf curve in pure methanol.
 
 import os
 import numpy as np
-from mbgdml.periodic import Cell
 from mbgdml.analysis.rdf import RDF
 from reptar import File
-import matplotlib.pyplot as plt
 
 
 exdir_path = 'data/md/meoh/61meoh-mbgdml-md.exdir'

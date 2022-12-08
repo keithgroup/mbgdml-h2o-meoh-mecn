@@ -24,7 +24,6 @@
 
 import numpy as np
 import os
-from mbgdml.utils import get_files
 from mbgdml.losses import sse
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -90,7 +89,7 @@ def lighten_color(color, amount=0.5):
     import colorsys
     try:
         c = mc.cnames[color]
-    except:
+    except Exception:
         c = color
     c = np.array(colorsys.rgb_to_hls(*mc.to_rgb(c)))
     return colorsys.hls_to_rgb(c[0],1-amount * (1-c[1]),c[2])
@@ -139,7 +138,7 @@ error_order = np.argsort(E_error_abs)
 # Setup matplotlib style
 if use_rc_params:
     import json
-    with open(rc_json_path, 'r') as f:
+    with open(rc_json_path, 'r', encoding="utf-8") as f:
         rc_params = json.load(f)
     font_paths = mpl.font_manager.findSystemFonts(
         fontpaths=font_dirs, fontext='ttf'

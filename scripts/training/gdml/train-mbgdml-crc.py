@@ -24,7 +24,7 @@
 
 import os
 import numpy as np
-from mbgdml.data import dataSet
+from mbgdml.data import DataSet
 from mbgdml.train import mbGDMLTrain
 from mbgdml.losses import loss_f_e_weighted_mse
 
@@ -81,7 +81,7 @@ parent_dir = '../../../'
 dset_dir = f'{parent_dir}/data/ml-dsets'
 dset_path = os.path.join(dset_dir, dset_path)
 
-dset = dataSet(dset_path, Z_key='z')
+dset = DataSet(dset_path, Z_key='z')
 loss_kwargs['n_atoms'] = dset.n_z
 
 if model0_path is not None:

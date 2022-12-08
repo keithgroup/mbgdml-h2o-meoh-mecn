@@ -107,7 +107,7 @@ packmol_input = [i + '\n' for i in packmol_input]
 
 packmol_input_name = f'{molecules}{solvent_label}.sphere-packmol.in'
 packmol_input_path = f'{save_dir}{packmol_input_name}'
-with open(packmol_input_path, 'w') as f:
+with open(packmol_input_path, 'w', encoding='utf-8') as f:
     f.writelines(packmol_input)
 
 # Executes Packmol.
@@ -120,7 +120,7 @@ completed_process = subprocess.run(
 
 packmol_output_name = packmol_input_name[:-2] + 'out'
 packmol_output_path = f'{save_dir}{packmol_output_name}'
-with open(packmol_output_path, 'w') as f:
+with open(packmol_output_path, 'w', encoding='utf-8') as f:
     f.write(completed_process.stdout.decode())
 
 print('\nDone!')

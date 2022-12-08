@@ -27,7 +27,7 @@ forces of data sets.
 
 import os
 import numpy as np
-from mbgdml.data import dataSet
+from mbgdml.data import DataSet
 
 dset_path = 'meoh/3meoh/gdml/62meoh.sphere.gfn2.md.500k.prod1.3meoh-dset.mb-cm14.npz'
 
@@ -39,7 +39,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 base_dir = '../../data/ml-dsets'
 dset_path = os.path.join(base_dir, dset_path)
 
-dset = dataSet(dset_path, Z_key='z')
+dset = DataSet(dset_path, Z_key='z')
 
 E = dset.E
 F = dset.F

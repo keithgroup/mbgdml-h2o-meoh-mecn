@@ -28,7 +28,7 @@ We normalize energies by the number of entities (i.e., molecules) and forces by 
 
 import os
 import numpy as np
-from mbgdml.data import dataSet
+from mbgdml.data import DataSet
 import pandas as pd
 
 

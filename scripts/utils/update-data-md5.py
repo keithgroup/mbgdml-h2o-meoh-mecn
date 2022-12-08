@@ -27,7 +27,7 @@ Loads and saves all datasets or structure sets to update MD5 and file name.
 import os
 import numpy as np
 from mbgdml.utils import get_files
-from mbgdml.data import dataSet, structureSet
+from mbgdml.data import DataSet, structureSet
 
 dir_to_search = '../../data/ml-dsets'
 
@@ -47,7 +47,7 @@ for file_path in file_paths:
     except KeyError:
         continue
     if npz_type == 'd':
-        data = dataSet(file_path, Z_key='z')
+        data = DataSet(file_path, Z_key='z')
     elif npz_type == 's':
         data = structureSet(file_path)
     else:

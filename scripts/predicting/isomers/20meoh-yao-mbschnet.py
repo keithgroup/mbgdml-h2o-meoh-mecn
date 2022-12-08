@@ -91,8 +91,8 @@ model_paths = [os.path.join(model_dir, model_path) for model_path in model_paths
 models = []
 for i in range(len(model_paths)):
     models.append(
-        schnetModel(
-            model_paths[i], model_comp_ids, 'cpu', criteria=model_criterias[i]
+        schnetModel( 
+            model_paths[i], models_comp_ids[i], 'cpu', criteria=model_criterias[i]
         )
     )
 mbpred = mbePredict(models, predict_schnet)

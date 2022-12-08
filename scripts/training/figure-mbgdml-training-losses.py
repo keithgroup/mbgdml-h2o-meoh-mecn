@@ -60,7 +60,6 @@ rc_json_path = '../matplotlib-rc-params.json'
 
 # Setup matplotlib style
 if use_rc_params:
-    import json
     with open(rc_json_path, 'r') as f:
         rc_params = json.load(f)
     font_paths = mpl.font_manager.findSystemFonts(

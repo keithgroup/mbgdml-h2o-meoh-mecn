@@ -159,7 +159,7 @@ for job in jobs:
 
     if save:
         print(f'\nSaving the predict set')
-        pset.save(pset.name, pset.asdict(), save_dir)
+        pset.save(os.path.join(save_dir, pset.name), pset.asdict())
 
     print('\nResults')
     # Compute energy and force prediction errors
@@ -202,6 +202,6 @@ for job in jobs:
         )
 
 if save:
-    with open(os.path.join(base_dir, csv_dir, csv_name), 'w') as f_csv:
+    with open(os.path.join(base_dir, csv_dir, csv_name), 'w', encoding='utf-8') as f_csv:
         csv_writer = csv.writer(f_csv)
         csv_writer.writerows(csv_data)

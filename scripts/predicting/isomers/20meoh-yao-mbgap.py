@@ -91,7 +91,7 @@ model_paths = [os.path.join(model_dir, model_path) for model_path in model_paths
 models = []
 for i in range(len(model_paths)):
     models.append(
-        gapModel(model_paths[i], model_comp_ids, criteria=model_criterias[i])
+        gapModel(model_paths[i], models_comp_ids[i], criteria=model_criterias[i])
     )
 mbpred = mbePredict(models, predict_gap)
 

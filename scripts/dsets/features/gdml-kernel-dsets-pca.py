@@ -26,7 +26,7 @@ import numpy as np
 import os
 from reptar import File
 from mbgdml.models import gdmlModel
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 from mbgdml.analysis.models import gdml_mat52
 from reptar.descriptors import Criteria, com_distance_sum
 from sklearn.decomposition import PCA
@@ -171,7 +171,7 @@ eigenvalues = pca.explained_variance_
 save_path = os.path.join(
     save_dir, plot_name + '-eigenvalues.csv'
 )
-with open(save_path, 'w') as f:
+with open(save_path, 'w', encoding='utf-8') as f:
     print('component,eigenvalue,')
     f.write('component,eigenvalue,\n')
     for i in range(len(eigenvalues)):
@@ -182,7 +182,7 @@ with open(save_path, 'w') as f:
 
 
 if use_pset:
-    pset = predictSet(pset_path, Z_key='z')
+    pset = PredictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred
     if in_ev:

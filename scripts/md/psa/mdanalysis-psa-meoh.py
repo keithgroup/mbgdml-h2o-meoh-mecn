@@ -30,7 +30,6 @@ Literature reference: https://doi.org/10.1371/journal.pcbi.1004568
 """
 
 import os
-import numpy as np
 import MDAnalysis as mda
 from MDAnalysis.analysis import psa
 import sys

@@ -25,7 +25,6 @@
 """Analyze MD trajectory with pymbar."""
 
 import os
-import numpy as np
 from reptar import File
 from pymbar import timeseries
 

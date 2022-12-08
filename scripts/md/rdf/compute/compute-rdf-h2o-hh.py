@@ -30,7 +30,6 @@ import os
 import numpy as np
 from mbgdml.analysis.rdf import RDF
 from reptar import File
-import matplotlib.pyplot as plt
 
 exdir_path = 'data/md/h2o/137h2o-mbgdml-md.exdir'
 example_key = '1-nvt'

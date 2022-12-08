@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 from reptar import File
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 from mbgdml._gdml.desc import _from_r
 from reptar.descriptors import Criteria, com_distance_sum
 import schnetpack as spk
@@ -176,7 +176,7 @@ eigenvalues = pca.explained_variance_
 save_path = os.path.join(
     save_dir, plot_name + '-eigenvalues.csv'
 )
-with open(save_path, 'w') as f:
+with open(save_path, 'w', encoding='utf-8') as f:
     print('component,eigenvalue,')
     f.write('component,eigenvalue,\n')
     for i in range(len(eigenvalues)):
@@ -184,7 +184,7 @@ with open(save_path, 'w') as f:
         f.write(f'{i},{eigenvalues[i]},\n')
 
 if use_pset:
-    pset = predictSet(pset_path, Z_key='z')
+    pset = PredictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred  # kcal/mol or eV
     if in_ev:

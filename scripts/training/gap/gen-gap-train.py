@@ -144,7 +144,7 @@ csv_data = [
     ['kcal/mol', 'Angstrom', E_mae, E_rmse, E_sse, E_max_error, F_mae, F_rmse, F_sse, F_max_error]
 ]
 
-with open(csv_name, 'w') as f_csv:
+with open(csv_name, 'w', encoding='utf-8') as f_csv:
     csv_writer = csv.writer(f_csv)
     csv_writer.writerows(csv_data)
 
@@ -173,9 +173,9 @@ for params in params_gen:
     train_script_job = train_script_job.replace('SIGMA_F_VAL', str(sigma_f))
 
     # Copy and write files
-    with open(os.path.join(dir_path, 'submit-gap-train.slurm'), 'w') as f:
+    with open(os.path.join(dir_path, 'submit-gap-train.slurm'), 'w', encoding='utf-8') as f:
         f.write(train_script_job)
-    with open(os.path.join(dir_path, 'get-gap-valid-error.py'), 'w') as f:
+    with open(os.path.join(dir_path, 'get-gap-valid-error.py'), 'w', encoding='utf-8') as f:
         f.write(valid_script)
     shutil.copyfile(xyz_train_path, os.path.join(dir_path, 'train.xyz'))
     shutil.copyfile(xyz_valid_path, os.path.join(dir_path, 'valid.xyz'))

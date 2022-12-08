@@ -25,7 +25,7 @@ import numpy as np
 import os
 from reptar import File
 from mbgdml.models import gdmlModel
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 from mbgdml.analysis.models import gdml_mat52
 from reptar.descriptors import Criteria, com_distance_sum
 import umap
@@ -187,7 +187,7 @@ if include_gradients:
     scaled_data_descriptor[:,-G_size:] = data_descriptor[:,-G_size:]
 
 if use_pset:
-    pset = predictSet(pset_path, Z_key='z')
+    pset = PredictSet(pset_path, Z_key='z')
     E_pred, F_pred = pset.nbody_predictions(nbody_orders)
     E_error = pset.E_true - E_pred  # kcal/mol or eV
     if in_ev:

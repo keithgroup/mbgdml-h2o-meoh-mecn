@@ -21,11 +21,10 @@
 # SOFTWARE.
 
 import os
-from copy import copy
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from mbgdml.data import dataSet, predictSet
+from mbgdml.data import PredictSet
 from mbgdml.mbe import mbe_contrib
 from reptar import File
 
@@ -41,7 +40,7 @@ error_statistic = 'mae'  # mae, rmse
 model_type = 'mbGAP'
 
 # Plot names
-plot_name = f'4-6mers-{model_type}-train1000'
+plot_name = f'4-6mers-{model_type}-train1000-method.ref'
 
 # Reference data
 isomer_data_paths = {
@@ -226,20 +225,20 @@ for solvent,solvent_axes in zip(solvents, axes):
         mbe_E, mbe_F = get_isomer_mb(rfile, isomer_size, solvent, nbody_orders)
         
         mbe_E = mbe_E[E_idx]
-        mbe_E_relative = mbe_E - mp2_E[0]
+        mbe_E_relative = mbe_E - mbe_E[0]
         
         mbe_F = mbe_F[E_idx]
 
 
         # Predicted set.
         pset_path = pset_paths[solvent][isomer_size]
-        pset = predictSet(pset_path, Z_key='z')
+        pset = PredictSet(pset_path, Z_key='z')
         model_E, model_F = pset.nbody_predictions([1, 2, 3])
         if model_type == 'mbGAP':
             model_E *= ev2kcalmol
             model_F *= ev2kcalmol
         model_E = model_E[E_idx]
-        model_E_relative = model_E - mp2_E[0]
+        model_E_relative = model_E - model_E[0]
 
         model_F = model_F[E_idx]
         

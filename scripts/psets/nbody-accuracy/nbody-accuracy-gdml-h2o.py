@@ -22,7 +22,7 @@
 
 """Determines origin of n-body energy errors (cutoff or prediction)."""
 
-from mbgdml.data import predictSet
+from mbgdml.data import PredictSet
 import numpy as np
 from numpy.lib.function_base import average
 import os
@@ -134,7 +134,7 @@ def compute_E_pred_rmse(int_constant_change, E_true, E_pred):
 rfile = File(dset_path)
 number_structures = rfile.get(f'{group_key}/geometry').shape[0]
 
-psets = [predictSet(i, Z_key='z') for i in pset_paths]
+psets = [PredictSet(i, Z_key='z') for i in pset_paths]
 
 # Variables for prediction of all.
 

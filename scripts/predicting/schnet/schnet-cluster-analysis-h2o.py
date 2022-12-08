@@ -28,8 +28,8 @@ import numpy as np
 import os
 from reptar import File
 from mbgdml.analysis.clustering import get_clustered_data, get_cluster_losses, cluster_loss_F_mse
-from mbgdml.analysis.problematic import prob_structures
-from mbgdml.data import dataSet
+from mbgdml.analysis.problematic import ProblematicStructures
+from mbgdml.data import DataSet
 from mbgdml.mbe import mbePredict
 from mbgdml.models import schnetModel
 from mbgdml.predictors import predict_schnet
@@ -59,7 +59,7 @@ hartree2kcalmol = 627.5094737775374055927342256  # Psi4 constant
 hartree2ev = 27.21138602  # Psi4 constant
 ev2kcalmol = hartree2kcalmol/hartree2ev
 
-dset = dataSet(dset_path, Z_key='z')
+dset = DataSet(dset_path, Z_key='z')
 z = dset.Z
 R = dset.R
 entity_ids = dset.entity_ids

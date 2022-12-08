@@ -114,7 +114,7 @@ for i in range(len(csv_data)):
 losses = np.array(losses)
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
-with open(csv_name, 'w') as f:
+with open(csv_name, 'w', encoding='utf-8') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerows([headers])
     csv_writer.writerows(csv_data)

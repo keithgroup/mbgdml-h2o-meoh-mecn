@@ -26,7 +26,7 @@ Computes and plots a histogram of cluster sizes of a data set.
 
 import os
 import numpy as np
-from mbgdml.data import dataSet
+from mbgdml.data import DataSet
 from mbgdml.descriptors import com_distance_sum
 import matplotlib.pyplot as plt
 

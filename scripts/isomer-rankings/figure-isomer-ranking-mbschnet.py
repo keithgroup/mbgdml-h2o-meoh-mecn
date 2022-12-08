@@ -20,12 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# pylint: disable=line-too-long
+
 import os
-from copy import copy
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from mbgdml.data import dataSet, predictSet
+from mbgdml.data import PredictSet
 from mbgdml.mbe import mbe_contrib
 from reptar import File
 
@@ -233,7 +234,7 @@ for solvent in solvents:
 
         # Predicted set.
         pset_path = pset_paths[solvent][isomer_size]
-        pset = predictSet(pset_path, Z_key='z')
+        pset = PredictSet(pset_path, Z_key='z')
         mbgdml_E, mbgdml_F = pset.nbody_predictions([1, 2, 3])
         if pset_in_ev:
             mbgdml_E *= ev2kcalmol

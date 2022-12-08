@@ -53,7 +53,7 @@ csv_data = [
     ['kcal/mol', 'Angstrom', E_mae, E_rmse, E_sse, E_max_error, F_mae, F_rmse, F_sse, F_max_error]
 ]
 
-with open(csv_name, 'w') as f_csv:
+with open(csv_name, 'w', encoding='utf-8') as f_csv:
     csv_writer = csv.writer(f_csv)
     csv_writer.writerows(csv_data)
 

@@ -1,7 +1,7 @@
-from mbgdml.analysis.problematic import prob_structures
+from mbgdml.analysis.problematic import ProblematicStructures
 from mbgdml.descriptors import Criteria, com_distance_sum
 from mbgdml.utils import get_entity_ids
-from mbgdml.data import dataSet
+from mbgdml.data import DataSet
 from mbgdml.models import gapModel
 from mbgdml.predictors import predict_gap
 import numpy as np
@@ -31,7 +31,7 @@ model_path = os.path.join(base_dir, model_path)
 train_idxs_path = os.path.join(base_dir, train_idxs_path)
 next_train_idxs_path = os.path.join(base_dir, next_train_idxs_path)
 
-dset = dataSet(dset_path, Z_key='z')
+dset = DataSet(dset_path, Z_key='z')
 
 desc_kwargs = {
     'entity_ids': get_entity_ids(atoms_per_mol=6, num_mol=2)  # 2meoh
@@ -44,7 +44,7 @@ model = gapModel(model_path, model_comp_ids, r_criteria)
 train_idxs = np.load(train_idxs_path)
 
 # Find problematic structures
-prob_s = prob_structures([model], predict_gap)
+prob_s = ProblematicStructures([model], predict_gap)
 prob_idxs = prob_s.find(dset, 100, dset_is_train=True, train_idxs=train_idxs)
 
 next_train_idxs = np.concatenate((train_idxs, prob_idxs))
