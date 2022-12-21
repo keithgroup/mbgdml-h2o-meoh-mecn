@@ -26,6 +26,7 @@
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import matplotlib.patheffects as pe
 import numpy as np
 import os
 import pandas as pd
@@ -33,41 +34,57 @@ import pandas as pd
 rdf_info = {
     'h2o': {
         'npz_path': 'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-oo.npz',
-        'exp_path': 'external/md/h2o-rdf/soper2013radial.csv',
-        'exp_csv_label': 'goo',
-        'exp_label': 'Reference',  # Soper
+        'exp_path': 'external/md/h2o-rdf/soper2013radial-goo.csv',
+        'exp_csv_label': 'g',
+        'exp_label': 'Experimental',  # Soper
+        'classical_paths': [
+
+        ],
+        'classical_label': 'Classical',
         'comp_label': 'mbGDML',
-        'solv_label': '   H$_2$O',  # Extra spaces to left align to other labels 
+        'solv_label': '   H$_2$O',  # Extra spaces to left align to other labels
         'r_max': 8.0,
         'mbml_color': '#4ABBF3',
-        'plot_ylabel': 'g$\mathregular{_{OO}}$(r)',
+        'plot_ylabel': r'g$\mathregular{_{OO}}$(r)',
     },
     'mecn': {
         'npz_path': 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-nn.npz',
-        'exp_path': 'external/md/mecn-rdf/hernandez2020general-fig7-nn.csv',
+        'exp_path': 'external/md/mecn-rdf/humphreys2015neutron-fig6-nn.csv',
         'exp_csv_label': 'g',
-        'exp_label': 'Reference',  # Hernández-Cobos et al.
+        'exp_label': 'Experimental',  # Hernández-Cobos et al.
+        'classical_paths': [
+            "external/md/mecn-rdf/alberti2013model-fig7-nn.csv",
+            "external/md/mecn-rdf/koverga2017new-fig6-nn.csv",
+            "external/md/mecn-rdf/kowsari2018systematic-fig1-nn.csv",
+            "external/md/mecn-rdf/hernandez2020general-fig7-nn.csv",
+        ],
+        'classical_label': 'Classical',
         'comp_label': 'mbGDML',
         'solv_label': 'MeCN',
         'r_max': 8.0,
         'mbml_color': '#61BFA3',
-        'plot_ylabel': 'g$\mathregular{_{NN}}$(r)',
+        'plot_ylabel': r'g$\mathregular{_{NN}}$(r)',
     },
     'meoh': {
         'npz_path': 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oo.npz',
         'exp_path': 'external/md/meoh-rdf/yamaguchi1999structure-fig6-oo.csv',
         'exp_csv_label': 'g',
-        'exp_label': 'Reference',  # Yamaguchi et al.
+        'exp_label': 'Experimental',  # Yamaguchi et al.
+        'classical_paths': [
+
+        ],
+        'classical_label': 'Classical',
         'comp_label': 'mbGDML',
         'solv_label': 'MeOH',
         'r_max': 8.0,
         'mbml_color': '#FFB5BA',
-        'plot_ylabel': 'g$\mathregular{_{OO}}$(r)',
+        'plot_ylabel': r'g$\mathregular{_{OO}}$(r)',
     },
 }
 keys_order = ['h2o', 'mecn', 'meoh']
 
-ref_color = '#6c757d'
+ref_color = '#555555'
+classical_color = '#f1f1f1'
 plot_xlabel = r'r $\left( \mathbf{\AA} \right)$'
 linewidth = 1.5
 x_min = 2
@@ -100,7 +117,7 @@ save_path = os.path.join(base_dir, save_path)
 # Setup matplotlib style
 if use_rc_params:
     import json
-    with open(rc_json_path, 'r') as f:
+    with open(rc_json_path, 'r', encoding='utf-8') as f:
         rc_params = json.load(f)
     font_paths = mpl.font_manager.findSystemFonts(
         fontpaths=font_dirs, fontext='ttf'
@@ -112,7 +129,7 @@ if use_rc_params:
 
 fig, axes = plt.subplots(len(keys_order), 1, constrained_layout=True, sharex=True, figsize=figsize)
 
-for i in range(len(keys_order)):
+for i, solv_key in enumerate(keys_order):
     solv_key = keys_order[i]
     solv_info = rdf_info[keys_order[i]]
 
@@ -144,7 +161,22 @@ for i in range(len(keys_order)):
         r_exp, g_exp, label=solv_info['exp_label'], zorder=1,
         linestyle=(0, (5, 4)), color=ref_color, linewidth=linewidth
     )
-    ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
+    ax.axhline(1.0, zorder=-50, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
+
+    classical_label = solv_info['comp_label']
+    for classical_path in solv_info["classical_paths"]:
+        classical_path = os.path.join(data_dir, classical_path)
+        df = pd.read_csv(classical_path)
+        r_classical = df['r'].values
+        g_classical = df[solv_info['exp_csv_label']].values
+        ax.plot(
+            r_classical, g_classical, label=classical_label, zorder=-2,
+            linestyle='-', color=classical_color, linewidth=linewidth, alpha=1.0,
+            path_effects=[
+                pe.Stroke(linewidth=linewidth, foreground=ref_color), pe.Normal()
+            ]
+        )
+        classical_label = None
 
     if i == 0:
         ax.legend(loc='lower right', frameon=False)
