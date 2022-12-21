@@ -31,7 +31,7 @@ import os
 import pandas as pd
 
 npz_path = 'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-hh.npz'
-exp_path = 'external/md/h2o-rdf/soper2013radial.csv'
+exp_path = 'external/md/h2o-rdf/soper2013radial-hh.csv'
 exp_label = 'Soper'
 
 x_max = 6.0
@@ -80,7 +80,7 @@ g_md = g_md[md_idxs]
 # Get experimental data
 df = pd.read_csv(exp_path)
 r_exp = df['r'].values
-g_exp = df['ghh'].values
+g_exp = df['g'].values
 
 # Find peak
 peak_md = np.argmax(g_md)

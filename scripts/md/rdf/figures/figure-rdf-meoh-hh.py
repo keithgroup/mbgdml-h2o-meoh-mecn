@@ -31,7 +31,7 @@ import os
 import pandas as pd
 
 npz_path = 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-hh.npz'
-exp_path = 'external/md/meoh-rdf/yamaguchi1999structure-fig6-hh.csv'  # Yamaguchi et al.
+exp_path = 'external/md/meoh-rdf/yamaguchi1999structure-erratum-hh.csv'  # Yamaguchi et al.
 exp_label = 'Yamaguchi et al.'
 
 r_max = 8.0

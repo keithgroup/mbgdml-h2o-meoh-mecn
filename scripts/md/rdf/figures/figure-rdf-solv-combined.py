@@ -24,10 +24,10 @@
 
 """Performs a path similarity analysis with MDAnalysis."""
 
+import os
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 import pandas as pd
 
 rdf_info = {
@@ -68,11 +68,13 @@ rdf_info = {
     },
     'meoh': {
         'npz_path': 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oo.npz',
-        'exp_path': 'external/md/meoh-rdf/yamaguchi1999structure-fig6-oo.csv',
+        'exp_path': 'external/md/meoh-rdf/yamaguchi1999structure-erratum-oo.csv',
         'exp_csv_label': 'g',
         'exp_label': 'Experimental',  # Yamaguchi et al.
         'classical_paths': [
-
+            "external/md/meoh-rdf/galicia2015microscopic-fig5-oo.csv",
+            "external/md/meoh-rdf/khasawneh2019evaluation-fig5-gromos-oo.csv",
+            "external/md/meoh-rdf/khasawneh2019evaluation-fig5-opls-oo.csv",
         ],
         'classical_label': 'Classical',
         'comp_label': 'mbGDML',
