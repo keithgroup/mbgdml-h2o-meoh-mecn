@@ -26,7 +26,6 @@
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib.patheffects as pe
 import numpy as np
 import os
 import pandas as pd
@@ -34,11 +33,13 @@ import pandas as pd
 rdf_info = {
     'h2o': {
         'npz_path': 'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-oo.npz',
-        'exp_path': 'external/md/h2o-rdf/soper2013radial-goo.csv',
+        'exp_path': 'external/md/h2o-rdf/soper2013radial-oo.csv',
         'exp_csv_label': 'g',
         'exp_label': 'Experimental',  # Soper
         'classical_paths': [
-
+            "external/md/h2o-rdf/mahoney2000five-fig4-tip3p-oo.csv",
+            "external/md/h2o-rdf/mahoney2000five-fig4-tip4p-oo.csv",
+            "external/md/h2o-rdf/mahoney2000five-fig4-tip5p-oo.csv",
         ],
         'classical_label': 'Classical',
         'comp_label': 'mbGDML',
@@ -84,11 +85,12 @@ rdf_info = {
 keys_order = ['h2o', 'mecn', 'meoh']
 
 ref_color = '#555555'
-classical_color = '#f1f1f1'
+classical_color = '#e1e1e1'
 plot_xlabel = r'r $\left( \mathbf{\AA} \right)$'
 linewidth = 1.5
 x_min = 2
-solv_label_location = (0.87, 0.90)
+solv_label_location = (0.87, 0.05)
+legend_location = "upper right"
 
 save_path = 'analysis/md/rdf/solvent-rdf-combined'
 fig_types = ['svg', 'eps']
@@ -163,7 +165,7 @@ for i, solv_key in enumerate(keys_order):
     )
     ax.axhline(1.0, zorder=-50, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
-    classical_label = solv_info['comp_label']
+    classical_label = solv_info['classical_label']
     for classical_path in solv_info["classical_paths"]:
         classical_path = os.path.join(data_dir, classical_path)
         df = pd.read_csv(classical_path)
@@ -171,15 +173,12 @@ for i, solv_key in enumerate(keys_order):
         g_classical = df[solv_info['exp_csv_label']].values
         ax.plot(
             r_classical, g_classical, label=classical_label, zorder=-2,
-            linestyle='-', color=classical_color, linewidth=linewidth, alpha=1.0,
-            path_effects=[
-                pe.Stroke(linewidth=linewidth, foreground=ref_color), pe.Normal()
-            ]
+            linestyle='-', color=classical_color, linewidth=linewidth, alpha=1.0
         )
         classical_label = None
 
     if i == 0:
-        ax.legend(loc='lower right', frameon=False)
+        ax.legend(loc=legend_location, frameon=False)
 
     ax.set_xlim(x_min, solv_info['r_max'])
 
