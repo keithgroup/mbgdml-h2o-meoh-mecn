@@ -32,12 +32,31 @@ import pandas as pd
 
 npz_path = 'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oh.npz'
 exp_path = 'external/md/meoh-rdf/yamaguchi1999structure-erratum-oh.csv'  # Yamaguchi et al.
-exp_label = 'Yamaguchi et al.'
+exp_label = 'Experimental'
+
+classical_paths = [
+    "external/md/meoh-rdf/khasawneh2019evaluation-fig5-opls-oh.csv",
+    "external/md/meoh-rdf/khasawneh2019evaluation-fig5-gromos-oh.csv",
+]
+classical_labels = [
+    "OPLS-AA",
+    "GROMOS96",
+]
+line_width = 2.0
+line_width_classical = 2.0
 
 r_max = 8.0
 
 mbml_color = '#FFB5BA'
 ref_color = '#6c757d'
+classical_colors = [
+    '#F0EBF5',
+    '#E2D7EA',
+    '#C5B0D4',
+    '#9D7AB8',
+    '#754F92',
+    '#4A325D',
+]
 
 save_path = f'analysis/md/rdf/meoh/61meoh-mbgdml-nvt_1_2_3-rdf-oh'
 fig_types = ['svg', 'eps']
@@ -107,12 +126,23 @@ fig, ax = plt.subplots(1, 1, constrained_layout=True, figsize=fig_size)
 
 ax.plot(
     r_md, g_md, label='mbGDML', zorder=0,
-    linestyle='-', color=mbml_color, linewidth=1.5
+    linestyle='-', color=mbml_color, linewidth=line_width
 )
 ax.plot(
     r_exp, g_exp, label=exp_label, zorder=1,
-    linestyle=(0, (5, 4)), color=ref_color, linewidth=1.5
+    linestyle=(0, (5, 4)), color=ref_color, linewidth=line_width
 )
+for classical_path, classical_label, classical_color\
+    in zip(classical_paths, classical_labels, classical_colors):
+    classical_path = os.path.join(data_dir, classical_path)
+    df = pd.read_csv(classical_path)
+    r_classical = df['r'].values
+    g_classical = df['g'].values
+    ax.plot(
+        r_classical, g_classical, label=classical_label, zorder=-2,
+        linestyle='-', color=classical_color, linewidth=line_width_classical, alpha=1.0
+    )
+    classical_label = None
 ax.axhline(1.0, zorder=-1, alpha=1.0, color='silver', linestyle=(0, (1, 4)))
 
 ax.set_xlabel(r'r $\left( \mathbf{\AA} \right)$')

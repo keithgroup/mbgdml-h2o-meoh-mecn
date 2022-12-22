@@ -52,7 +52,7 @@ rdf_info = {
         'npz_path': 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-nn.npz',
         'exp_path': 'external/md/mecn-rdf/humphreys2015neutron-fig6-nn.csv',
         'exp_csv_label': 'g',
-        'exp_label': 'Experimental',  # Hernández-Cobos et al.
+        'exp_label': 'Experimental',  # Humphreys et al.
         'classical_paths': [
             "external/md/mecn-rdf/alberti2013model-fig7-nn.csv",
             "external/md/mecn-rdf/koverga2017new-fig6-nn.csv",
