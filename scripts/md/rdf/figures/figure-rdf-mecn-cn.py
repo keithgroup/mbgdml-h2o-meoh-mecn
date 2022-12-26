@@ -39,12 +39,14 @@ classical_paths = [
     "external/md/mecn-rdf/hernandez2020general-fig7-cn.csv",
     "external/md/mecn-rdf/koverga2017new-fig6-cn.csv",
     "external/md/mecn-rdf/kowsari2018systematic-fig1-cn.csv",
+    "external/md/mecn-rdf/pothoczki2017intermolecular-fig2-cn.csv",
 ]
 classical_labels = [
     "Albertí et al.",
     "Hernández-Cobos et al.",
     "Koverga et al.",
     "Kowsari et al.",
+    "Pothoczki et al.",
 ]
 line_width = 2.0
 line_width_classical = 2.0

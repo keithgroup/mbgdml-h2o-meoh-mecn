@@ -58,6 +58,7 @@ rdf_info = {
             "external/md/mecn-rdf/koverga2017new-fig6-nn.csv",
             "external/md/mecn-rdf/kowsari2018systematic-fig1-nn.csv",
             "external/md/mecn-rdf/hernandez2020general-fig7-nn.csv",
+            "external/md/mecn-rdf/pothoczki2017intermolecular-fig2-nn.csv",
         ],
         'classical_label': 'Classical',
         'comp_label': 'mbGDML',
