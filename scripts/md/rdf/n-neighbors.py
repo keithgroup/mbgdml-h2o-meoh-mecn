@@ -45,8 +45,8 @@ data_dict = {
     "H2O H-H": {
         "md_path": 'analysis/md/rdf/h2o/137h2o-mbgdml-nvt_1_2-rdf-hh.npz',
         "exp_path": 'external/md/h2o-rdf/soper2013radial-hh.csv',
-        "valley_search_space_md": (2.1, 2.7),  # Min then max
-        "valley_search_space_exp": (2.1, 2.7),  # Min then max
+        "valley_search_space_md": (2.8, 3.2),  # Min then max
+        "valley_search_space_exp": (2.8, 3.2),  # Min then max
     },
     "MeCN N-N": {
         "md_path": 'analysis/md/rdf/mecn/67mecn-mbgdml-nvt_1_2_3-298-rdf-nn.npz',
