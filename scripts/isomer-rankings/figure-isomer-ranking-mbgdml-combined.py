@@ -34,6 +34,7 @@ save_dir = 'analysis/isomer-rankings/mbgdml'
 isomer_dir = 'isomers/'
 pset_dir = 'psets/'
 solvents = ['h2o', 'mecn', 'meoh']  # 'h2o', 'mecn', 'meoh'
+solvent_labels = ['   H$_2$O', 'MeCN', 'MeOH']
 isomer_sizes = [4, 5, 6]
 nbody_orders = [1, 2, 3]
 save_figure = True
@@ -202,7 +203,7 @@ def get_error_statistic(true, pred, stat_type):
         return np.sqrt(((pred - true) ** 2).mean())
 
 idx_subpanel = 0
-for solvent,solvent_axes in zip(solvents, axes):
+for solvent,solvent_axes,solvent_label in zip(solvents, axes, solvent_labels):
 
     data_color = model_colors[solvent]
     mbe_color = mbe_colors[solvent]
@@ -358,7 +359,16 @@ for solvent,solvent_axes in zip(solvents, axes):
             ax.set_ylim(ymin=0)
 
         if i_axis == 0:
-            ax.legend(frameon=False)
+            if idx_subpanel == 0:
+                ax.legend(frameon=False)
+            
+            ax.text(
+                *(0.79, 0.05),
+                solvent_label,
+                fontsize='medium',
+                fontweight='normal',
+                transform=ax.transAxes
+            )
         
         i_axis += 1
         idx_subpanel += 1
