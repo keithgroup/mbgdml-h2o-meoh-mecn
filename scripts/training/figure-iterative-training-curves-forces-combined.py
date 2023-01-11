@@ -248,7 +248,7 @@ for solvent,ax in zip(solvents, axes):
 
 
 axes[1].set_xlabel('Training Set Size')
-axes[0].set_ylabel('Force RMSE (kcal/(mol $\AA$))')
+axes[0].set_ylabel('Force RMSE (kcal/(mol Å))')
 
 
 print(f'Saving {plot_names[solvent]}')
