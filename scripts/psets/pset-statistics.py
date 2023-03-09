@@ -28,6 +28,8 @@ import os
 import numpy as np
 from mbgdml.data import PredictSet
 
+use_relative_energy_errors = False
+only_16mer = False  # False: errors of only 4, 5, and 6mers; True: Only 16mer
 
 systems_dict = {
     'H2O mbGDML': {
@@ -122,7 +124,6 @@ systems_dict = {
     },
 }
 
-only_16mer = False  # False: errors of 4, 5, and 6mers
 
 
 ###   SCRIPT   ###
@@ -149,6 +150,7 @@ for model_key, pset_data in systems_dict.items():
     E_errors_per_monomer = []
     F_errors = []
     F_errors_per_atom = []
+    n_monomers_all = []
     for pset_path in pset_paths:
         pset = PredictSet(pset_path, Z_key='z')
         n_monomers = int(len(set(pset.entity_ids)))
@@ -158,18 +160,32 @@ for model_key, pset_data in systems_dict.items():
         F_true = pset.F_true
 
         E_pred, F_pred = pset.nbody_predictions([1, 2, 3])
+
+        # Change energy to be relative to lowest energy.
+        # Also handles slicing to not include the minimum energy. This only affects
+        # energies.
+        if use_relative_energy_errors:
+            E_idx = np.argsort(E_true)
+            E_true = E_true[E_idx]
+            E_true -= E_true[0]
+            E_pred = E_pred[E_idx]
+            E_pred -= E_pred[0]
+            n_R = int(len(E_true)) - 1
+        else:
+            n_R = int(len(E_true))
+
         E_error = E_pred - E_true
-        F_error = np.ravel(F_pred-F_true)
+        F_error = np.ravel(F_pred - F_true)
         if pset.e_unit.lower() == 'ev':
             E_error *= ev2kcalmol
             F_error *= ev2kcalmol
-        F_error_per_atom = F_error/n_atoms
-        E_error_per_monomer = E_error/n_monomers
 
-        E_errors.extend(E_error.tolist())
-        E_errors_per_monomer.extend(E_error_per_monomer.tolist())
+        E_errors.extend(E_error[-n_R:].tolist())
+        E_error /= n_monomers
+        E_errors_per_monomer.extend(E_error[-n_R:].tolist())
         F_errors.extend(F_error.tolist())
-        F_errors_per_atom.extend(F_error_per_atom.tolist())
+        F_error /= n_atoms
+        F_errors_per_atom.extend(F_error.tolist())
 
     E_errors = np.array(E_errors)
     E_errors_per_monomer = np.array(E_errors_per_monomer)
