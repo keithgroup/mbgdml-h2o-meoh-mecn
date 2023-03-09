@@ -29,6 +29,8 @@ import numpy as np
 from mbgdml.mbe import mbe_contrib
 from reptar import File
 
+error_type = "absolute"  # absolute or relative
+
 
 systems_dict = {
     'H2O 4-6mers': {
@@ -184,12 +186,20 @@ for label, data_dict in systems_dict.items():
             entity_ids_lower = rfile.get(f'{nbody_key}/entity_ids')
             r_prov_ids_lower = rfile.get(f'{nbody_key}/r_prov_ids')
             r_prov_specs_lower = rfile.get(f'{nbody_key}/r_prov_specs')
-            
+
             E_pred, F_pred = mbe_contrib(
                 E_pred, F_pred, entity_ids, None, None, E_lower, F_lower,
                 entity_ids_lower, r_prov_ids_lower, r_prov_specs_lower,
                 operation='add'
             )
+
+        # Change energy to be relative to lowest energy
+        if error_type == "relative":
+            E_idx = np.argsort(E_true)
+            E_true = E_true[E_idx]
+            E_true -= E_true[0]
+            E_pred = E_pred[E_idx]
+            E_pred -= E_pred[0]
 
         E_error = E_pred - E_true  # Eh
         E_error *= hartree2kcalmol
