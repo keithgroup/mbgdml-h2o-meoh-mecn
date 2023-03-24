@@ -32,7 +32,7 @@ from mbgdml.data import DataSet
 import pandas as pd
 
 
-csv_path = 'meoh/meoh-psets-schnet.niter5.nfeat128.best.train1000.csv'
+csv_path = 'meoh/meoh-psets-mbgdml.train1000.csv'
 atoms_per_entity = 6
 entities_per_row = [  # Same for each CSV file
     1, 2, 3, 4, 1, 2, 3, 5, 1, 2, 3, 6, 1, 2, 3, 16, 1, 2, 3
