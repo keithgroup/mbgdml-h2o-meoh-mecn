@@ -33,6 +33,14 @@ You may need to adjust the relative paths to data in the provided scripts.
 If you are trying to reproduce this work, we thank you for your service to the academic community!
 We tried to be as transparent about our data, code, and analyses as possible; however, please contact the corresponding authors with any questions or difficulties.
 
+## Citing
+
+This repository supports the following work:
+
+> Maldonado, A. M.; Vassilev-Galindo, V.; Poltavsky, I.; Tkatchenko, A.; Keith, J. A.
+> Modeling molecular ensembles with gradient-domain machine learning force fields.
+> DOI: [10.26434/chemrxiv-2023-wdd1r](https://doi.org/10.26434/chemrxiv-2023-wdd1r)
+
 ## License
 
 [![CC BY 4.0][cc-by-4.0-shield]][cc-by-4.0]
