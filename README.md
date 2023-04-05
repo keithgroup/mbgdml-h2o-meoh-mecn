@@ -37,7 +37,7 @@ We tried to be as transparent about our data, code, and analyses as possible; ho
 
 This repository supports the following work:
 
-> Maldonado, A. M.; Vassilev-Galindo, V.; Poltavsky, I.; Tkatchenko, A.; Keith, J. A.
+> Maldonado, A. M.; Poltavsky, I.; Vassilev-Galindo, V.; Tkatchenko, A.; Keith, J. A.
 > Modeling molecular ensembles with gradient-domain machine learning force fields.
 > DOI: [10.26434/chemrxiv-2023-wdd1r](https://doi.org/10.26434/chemrxiv-2023-wdd1r)
 
