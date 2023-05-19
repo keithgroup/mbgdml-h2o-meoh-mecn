@@ -263,7 +263,7 @@ for solvent,solvent_axes in zip(solvents, axes):
 
         # Axis
         if i_axis == 0:
-            ax.set_ylabel('$\Delta$E (kcal/mol)')
+            ax.set_ylabel(r'$\Delta$E (kcal mol$^{\bf{-1}}$)')
 
         # MP2 reference data
         ax.plot(

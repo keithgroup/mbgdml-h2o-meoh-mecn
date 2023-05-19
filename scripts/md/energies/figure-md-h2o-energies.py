@@ -196,7 +196,7 @@ ax.set_xlabel('Time (fs)')
 ax.set_xlim(xmin=0)
 
 # Y axis
-ax.set_ylabel('$\Delta$ E (kcal/mol)')
+ax.set_ylabel(r'$\Delta$ E (kcal mol$^{\bf{-1}}$)')
 
 ax.legend(frameon=False)
 

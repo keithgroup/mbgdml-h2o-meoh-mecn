@@ -152,7 +152,7 @@ for path in umap_npz_paths:
         plt.gca().set_aspect('equal', 'datalim')
         fig.colorbar(
             mpl.cm.ScalarMappable(norm=norm, cmap=cmap), ax=ax,
-            label='$n$-body energy (kcal/mol)', location='right'
+            label=r'$n$-body energy (kcal mol$^{\bf{-1}}$)', location='right'
         )
 
         for fig_type in fig_types:

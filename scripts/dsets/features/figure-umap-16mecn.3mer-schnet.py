@@ -200,7 +200,7 @@ for n_nbr,min_dist,embedding in zip(n_neighbors, min_dists, embeddings):
 
     fig.colorbar(
         mpl.cm.ScalarMappable(norm=norm, cmap=cmap), ax=ax1,
-        label='Energy error (kcal/mol)', location='right', ticks=None
+        label=r'Energy error (kcal mol$^{\bf{-1}}$)', location='right', ticks=None
     )
     fig.colorbar(
         mpl.cm.ScalarMappable(norm=norm_geom, cmap=cmap_geom), ax=ax2,

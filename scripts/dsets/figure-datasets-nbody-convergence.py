@@ -221,8 +221,8 @@ for plot_name, data in plot_data.items():
     )
 
     # Axis labels
-    ax.set_xlabel('L cutoff (Ang.)')
-    ax.set_ylabel(f'{mb_order}-body energy (kcal/mol)', color=color)
+    ax.set_xlabel('L cutoff (Å)')
+    ax.set_ylabel(str(mb_order) + r'-body energy (kcal mol$^{\bf{-1}}$)', color=color)
     ax2.set_ylabel(f'Cumulative number of clusters', color=cluster_num_color)
 
     # Axis tick label colors

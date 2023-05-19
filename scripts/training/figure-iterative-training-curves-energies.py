@@ -232,7 +232,7 @@ for solvent in solvents:
     
     ax.set_xlabel('Training Set Size')
 
-    ax.set_ylabel('Energy RMSE (kcal/mol)')
+    ax.set_ylabel(r'Energy RMSE (kcal mol$^{\bf{-1}}$)')
 
     ax.legend(frameon=False)
 

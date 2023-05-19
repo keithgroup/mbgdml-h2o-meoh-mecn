@@ -103,8 +103,8 @@ for json_path in training_json_paths:
 
     ax_F.set_xlabel('Sigma')
 
-    ax_F.set_ylabel('Force RMSE [kcal/(mol Å)]')
-    ax_E.set_ylabel('Energy RMSE (kcal/mol)')
+    ax_F.set_ylabel(r'Force RMSE [kcal (mol Å)$^{\bf{-1}}$]')
+    ax_E.set_ylabel(r'Energy RMSE (kcal mol$^{\bf{-1}}$)')
 
     lns = ln1+ln2
     labs = [l.get_label() for l in lns]

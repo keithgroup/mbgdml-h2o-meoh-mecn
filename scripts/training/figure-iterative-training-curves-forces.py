@@ -230,7 +230,7 @@ for solvent in solvents:
     
     ax.set_xlabel('Training Set Size')
 
-    ax.set_ylabel('Force RMSE (kcal/(mol Å))')
+    ax.set_ylabel(r'Force RMSE [kcal (mol Å)$^{\bf{-1}}$]')
     ax.set_ylim(bottom=0.0)
 
     ax.legend(frameon=False)

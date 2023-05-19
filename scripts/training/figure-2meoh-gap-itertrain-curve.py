@@ -116,7 +116,7 @@ ax.axhline(
 
 ax.set_xlabel('Training Set Size')
 
-ax.set_ylabel('Force MSE (kcal/(mol Å))')
+ax.set_ylabel(r'Force MSE [kcal (mol Å)$^{\bf{-1}}$]')
 
 for fig_type in fig_types:
     plt.savefig(
